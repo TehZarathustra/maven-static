@@ -1,0 +1,62 @@
+.nav-menu
+	&__list
+		margin: 0
+		padding: 0
+		&:last-child
+			border-bottom: 1px solid rgba(255,255,255,.25)
+	&__item
+		list-style: none
+	&__toggle
+		&:before
+			content: '\f0c9'
+			font-family: 'FontAwesome'
+			font-size: 2em
+			color: #fff
+			position: absolute
+			cursor: pointer
+			top: 5px
+			left: 10px
+			display: none
+			+transition(.2s)
+		&:hover:before
+			opacity: .7
+	&__telephone
+		&:before
+			content: '\f098'
+			display: block
+			font-family: 'FontAwesome'
+			font-size: 2em
+			color: #fff
+			position: absolute
+			cursor: pointer
+			top: 5px
+			right: 10px
+			display: none
+			+transition(.2s)
+		&:hover:before
+			opacity: .7
+	&__link
+		display: block
+		text-decoration: none
+		text-transform: uppercase
+		padding: 28.5px 40px
+		font-weight: lighter
+		border-top: 1px solid rgba(255,255,255,.25)
+		+transition(.3s)
+		&_default
+			color: #000
+			background-color: #d9d9d4
+			&:hover
+				background-color: lighten(#d9d9d4, 4%)
+		&_black
+			color: #fff
+			background-color: #1e2023
+			&:hover
+				background-color: lighten(#1e2023, 4%)
+	+tablet-landskape
+		&__toggle:before
+			display: block
+		&__telephone:before
+			display: block
+		&__link
+			padding: 10px

@@ -1,0 +1,96 @@
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    link(rel='shortcut icon', type='image/ico', href='favicon.ico')
+    // build:css css/vendor.min.css
+    // bower:css
+    // endbower
+    // endbuild
+    // build:css css/main.min.css
+    link(rel='stylesheet', href='css/bundle.min.css')
+    // endbuild
+    script(src='vendor/modernizr-2.8.3.min.js')
+  body
+    <!--[if lt IE 11]>
+    .browserupgrade
+      p
+        strong YOUR BROWSER IS FROM ANOTHER ERA
+      p
+        | he's witnessed asteroid that wiped out dinosaurs
+        br
+        | he's so ancient that he can barely render your page
+      p
+        | Please,
+        a(href='http://browsehappy.com/') update it
+    <![endif]-->
+    .page-wrapper.page-wrapper_flex
+        aside.left-pane.left-pane_flex
+            .logo
+                a.logo__link(href="/")
+                    img.logo__image(src="img/logo.png", alt="logo")
+            .nav-menu
+                .nav-menu__toggle
+                a.nav-menu__telephone(href="#")
+                nav.nav-menu__container
+                    ul.nav-menu__list
+                        li.nav-menu__item
+                             a.nav-menu__link.nav-menu__link_black(href="#") about
+                        li.nav-menu__item
+                             a.nav-menu__link.nav-menu__link_black(href="#") contracts
+                        li.nav-menu__item
+                             a.nav-menu__link.nav-menu__link_black(href="#") quick ship
+                        li.nav-menu__item
+                             a.nav-menu__link.nav-menu__link_black(href="#") line card (pdf)
+                        li.nav-menu__item
+                             a.nav-menu__link.nav-menu__link_default(href="#") manufacturers
+                        li.nav-menu__item
+                             a.nav-menu__link.nav-menu__link_default(href="#") quickship
+                        li.nav-menu__item
+                             a.nav-menu__link.nav-menu__link_default(href="#") news
+            .social
+                ul.social__list
+                    li.social__item
+                        a.social__link.social__link_facebook(href="#")
+                    li.social__item
+                        a.social__link.social__link_twitter(href="#")
+                    li.social__item
+                        a.social__link.social__link_pinterest(href="#")
+        .main-content
+            h1.fixed-heading
+            .scroll-items-wrapper
+                article.scroll-item
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading about
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .scroll-item__left-column.scroll-item__left-column_flex(data-layout="1")
+                            img.scroll-item__image(src="img/pic_sample_2.jpg", alt="image")
+                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="1")
+                            h3.scroll-item__subheading About MAVEN
+                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+
+        .debug
+            .debug__layouts
+                p.debug__title Layouts:
+                label.debug__item 1
+                    input.debug__radio(checked, type="radio", name="layout", value="1")
+                label.debug__item 2
+                    input.debug__radio(type="radio", name="layout", value="2")
+                label.debug__item 3
+                    input.debug__radio(type="radio", name="layout", value="3")
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="vendor/jquery-1.11.2.min.js"><\\/script>')
+    // build:js js/vendor.min.js
+    // bower:js
+    // endbower
+    // endbuild
+    // build:js js/main.min.js
+    script(src='js/plugins.js')
+    script(src='js/main.js')
+    // endbuild

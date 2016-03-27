@@ -1,0 +1,5 @@
+node_modules
+.sass-cache
+app/css
+app/components
+app/js/main.min.js
