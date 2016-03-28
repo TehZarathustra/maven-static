@@ -1,4 +1,4 @@
-# Maven-static based on Boilerplate, Sass, Jade and Gulp
+# Maven-static
 
 Requires node.js, Ruby and Sass
 
