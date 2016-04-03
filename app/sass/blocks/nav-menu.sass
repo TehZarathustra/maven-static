@@ -6,6 +6,7 @@
 			border-bottom: 1px solid rgba(255,255,255,.25)
 	&__item
 		list-style: none
+		position: relative
 	&__toggle
 		&:before
 			content: '\f0c9'
@@ -35,6 +36,20 @@
 			+transition(.2s)
 		&:hover:before
 			opacity: .7
+	&__progress
+		position: absolute
+		display: none
+		width: 3px
+		top: 0
+		left: 0
+		bottom: 0
+		background-color: lighten(#d9d9d4, 20%)
+	&__progress-bar
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		background-color: lighten(#1e2023,5%)
 	&__link
 		display: block
 		text-decoration: none

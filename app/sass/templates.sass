@@ -1,4 +1,5 @@
 .debug
+	display: none
 	position: fixed
 	right: 15px
 	bottom: 15px
@@ -15,6 +16,41 @@
 	&__item
 		margin-right: 20px
 		display: inline-block
+.fixed-heading-wrap
+	text-align: center
+	overflow: hidden
+	position: absolute
+	z-index: 2
+.fixed-heading
+	display: inline-block
+	position: relative
+	font-weight: lighter
+	text-transform: uppercase
+	font-size: .9em
+	margin-top: 0
+	&:before
+		content: ''
+		margin-left: -15px
+		display: block
+		position: absolute
+		z-index: -1
+		background-color: #000
+		height: 1px
+		top: 8px
+		width: 4000%
+		transform: translateX(-100%)
+	&:after
+		content: ''
+		margin-right: -15px
+		display: block
+		position: absolute
+		z-index: -1
+		background-color: #000
+		height: 1px
+		top: 8px
+		right: 0
+		width: 4000%
+		transform: translateX(100%)
 
 .left-pane
 	width: 280px
@@ -29,6 +65,11 @@
 		position: fixed
 		&_unfolded
 			height: auto
+.loader
+	text-align: center
+	font-size: 3em
+	&_hidden
+		visibility: hidden
 .logo
 	height: 150px
 	background-color: #1e2023
@@ -67,6 +108,7 @@
 			border-bottom: 1px solid rgba(255,255,255,.25)
 	&__item
 		list-style: none
+		position: relative
 	&__toggle
 		&:before
 			content: '\f0c9'
@@ -96,6 +138,20 @@
 			+transition(.2s)
 		&:hover:before
 			opacity: .7
+	&__progress
+		position: absolute
+		display: none
+		width: 3px
+		top: 0
+		left: 0
+		bottom: 0
+		background-color: lighten(#d9d9d4, 20%)
+	&__progress-bar
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		background-color: lighten(#1e2023,5%)
 	&__link
 		display: block
 		text-decoration: none
@@ -129,6 +185,7 @@
 			flex-direction: column
 .scroll-item
 	height: 100%
+	padding-bottom: 180px
 	&__heading-wrap
 		text-align: center
 		overflow: hidden
@@ -141,6 +198,8 @@
 		text-transform: uppercase
 		font-size: .9em
 		margin-top: 0
+		&_hidden
+			visibility: hidden
 		&:before
 			content: ''
 			margin-left: -15px
@@ -175,12 +234,15 @@
 		+transition(.52s)
 		width: 40%
 		overflow: hidden
+		position: relative
 		height: 90%
 		&_layout-1
 		&_layout-2
 			order: 2
 		&_layout-3
 			display: none
+		&_layout-4, &_layout-5
+			width: 70%
 	&__right-column
 		+transition(.52s)
 		width: 50%
@@ -193,8 +255,71 @@
 			padding: 20%
 			width: 100%
 			text-align: center
+		&_layout-4
+			width: 25%
+			text-align: right
 	&__text
 		font-weight: lighter
+	&__image-wrap
+		background-size: cover
+		background-position: 20% 0
+		background-repeat: no-repeat
+		position: relative
+		z-index: 1
+		+transition(1s)
+		height: 100%
+		width: 100%
+		&_fullscreen
+			transform: translateX(-380px) translateY(-95px)
+			-ms-transform: translateX(-380px) translateY(-95px)
+			-webkit-transform: translateX(-380px) translateY(-95px)
+			cursor: pointer
+			// width: 100% !important
+			position: fixed
+			z-index: 3
+			&:before
+				content: 'We deliver quality, style and luxury at price point that is competitive'
+				font-size: 1.8em
+				letter-spacing: 5px
+				display: block
+				position: absolute
+				// +transition(.2s)
+				right: 10%
+				bottom: 10%
+				width: 350px
+				color: #fff
+				font-weight: lighter
+		&_shortened
+			width: 80%
+		&_moved
+			transform: translateY(10%) translateX(10%)
+		&_moved-left
+			transform: translateX(-15%)
+		&_bundle
+			position: absolute
+			overflow: hidden
+		&_bundle-order-1
+			width: 35%
+			height: 35%
+			top: 15%
+			left: 17%
+		&_bundle-order-2
+			right: 50px
+			width: 35%
+			height: 100%
+		&_bundle-order-3
+			bottom: 0
+			width: 50%
+			height: 45%
+	&:target:before
+		content: ''
+		display: block
+		height: 30px
+		margin: -30px 0 0
+
+.no-pseudo
+	&:before
+		opacity: 0
 .scroll-items-wrapper
 	height: 90%
 .social

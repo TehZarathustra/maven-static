@@ -32,13 +32,41 @@
           <div class="nav-menu__toggle"></div><a href="#" class="nav-menu__telephone"></a>
           <nav class="nav-menu__container">
             <ul class="nav-menu__list">
-              <li class="nav-menu__item"><a href="#" class="nav-menu__link nav-menu__link_black">about</a></li>
-              <li class="nav-menu__item"><a href="#" class="nav-menu__link nav-menu__link_black">contracts</a></li>
-              <li class="nav-menu__item"><a href="#" class="nav-menu__link nav-menu__link_black">quick ship</a></li>
-              <li class="nav-menu__item"><a href="#" class="nav-menu__link nav-menu__link_black">line card (pdf)</a></li>
-              <li class="nav-menu__item"><a href="#" class="nav-menu__link nav-menu__link_default">manufacturers</a></li>
-              <li class="nav-menu__item"><a href="#" class="nav-menu__link nav-menu__link_default">quickship</a></li>
-              <li class="nav-menu__item"><a href="#" class="nav-menu__link nav-menu__link_default">news</a></li>
+              <li class="nav-menu__item">
+                <div class="nav-menu__progress">
+                  <div class="nav-menu__progress-bar"></div>
+                </div><a href="#about" class="nav-menu__link nav-menu__link_default">about</a>
+              </li>
+              <li class="nav-menu__item">
+                <div class="nav-menu__progress">
+                  <div class="nav-menu__progress-bar"></div>
+                </div><a href="#contracts" class="nav-menu__link nav-menu__link_default">contracts</a>
+              </li>
+              <li class="nav-menu__item">
+                <div class="nav-menu__progress">
+                  <div class="nav-menu__progress-bar"></div>
+                </div><a href="#quick_ship" class="nav-menu__link nav-menu__link_default">quick ship</a>
+              </li>
+              <li class="nav-menu__item">
+                <div class="nav-menu__progress">
+                  <div class="nav-menu__progress-bar"></div>
+                </div><a href="#" class="nav-menu__link nav-menu__link_default">line card (pdf)</a>
+              </li>
+              <li class="nav-menu__item">
+                <div class="nav-menu__progress">
+                  <div class="nav-menu__progress-bar"></div>
+                </div><a href="#" class="nav-menu__link nav-menu__link_default">manufacturers</a>
+              </li>
+              <li class="nav-menu__item">
+                <div class="nav-menu__progress">
+                  <div class="nav-menu__progress-bar"></div>
+                </div><a href="#" class="nav-menu__link nav-menu__link_default">quickship</a>
+              </li>
+              <li class="nav-menu__item">
+                <div class="nav-menu__progress">
+                  <div class="nav-menu__progress-bar"></div>
+                </div><a href="#" class="nav-menu__link nav-menu__link_default">news</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -51,20 +79,55 @@
         </div>
       </aside>
       <div class="main-content">
-        <h1 class="fixed-heading"></h1>
+        <div class="fixed-heading-wrap">
+          <h1 class="fixed-heading"></h1>
+        </div>
         <div class="scroll-items-wrapper">
-          <article class="scroll-item">
+          <article id="about" class="scroll-item">
             <div class="scroll-item__heading-wrap">
               <h2 class="scroll-item__heading">about</h2>
             </div>
             <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
-              <div data-layout="1" class="scroll-item__left-column scroll-item__left-column_flex"><img src="img/pic_sample_2.jpg" alt="image" class="scroll-item__image"></div>
+              <div data-layout="1" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
               <div data-layout="1" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
                 <h3 class="scroll-item__subheading">About MAVEN</h3>
                 <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
               </div>
             </div>
           </article>
+          <article id="contracts" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">contracts</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="4" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap scroll-item__image-wrap_shortened"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
+              <div data-layout="4" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
+                <h3 class="scroll-item__subheading">About MAVEN</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <article id="quick_ship" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">quick ship</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="5" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap scroll-item__image-wrap_bundle scroll-item__image-wrap_bundle-order-1 scroll-item__image-wrap_moved"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                <div class="scroll-item__image-wrap scroll-item__image-wrap_bundle scroll-item__image-wrap_bundle-order-2 scroll-item__image-wrap_moved"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                <div class="scroll-item__image-wrap scroll-item__image-wrap_bundle scroll-item__image-wrap_bundle-order-3 scroll-item__image-wrap_moved-left"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
+              <div data-layout="5" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
+                <h3 class="scroll-item__subheading">About MAVEN</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <div class="loader loader_hidden"><i class="fa fa-cog fa-spin"></i></div>
         </div>
       </div>
       <div class="debug">
@@ -86,6 +149,7 @@
     <script>window.jQuery || document.write('<script src="vendor/jquery-1.11.2.min.js"><\\/script>')</script>
     <!-- build:js js/vendor.min.js-->
     <!-- bower:js-->
+    <script src="components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <!-- endbower-->
     <!-- endbuild-->
     <!-- build:js js/main.min.js-->

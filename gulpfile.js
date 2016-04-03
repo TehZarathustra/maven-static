@@ -79,7 +79,7 @@ gulp.task('serve', ['sass'], function() {
 
     gulp.watch(['app/sass/*.sass','app/sass/blocks/*.sass'], ['sass']);
 	gulp.watch(['app/jade/*.jade'], ['bower', browserSync.reload]);
-	gulp.watch(['app/js/main.js'], ['scripts', browserSync.reload]);
+	gulp.watch(['app/js/main.js', 'app/js/plugins.js'], ['scripts', browserSync.reload]);
 });
 
 
