@@ -18,53 +18,7 @@
 				init;
 
 			for (var i = 0, l = items.length; i < l; i++) {
-				new ScrollMagic.Scene({
-						triggerElement: items[i],
-						duration: '100%'
-					})
-					.addTo(controller)
-					.on('progress', function (e) {
-						var el = _getScrollNodes(this.triggerElement().id);
-
-						el.bar.css({
-							'height': e.progress.toFixed(2).replace(/\d\./, '')
-						})
-
-						if (e.progress.toFixed(2) >= 0.48) {
-							FIXED_HEADING.text(el.titleText);
-							el.link.removeClass('nav-menu__link_black');
-							el.title.addClass('scroll-item__heading_hidden');
-						} else {
-							el.title.removeClass('scroll-item__heading_hidden');
-						}
-					})
-
-					.on('enter leave', function (e) {
-						var el = _getScrollNodes(this.triggerElement().id);
-
-						if (e.type == 'enter') {
-							el.barParent.show();
-							el.image.removeClass('scroll-item__image-wrap_shortened');
-							el.image.removeClass('scroll-item__image-wrap_moved');
-							el.image.removeClass('scroll-item__image-wrap_moved-left');
-
-							if (history.pushState && firstEnter) {
-				                history.pushState(null, null, "#" + el.id);
-				            }
-
-						} else {
-							firstEnter = true;
-							el.barParent.hide();
-						}
-					})
-
-					.on('start end', function (e) {
-						var el = _getScrollNodes(this.triggerElement().id);
-
-						if (e.type != 'start' && !el.link.hasClass('nav-menu__link_black')) {
-							el.link.addClass('nav-menu__link_black');
-						}
-					});
+				_makeScene(items[i]);
 			}
 
 			// loader
@@ -81,13 +35,66 @@
 
 							setTimeout(function() {
 								$('.scroll-items-wrapper').append(_fillTemplate());
+								var item = document.querySelectorAll('article.scroll-item');
+								console.log(item[item.length - 1]);
+								_makeScene(item[item.length - 1]);
 								$('.loader').hide();
-								_buildStages();
 							}, 1000);
 							
 						}
 
 						dataFlag = true;
+					}
+				});
+		}
+
+		// make generic scene
+		function _makeScene(item) {
+			new ScrollMagic.Scene({
+					triggerElement: item,
+					duration: '100%'
+				})
+				.addTo(controller)
+				.on('progress', function (e) {
+					var el = _getScrollNodes(this.triggerElement().id);
+
+					el.bar.css({
+						'height': e.progress.toFixed(2).replace(/\d\./, '')
+					})
+
+					if (e.progress.toFixed(2) >= 0.48) {
+						FIXED_HEADING.text(el.titleText);
+						el.link.removeClass('nav-menu__link_black');
+						el.title.addClass('scroll-item__heading_hidden');
+					} else {
+						el.title.removeClass('scroll-item__heading_hidden');
+					}
+				})
+
+				.on('enter leave', function (e) {
+					var el = _getScrollNodes(this.triggerElement().id);
+
+					if (e.type == 'enter') {
+						el.barParent.show();
+						el.image.removeClass('scroll-item__image-wrap_shortened');
+						el.image.removeClass('scroll-item__image-wrap_moved');
+						el.image.removeClass('scroll-item__image-wrap_moved-left');
+
+						if (history.pushState && firstEnter) {
+			                history.pushState(null, null, "#" + el.id);
+			            }
+
+					} else {
+						firstEnter = true;
+						el.barParent.hide();
+					}
+				})
+
+				.on('start end', function (e) {
+					var el = _getScrollNodes(this.triggerElement().id);
+
+					if (e.type != 'start' && !el.link.hasClass('nav-menu__link_black')) {
+						el.link.addClass('nav-menu__link_black');
 					}
 				});
 		}
@@ -134,7 +141,7 @@
 
 		function _fillTemplate() {
 			var data = _getData();
-			return '<article class="scroll-item"> <div class="scroll-item__heading-wrap"> <h2 class="scroll-item__heading">loaded content</h2> </div><div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex"> <div data-layout="1" class="scroll-item__left-column scroll-item__left-column_flex scroll-item__left-column_layout-1"> <div class="scroll-item__image-wrap" style="background-image: url(&quot;img/home.jpg&quot;);"><img src="img/home.jpg" alt="image" class="scroll-item__image" style="display: none;"></div></div><div data-layout="1" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex scroll-item__right-column_layout-1"> <h3 class="scroll-item__subheading">About MAVEN</h3> <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p></div></div></article>';
+			return '<article id="loaded-content" class="scroll-item"> <div class="scroll-item__heading-wrap"> <h2 class="scroll-item__heading">loaded content</h2> </div><div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex"> <div data-layout="1" class="scroll-item__left-column scroll-item__left-column_flex scroll-item__left-column_layout-1"> <div class="scroll-item__image-wrap" style="background-image: url(&quot;img/home.jpg&quot;);"><img src="img/home.jpg" alt="image" class="scroll-item__image" style="display: none;"></div></div><div data-layout="1" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex scroll-item__right-column_layout-1"> <h3 class="scroll-item__subheading">About MAVEN</h3> <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p></div></div></article>';
 		}
 
 		function _setHeadingWidth() {
