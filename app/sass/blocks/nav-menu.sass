@@ -1,5 +1,6 @@
-.nav-menu
+.nav-menu, .submenu
 	&__list
+		position: relative
 		margin: 0
 		padding: 0
 		&:last-child
@@ -68,6 +69,11 @@
 			background-color: #1e2023
 			&:hover
 				background-color: lighten(#1e2023, 4%)
+		&_hidden
+			opacity: 0
+			position: absolute
+			width: 100%
+			transform: translateY(-100%)
 	+tablet-landskape
 		&__toggle:before
 			display: block
@@ -75,3 +81,15 @@
 			display: block
 		&__link
 			padding: 10px
+
+.submenu
+	+transition(.5s)
+	position: relative
+	transform: translateY(0)
+	&_hidden
+		opacity: 0
+		transform: translateY(-100%)
+		top: -100%
+		z-index: -1
+	&__progress-bar
+		z-index: 22

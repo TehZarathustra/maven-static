@@ -47,6 +47,7 @@ body
 
 $tablet-width: 768px
 $desktop-width: 1024px
+$phones-width: 500px
 
 =tablet-landskape
   @media (max-width: #{$desktop-width})
@@ -58,6 +59,10 @@ $desktop-width: 1024px
 
 =desktop
   @media (min-width: #{$desktop-width})
+    @content
+
+=phones
+  @media (max-width: #{$phones-width})
     @content
 
 

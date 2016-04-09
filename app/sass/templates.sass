@@ -21,6 +21,8 @@
 	overflow: hidden
 	position: absolute
 	z-index: 2
+	+tablet-landskape
+		display: none
 .fixed-heading
 	display: inline-block
 	position: relative
@@ -56,11 +58,12 @@
 	width: 280px
 	height: 100%
 	background: #d9d9d4
-	overflow-y: scroll
+	overflow: hidden
 	&_flex
 		flex-shrink: 0
 	+tablet-landskape
 		width: 100%
+		z-index: 10
 		height: 50px
 		position: fixed
 		&_unfolded
@@ -98,10 +101,11 @@
 		flex-basis: 100%
 		flex-shrink: 0
 		width: 100%
-		margin-top: 20px
+		margin-top: 60px
 		padding: 20px 20px
-.nav-menu
+.nav-menu, .submenu
 	&__list
+		position: relative
 		margin: 0
 		padding: 0
 		&:last-child
@@ -170,6 +174,11 @@
 			background-color: #1e2023
 			&:hover
 				background-color: lighten(#1e2023, 4%)
+		&_hidden
+			opacity: 0
+			position: absolute
+			width: 100%
+			transform: translateY(-100%)
 	+tablet-landskape
 		&__toggle:before
 			display: block
@@ -177,6 +186,18 @@
 			display: block
 		&__link
 			padding: 10px
+
+.submenu
+	+transition(.5s)
+	position: relative
+	transform: translateY(0)
+	&_hidden
+		opacity: 0
+		transform: translateY(-100%)
+		top: -100%
+		z-index: -1
+	&__progress-bar
+		z-index: 22
 .page-wrapper
 	height: 100%
 	&_flex
@@ -186,6 +207,9 @@
 .scroll-item
 	height: 100%
 	padding-bottom: 180px
+	overflow: hidden
+	+phones
+		margin-bottom: 100px
 	&__heading-wrap
 		text-align: center
 		overflow: hidden
@@ -230,6 +254,9 @@
 			justify-content: space-between
 			align-items: center
 			+transition(.52s)
+			+phones
+				flex-direction: row 
+				flex-wrap: wrap
 	&__left-column
 		+transition(.52s)
 		width: 40%
@@ -243,6 +270,14 @@
 			display: none
 		&_layout-4, &_layout-5
 			width: 70%
+		&_layout-7
+			order: 2
+			width: 65%
+		&_layout-8
+			width: 65%
+		+phones
+			width: 100% !important
+			flex-shrink: 0
 	&__right-column
 		+transition(.52s)
 		width: 50%
@@ -258,32 +293,121 @@
 		&_layout-4
 			width: 25%
 			text-align: right
+		&_layout-7
+			order: 1
+			text-align: center
+			width: 30%
+		&_layout-8
+			text-align: center
+			width: 30%
+		+phones
+			width: 100% !important
+			flex-shrink: 0
+			padding: 0
+	&__full-column
+		width: 100%
+		height: 100%
+		&_layout-10
+			text-align: center
+			padding-top: 60px
+		p
+			margin-bottom: 5%
+		&_layout-6
+			padding-top: 50px
+			display: flex
+			justify-content: space-between
+			align-items: center
+		+phones
+			flex-wrap: wrap
 	&__text
 		font-weight: lighter
+	&__text-bundle
+		text-align: center
+		p
+			font-weight: lighter
+		&_layout-6
+			width: 30%
+		+phones
+			width: 100% !important
+	&__image-bundle
+		height: 100%
+		display: flex
+		+phones
+			width: 100% !important
+		&_layout-4
+			align-items: flex-end
+			.scroll-item__image-wrap
+				height: 90%
+				width: 100%
+		&_layout-5
+			justify-content: space-between
+			align-items: center
+			.scroll-item__image-wrap
+				position: relative
+				&:after
+					position: absolute
+					bottom: -30px
+					font-weight: lighter
+					width: 100%
+					content: attr(data-caption)
+			.scroll-item__image-wrap:first-child
+				width: 30%
+				height: 90%
+			.scroll-item__image-wrap:last-child
+				width: 60%
+				height: 70%
+				&:after
+					text-align: right
+			+phones
+				flex-wrap: wrap
+				.scroll-item__image-wrap
+					height: 40% !important
+					width: 100% !important
+		&_layout-6
+			width: 30%
+			+phones
+				width: 100% !important
+
+		&_layout-10
+			justify-content: space-between
+			align-items: center
+			+phones
+				flex-wrap: wrap
+			.scroll-item__image-wrap
+				height: 400px
+				+phones
+					width: 100% !important
+					height: 200px !important
+			.scroll-item__image-wrap:nth-child(1)
+				width: 45%
+			.scroll-item__image-wrap:nth-child(2)
+				height: 600px
+			.scroll-item__image-wrap:nth-child(2),
+			.scroll-item__image-wrap:nth-child(3)
+				width: 22%
 	&__image-wrap
 		background-size: cover
 		background-position: 20% 0
 		background-repeat: no-repeat
 		position: relative
 		z-index: 1
-		+transition(1s)
 		height: 100%
 		width: 100%
+		&_transition
+			+transition(1.2s)
 		&_fullscreen
 			transform: translateX(-380px) translateY(-95px)
 			-ms-transform: translateX(-380px) translateY(-95px)
 			-webkit-transform: translateX(-380px) translateY(-95px)
 			cursor: pointer
-			// width: 100% !important
 			position: fixed
-			z-index: 3
+			z-index: 56
 			&:before
 				content: 'We deliver quality, style and luxury at price point that is competitive'
 				font-size: 1.8em
 				letter-spacing: 5px
 				display: block
 				position: absolute
-				// +transition(.2s)
 				right: 10%
 				bottom: 10%
 				width: 350px
@@ -311,6 +435,15 @@
 			bottom: 0
 			width: 50%
 			height: 45%
+		+phones
+			transform: none !important
+			transition: none !important
+			width: 100% !important
+			position: relative !important
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
 	&:target:before
 		content: ''
 		display: block

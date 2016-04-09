@@ -12,6 +12,8 @@
     <!-- bower:css-->
     <link rel="stylesheet" href="components/normalize-css/normalize.css" />
     <link rel="stylesheet" href="components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="components/perfect-scrollbar/css/perfect-scrollbar.css" />
     <!-- endbower-->
     <!-- endbuild-->
     <!-- build:css css/main.min.css-->
@@ -45,27 +47,59 @@
               <li class="nav-menu__item">
                 <div class="nav-menu__progress">
                   <div class="nav-menu__progress-bar"></div>
-                </div><a href="#quick_ship" class="nav-menu__link nav-menu__link_default">quick ship</a>
-              </li>
-              <li class="nav-menu__item">
-                <div class="nav-menu__progress">
-                  <div class="nav-menu__progress-bar"></div>
-                </div><a href="#" class="nav-menu__link nav-menu__link_default">line card (pdf)</a>
-              </li>
-              <li class="nav-menu__item">
-                <div class="nav-menu__progress">
-                  <div class="nav-menu__progress-bar"></div>
-                </div><a href="#" class="nav-menu__link nav-menu__link_default">manufacturers</a>
-              </li>
-              <li class="nav-menu__item">
-                <div class="nav-menu__progress">
-                  <div class="nav-menu__progress-bar"></div>
-                </div><a href="#" class="nav-menu__link nav-menu__link_default">quickship</a>
-              </li>
-              <li class="nav-menu__item">
-                <div class="nav-menu__progress">
-                  <div class="nav-menu__progress-bar"></div>
-                </div><a href="#" class="nav-menu__link nav-menu__link_default">news</a>
+                </div><a href="#manufacturers" class="nav-menu__link nav-menu__link_default">manufacturers</a>
+                <ul class="submenu submenu__list submenu_hidden">
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_1" class="submenu__link submenu__link_default">layout 1</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_2" class="submenu__link submenu__link_default">layout 2</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_3" class="submenu__link submenu__link_default">layout 3</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_4" class="submenu__link submenu__link_default">layout 4</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_5" class="submenu__link submenu__link_default">layout 5</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_6" class="submenu__link submenu__link_default">layout 6</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_7" class="submenu__link submenu__link_default">layout 7</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_8" class="submenu__link submenu__link_default">layout 8</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_9" class="submenu__link submenu__link_default">layout 9</a>
+                  </li>
+                  <li class="submenu__item">
+                    <div class="submenu__progress">
+                      <div class="submenu__progress-bar"></div>
+                    </div><a href="#layout_10" class="submenu__link submenu__link_default">layout 10</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </nav>
@@ -89,7 +123,7 @@
             </div>
             <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
               <div data-layout="1" class="scroll-item__left-column scroll-item__left-column_flex">
-                <div class="scroll-item__image-wrap scroll-item__image-wrap_fullscreen"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                <div data-layout="fullscreen" class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
               </div>
               <div data-layout="1" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
                 <h3 class="scroll-item__subheading">About MAVEN</h3>
@@ -111,9 +145,9 @@
               </div>
             </div>
           </article>
-          <article id="quick_ship" class="scroll-item">
+          <article id="manufacturers" class="scroll-item">
             <div class="scroll-item__heading-wrap">
-              <h2 class="scroll-item__heading">quick ship</h2>
+              <h2 class="scroll-item__heading">manufacturers</h2>
             </div>
             <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
               <div data-layout="5" class="scroll-item__left-column scroll-item__left-column_flex">
@@ -122,8 +156,154 @@
                 <div class="scroll-item__image-wrap scroll-item__image-wrap_bundle scroll-item__image-wrap_bundle-order-3 scroll-item__image-wrap_moved-left"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
               </div>
               <div data-layout="5" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
-                <h3 class="scroll-item__subheading">About MAVEN</h3>
+                <h3 class="scroll-item__subheading">Manufacturers</h3>
                 <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <article id="layout_1" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 1</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="1" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
+              <div data-layout="1" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
+                <h3 class="scroll-item__subheading">Main title</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <article id="layout_2" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 2</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="2" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
+              <div data-layout="2" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
+                <h3 class="scroll-item__subheading">Main title</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <article id="layout_3" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 3</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="3" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
+              <div data-layout="3" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
+                <h3 class="scroll-item__subheading">Main title</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <article id="layout_4" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 4</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="4" class="scroll-item__full-column scroll-item__full-column_flex">
+                <div data-layout="4" class="scroll-item__image-bundle">
+                  <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="layout_5" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 5</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="5" class="scroll-item__full-column scroll-item__full-column_flex">
+                <div data-layout="5" class="scroll-item__image-bundle">
+                  <div data-caption="Lorem ipsum dolor sit amet." class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                  <div data-caption="Lorem ipsum dolor." class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="layout_6" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 6</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="6" class="scroll-item__full-column scroll-item__full-column_flex">
+                <div data-layout="6" class="scroll-item__image-bundle">
+                  <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                </div>
+                <div data-layout="6" class="scroll-item__text-bundle">
+                  <h3 class="scroll-item__subheading">Main title</h3>
+                  <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+                </div>
+                <div data-layout="6" class="scroll-item__image-bundle">
+                  <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="layout_7" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 7</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="7" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
+              <div data-layout="7" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
+                <h3 class="scroll-item__subheading">Main title</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <article id="layout_8" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 8</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="7" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
+              <div data-layout="7" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
+                <h3 class="scroll-item__subheading">Main title</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <article id="layout_9" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">layout 9</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="5" class="scroll-item__left-column scroll-item__left-column_flex">
+                <div class="scroll-item__image-wrap scroll-item__image-wrap_bundle scroll-item__image-wrap_bundle-order-1 scroll-item__image-wrap_moved"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                <div class="scroll-item__image-wrap scroll-item__image-wrap_bundle scroll-item__image-wrap_bundle-order-2 scroll-item__image-wrap_moved"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                <div class="scroll-item__image-wrap scroll-item__image-wrap_bundle scroll-item__image-wrap_bundle-order-3 scroll-item__image-wrap_moved-left"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+              </div>
+              <div data-layout="5" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
+                <h3 class="scroll-item__subheading">Main title</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+              </div>
+            </div>
+          </article>
+          <article id="layout_10" class="scroll-item">
+            <div class="scroll-item__heading-wrap">
+              <h2 class="scroll-item__heading">Layout 10</h2>
+            </div>
+            <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+              <div data-layout="10" class="scroll-item__full-column scroll-item__text scroll-item__full-column_flex">
+                <h3 class="scroll-item__subheading">Main title</h3>
+                <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p>
+                <div data-layout="10" class="scroll-item__image-bundle">
+                  <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                  <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                  <div class="scroll-item__image-wrap"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                </div>
               </div>
             </div>
           </article>
@@ -150,6 +330,9 @@
     <!-- build:js js/vendor.min.js-->
     <!-- bower:js-->
     <script src="components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script src="components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+    <script src="components/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="components/perfect-scrollbar/js/perfect-scrollbar.js"></script>
     <!-- endbower-->
     <!-- endbuild-->
     <!-- build:js js/main.min.js-->
