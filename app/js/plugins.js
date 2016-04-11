@@ -58,7 +58,6 @@
 					var el = _getScrollNodes(this.triggerElement().id);
 
 					if (el.isInSubMenu) {
-						// console.log(el.subBar);
 						el.link.parent().find('.submenu__progress-bar').css({
 							'height': e.progress.toFixed(2).replace(/\d\./, '')
 						})
@@ -71,7 +70,6 @@
 
 					if (e.progress.toFixed(2) >= 0.48) {
 						FIXED_HEADING.text(el.titleText);
-						el.link.removeClass('nav-menu__link_black');
 						el.title.addClass('scroll-item__heading_hidden');
 					} else {
 						el.title.removeClass('scroll-item__heading_hidden');
@@ -84,6 +82,8 @@
 					if (e.type == 'enter') {
 						el.barParent.show();
 
+						el.link.removeClass('nav-menu__link_black');
+
 						if (el.subBarParent) el.subBarParent.show();
 						el.image.removeClass('scroll-item__image-wrap_shortened');
 						el.image.removeClass('scroll-item__image-wrap_moved');
@@ -94,7 +94,6 @@
 			            }
 
 			            if (el.isSubmenuHideTrigger) {
-			            	// console.log(el.isSubmenuHideTrigger);
 							$('.submenu').addClass('submenu_hidden');
 						}
 
@@ -117,7 +116,7 @@
 
 					if (e.type != 'start' && !el.link.hasClass('nav-menu__link_black')) {
 						if (!el.isInSubMenu) {
-							el.link.addClass('nav-menu__link_black');
+							if (e.state == 'AFTER') el.link.addClass('nav-menu__link_black');
 						} else {
 							if (e.state == 'AFTER') {
 								$('.submenu').css({
