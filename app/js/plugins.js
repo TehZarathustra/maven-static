@@ -58,7 +58,7 @@
 					var el = _getScrollNodes(this.triggerElement().id);
 
 					if (el.isInSubMenu) {
-						console.log(el.subBar);
+						// console.log(el.subBar);
 						el.link.parent().find('.submenu__progress-bar').css({
 							'height': e.progress.toFixed(2).replace(/\d\./, '')
 						})
@@ -119,11 +119,15 @@
 						if (!el.isInSubMenu) {
 							el.link.addClass('nav-menu__link_black');
 						} else {
-							el.link.addClass('nav-menu__link_hidden');
-						}
-					} else {
-						if (el.isInSubMenu) {
-							el.link.removeClass('nav-menu__link_hidden');
+							if (e.state == 'AFTER') {
+								$('.submenu').css({
+									'transform': 'translateY(-' + el.link.parent().height() * (el.link.parent().index() + 1) + 'px' + ')'
+								});
+							} else {
+								$('.submenu').css({
+									'transform': 'translateY(-' + el.link.parent().height() * (el.link.parent().index()) + 'px' + ')'
+								});
+							}
 						}
 					}
 				});

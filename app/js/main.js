@@ -90,6 +90,10 @@
 				});
 		});
 
+		setTimeout(function() {
+			if (!mobileCheck) enableTransition();
+		},1500);
+
 		var intro;
 
 		if (window.location.href.split('#')[1] == 'about' || !window.location.href.split('#')[1]) {
@@ -141,6 +145,97 @@
 	})();
 
 	setImagesAsBackground();
+
+	// modals
+	(function($) {
+		$(function() {
+			$(window).on("resize", resizeForm);
+			jQuery.fn.center = function(parent) {
+				if (parent) {
+					parent = this.parent();
+				} else {
+					parent = window;
+				}
+				this.css({
+					"top": (($(window).height() - $(this).outerHeight()) / 2) + "px",
+					"left": (((jQuery(parent).width() - this.outerWidth()) / 2) + jQuery(parent).scrollLeft() + "px")
+				});
+				return this;
+			};
+
+			function resizeForm() {
+				jQuery('.pops').center();
+			}
+
+			$('.m-close, .page-overlay').bind(mobileCheck ? 'touchend' : 'click', function(){
+				$('.page-overlay, .modal').fadeOut(500);
+				destroySlideShow();
+			});
+
+			function add_modal(trigger, modal, close, gallery) {
+				close = close || '';
+				gallery = gallery || '';
+				$(trigger).bind(mobileCheck ? 'touchend' : 'click', function(e) {
+					var self = $(this);
+
+					e.preventDefault();
+
+					if (gallery) {
+						$(modal).html(buildSlideshow(self));
+
+						$('.owl-carousel').owlCarousel({
+							items: 1
+						})
+						.on('changed.owl.carousel', function(e) {
+							$('.gallery__current').text(e.item.index + 1);
+						});
+
+						$('.gallery__next').click(function() {
+							$('.owl-carousel').trigger('next.owl.carousel');
+						})
+
+						$('.gallery__prev').click(function() {
+							$('.owl-carousel').trigger('prev.owl.carousel');
+						})
+					}
+
+					$('.page-overlay, '+modal+'').fadeIn(400);
+					$(modal).center();
+					$('.image-pop').center();
+				});
+			};
+
+			function destroySlideShow() {
+				$('.owl-carousel').trigger('destroy.owl.carousel');
+				$('.gallery__next').remove();
+				$('.gallery__prev').remove();
+				$('.gallery__counter-wrap').remove();
+			}
+
+			function buildSlideshow(el) {
+				var pics = el.data('slideshow').split(' ');
+				var html = '<div class="owl-carousel">'
+					+ pics.map(function(pic) {
+						return '<div class="gallery__image-wrap">'
+							+ '<img class="gallery__image" src="' + pic + '"/>' +
+						'</div>'
+					}).join('') +
+				'</div>';
+
+				$('.page-wrapper').append('<div class="gallery__prev"></div>'
+					+ '<div class="gallery__next"></div>'
+					+ '<div class="gallery__counter-wrap">'
+					+ 	'<div class="gallery__counter">'
+							+ '<span class="gallery__current">1</span>/<span class="gallery__total">' + pics.length + '</span>'
+						+ '</div>'
+					+ '</div>')
+
+				return html;
+			}
+
+			add_modal('.scroll-item__image-wrap_gallery-trigger', '.gallery-modal', false, true);
+		});
+	})(jQuery);
 
 	// global helpers
 	function setImagesAsBackground() {

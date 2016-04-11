@@ -5,6 +5,13 @@
     "normalize-css": "normalize.css#~3.0.3",
     "font-awesome": "^4.5.0",
     "components-font-awesome": "^4.5.0",
-    "scrollmagic": "^2.0.5"
+    "scrollmagic": "^2.0.5",
+    "owl.carousel": "OwlCarousel2#^2.0.0-beta.3",
+    "animate.css": "^3.5.1"
+  },
+  "overrides": {
+    "owl.carousel": {
+      "dependencies": []
+    }
   }
 }

@@ -86,7 +86,7 @@ html.no-js(lang='en')
                         h2.scroll-item__heading contracts
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__left-column.scroll-item__left-column_flex(data-layout="4")
-                            .scroll-item__image-wrap.scroll-item__image-wrap_shortened
+                            .scroll-item__image-wrap.scroll-item__image-wrap_shortened.scroll-item__image-wrap_gallery-trigger(data-slideshow="img/home.jpg img/home.jpg img/home.jpg img/home.jpg")
                                 img.scroll-item__image(src="img/home.jpg", alt="image")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="4")
                             h3.scroll-item__subheading About MAVEN
@@ -217,6 +217,8 @@ html.no-js(lang='en')
                                     img.scroll-item__image(src="img/home.jpg", alt="image")
                 .loader.loader_hidden
                     i.fa.fa-cog.fa-spin
+        .page-overlay
+        .gallery-modal.modal
         .debug
             .debug__layouts
                 p.debug__title Layouts:

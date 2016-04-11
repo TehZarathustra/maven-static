@@ -76,6 +76,8 @@
 .logo
 	height: 150px
 	background-color: #1e2023
+	position: relative
+	z-index: 2
 	&__link
 		display: block
 		padding: 60px 30px 60px 40px
@@ -103,6 +105,62 @@
 		width: 100%
 		margin-top: 60px
 		padding: 20px 20px
+.page-overlay
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: #fff
+	z-index: 100
+	display: none
+	cursor: pointer
+.modal
+	position: fixed
+	display: none
+	z-index: 101
+	max-width: 1200px
+.m-close
+	position: absolute
+	top: -35px
+	right: 0px
+	cursor: pointer
+.gallery-modal
+	width: 90%
+	height: 80%
+	overflow: hidden
+.gallery__counter-wrap
+	position: fixed
+	bottom: 20px
+	left: 0
+	text-align: center
+	z-index: 102
+	width: 100%
+.gallery__counter
+.gallery__next
+	position: fixed
+	cursor: pointer
+	top: 50%
+	z-index: 102
+	transform: translateY(-50%)
+	right: 10px
+	&:before
+		content: '\f105'
+		font-family: 'FontAwesome'
+		color: #000
+		font-size: 3em
+.gallery__prev
+	position: fixed
+	cursor: pointer
+	top: 50%
+	z-index: 102
+	transform: translateY(-50%)
+	left: 10px
+	&:before
+		content: '\f104'
+		font-family: 'FontAwesome'
+		color: #000
+		font-size: 3em
 .nav-menu, .submenu
 	&__list
 		position: relative
@@ -113,6 +171,7 @@
 	&__item
 		list-style: none
 		position: relative
+		+transition(.5s)
 	&__toggle
 		&:before
 			content: '\f0c9'
@@ -163,7 +222,7 @@
 		padding: 28.5px 40px
 		font-weight: lighter
 		border-top: 1px solid rgba(255,255,255,.25)
-		+transition(.3s)
+		+transition(.5s)
 		&_default
 			color: #000
 			background-color: #d9d9d4
@@ -171,14 +230,11 @@
 				background-color: lighten(#d9d9d4, 4%)
 		&_black
 			color: #fff
+			position: relative
+			z-index: 2
 			background-color: #1e2023
 			&:hover
 				background-color: lighten(#1e2023, 4%)
-		&_hidden
-			opacity: 0
-			position: absolute
-			width: 100%
-			transform: translateY(-100%)
 	+tablet-landskape
 		&__toggle:before
 			display: block
@@ -260,7 +316,7 @@
 	&__left-column
 		+transition(.52s)
 		width: 40%
-		overflow: hidden
+		// overflow: hidden
 		position: relative
 		height: 90%
 		&_layout-1
@@ -415,6 +471,12 @@
 				font-weight: lighter
 		&_shortened
 			width: 80%
+		&_gallery-trigger
+			&:after
+				content: 'Slideshow'
+				position: absolute
+				cursor: pointer
+				bottom: -30px
 		&_moved
 			transform: translateY(10%) translateX(10%)
 		&_moved-left

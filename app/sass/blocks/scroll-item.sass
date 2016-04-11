@@ -54,7 +54,7 @@
 	&__left-column
 		+transition(.52s)
 		width: 40%
-		overflow: hidden
+		// overflow: hidden
 		position: relative
 		height: 90%
 		&_layout-1
@@ -209,6 +209,12 @@
 				font-weight: lighter
 		&_shortened
 			width: 80%
+		&_gallery-trigger
+			&:after
+				content: 'Slideshow'
+				position: absolute
+				cursor: pointer
+				bottom: -30px
 		&_moved
 			transform: translateY(10%) translateX(10%)
 		&_moved-left

@@ -8,6 +8,7 @@
 	&__item
 		list-style: none
 		position: relative
+		+transition(.5s)
 	&__toggle
 		&:before
 			content: '\f0c9'
@@ -58,7 +59,7 @@
 		padding: 28.5px 40px
 		font-weight: lighter
 		border-top: 1px solid rgba(255,255,255,.25)
-		+transition(.3s)
+		+transition(.5s)
 		&_default
 			color: #000
 			background-color: #d9d9d4
@@ -66,14 +67,11 @@
 				background-color: lighten(#d9d9d4, 4%)
 		&_black
 			color: #fff
+			position: relative
+			z-index: 2
 			background-color: #1e2023
 			&:hover
 				background-color: lighten(#1e2023, 4%)
-		&_hidden
-			opacity: 0
-			position: absolute
-			width: 100%
-			transform: translateY(-100%)
 	+tablet-landskape
 		&__toggle:before
 			display: block

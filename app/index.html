@@ -12,8 +12,8 @@
     <!-- bower:css-->
     <link rel="stylesheet" href="components/normalize-css/normalize.css" />
     <link rel="stylesheet" href="components/components-font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
-    <link rel="stylesheet" href="components/perfect-scrollbar/css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="components/owl.carousel/dist/assets/owl.carousel.css" />
+    <link rel="stylesheet" href="components/animate.css/animate.css" />
     <!-- endbower-->
     <!-- endbuild-->
     <!-- build:css css/main.min.css-->
@@ -137,7 +137,7 @@
             </div>
             <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
               <div data-layout="4" class="scroll-item__left-column scroll-item__left-column_flex">
-                <div class="scroll-item__image-wrap scroll-item__image-wrap_shortened"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
+                <div data-slideshow="img/home.jpg img/home.jpg img/home.jpg img/home.jpg" class="scroll-item__image-wrap scroll-item__image-wrap_shortened scroll-item__image-wrap_gallery-trigger"><img src="img/home.jpg" alt="image" class="scroll-item__image"></div>
               </div>
               <div data-layout="4" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex">
                 <h3 class="scroll-item__subheading">About MAVEN</h3>
@@ -310,6 +310,8 @@
           <div class="loader loader_hidden"><i class="fa fa-cog fa-spin"></i></div>
         </div>
       </div>
+      <div class="page-overlay"></div>
+      <div class="gallery-modal modal"></div>
       <div class="debug">
         <div class="debug__layouts">
           <p class="debug__title">Layouts:</p>
@@ -330,9 +332,7 @@
     <!-- build:js js/vendor.min.js-->
     <!-- bower:js-->
     <script src="components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
-    <script src="components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
-    <script src="components/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-    <script src="components/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="components/owl.carousel/dist/owl.carousel.js"></script>
     <!-- endbower-->
     <!-- endbuild-->
     <!-- build:js js/main.min.js-->
