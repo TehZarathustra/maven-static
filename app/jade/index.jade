@@ -96,11 +96,11 @@ html.no-js(lang='en')
                         h2.scroll-item__heading manufacturers
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__left-column.scroll-item__left-column_flex(data-layout="5")
-                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-1.scroll-item__image-wrap_moved
+                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-1(data-animation="moved", data-animation-type="onEnter")
                                 img.scroll-item__image(src="img/home.jpg", alt="image")
-                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-2.scroll-item__image-wrap_moved
+                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-2(data-animation="moved", data-animation-type="onEnter")
                                 img.scroll-item__image(src="img/home.jpg", alt="image")
-                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-3.scroll-item__image-wrap_moved-left
+                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-3(data-animation="moved-left", data-animation-type="onEnter")
                                 img.scroll-item__image(src="img/home.jpg", alt="image")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="5")
                             h3.scroll-item__subheading Manufacturers
@@ -110,7 +110,7 @@ html.no-js(lang='en')
                         h2.scroll-item__heading layout 1
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__left-column.scroll-item__left-column_flex(data-layout="1")
-                            .scroll-item__image-wrap
+                            .scroll-item__image-wrap.scroll-item__image-wrap_shortened(data-animation="vertical-parallax-2", data-animation-type="onProgress")
                                 img.scroll-item__image(src="img/home.jpg", alt="image")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="1")
                             h3.scroll-item__subheading Main title
@@ -120,7 +120,7 @@ html.no-js(lang='en')
                         h2.scroll-item__heading layout 2
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__left-column.scroll-item__left-column_flex(data-layout="2")
-                            .scroll-item__image-wrap
+                            .scroll-item__image-wrap(data-animation="shortened", data-animation-type="onEnter")
                                 img.scroll-item__image(src="img/home.jpg", alt="image")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="2")
                             h3.scroll-item__subheading Main title
@@ -141,7 +141,7 @@ html.no-js(lang='en')
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__full-column.scroll-item__full-column_flex(data-layout="4")
                             .scroll-item__image-bundle(data-layout="4")
-                                .scroll-item__image-wrap
+                                .scroll-item__image-wrap(data-animation="vertical-parallax-1", data-animation-type="onProgress")
                                     img.scroll-item__image(src="img/home.jpg", alt="image")
                 article.scroll-item#layout_5
                     .scroll-item__heading-wrap
@@ -149,9 +149,9 @@ html.no-js(lang='en')
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__full-column.scroll-item__full-column_flex(data-layout="5")
                             .scroll-item__image-bundle(data-layout="5")
-                                .scroll-item__image-wrap(data-caption="Lorem ipsum dolor sit amet.")
+                                .scroll-item__image-wrap(data-caption="Lorem ipsum dolor sit amet.", data-animation="vertical-parallax-2", data-animation-type="onProgress")
                                     img.scroll-item__image(src="img/home.jpg", alt="image")
-                                .scroll-item__image-wrap(data-caption="Lorem ipsum dolor.")
+                                .scroll-item__image-wrap(data-caption="Lorem ipsum dolor.", data-animation="vertical-parallax-3", data-animation-type="onProgress")
                                     img.scroll-item__image(src="img/home.jpg", alt="image")
                 article.scroll-item#layout_6
                     .scroll-item__heading-wrap
