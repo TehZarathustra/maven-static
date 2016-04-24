@@ -1,4 +1,12 @@
 (function() {
+	// globals
+	var mobileCheck;
+	if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		mobileCheck = true;
+	} else {
+		mobileCheck = false;
+	};
+
 	// scroll magic
 	(function() {
 		var CONTENT_BLOCK = $('.main-content'),
@@ -61,7 +69,7 @@
 						if ($(this).data('animationType') === 'onProgress') {
 							var animation = $(this).data('animation');
 
-							if (animation === 'vertical-parallax-1') {
+							if (animation === 'vertical-parallax-1' && !mobileCheck) {
 								$(this).css({
 									'background-position': '50% ' + e.progress.toFixed(2).replace(/\d\./, '') + '%'
 								});
@@ -72,7 +80,7 @@
 								}
 							}
 							
-							if (animation === 'vertical-parallax-2') {
+							if (animation === 'vertical-parallax-2' && !mobileCheck) {
 								$(this).css({
 									'transform': 'translateY(' + e.progress.toFixed(2).replace(/\d\./, '') + 'px)'
 								});
@@ -83,7 +91,7 @@
 								}
 							}
 							
-							if (animation === 'vertical-parallax-3') {
+							if (animation === 'vertical-parallax-3' && !mobileCheck) {
 								$(this).css({
 									'transform': 'translateY(-' + e.progress.toFixed(2).replace(/\d\./, '') + 'px)'
 								});
