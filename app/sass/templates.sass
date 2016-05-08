@@ -284,7 +284,8 @@
 		text-align: center
 		overflow: hidden
 	&__subheading
-		font-weight: lighter
+		text-transform: uppercase
+		letter-spacing: 1px
 	&__heading
 		display: inline-block
 		position: relative
@@ -363,6 +364,8 @@
 		&_layout-4
 			width: 25%
 			text-align: right
+		&_layout-5
+			text-align: center
 		&_layout-7
 			order: 1
 			text-align: center
@@ -421,7 +424,7 @@
 					width: 100%
 					content: attr(data-caption)
 			.scroll-item__image-wrap:first-child
-				width: 30%
+				width: 37%
 				height: 90%
 			.scroll-item__image-wrap:last-child
 				width: 60%
@@ -441,6 +444,8 @@
 		&_layout-10
 			justify-content: space-between
 			align-items: center
+			+tablet-landskape
+				margin-top: 150px
 			+phones
 				flex-wrap: wrap
 			.scroll-item__image-wrap
@@ -474,6 +479,8 @@
 		z-index: 1
 		height: 90vh
 		width: 100%
+		&.tapped
+			opacity: .7
 		+phones
 			background-position: center
 			transform: none !important
@@ -538,10 +545,12 @@
 			right: 50px
 			width: 35%
 			height: 90vh
+			+tablet-landskape
+				width: 30%
 		&_bundle-order-3
 			bottom: 0
-			left: 15.5%
-			width: 40%
+			left: 0
+			width: 51%
 			height: 40vh
 		+phones
 			transform: none !important

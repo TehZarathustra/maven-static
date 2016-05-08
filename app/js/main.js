@@ -260,6 +260,7 @@
 			$('.scroll-item__image-wrap:not(.scroll-item__image-wrap_fullscreen):not(.scroll-item__image-wrap_gallery-trigger)').click(function() {
 				click++;
 				var self = $(this);
+				self.addClass('tapped');
 
 				if (click === 2) {
 					$('.page-overlay').fadeIn(500);
@@ -268,9 +269,10 @@
 					}).fadeIn(1000);
 
 					click = 0;
+					self.removeClass('tapped');
 				}
 
-				resetClick();
+				resetClick(self);
 			});
 
 			$('.fullpage-image').click(function() {
@@ -278,9 +280,10 @@
 				$(this).fadeOut(500);
 			})
 
-			function resetClick() {
+			function resetClick(node) {
 				setTimeout(function() {
 					click = 0;
+					node.removeClass('tapped');
 				},1500);
 			}
 		}
