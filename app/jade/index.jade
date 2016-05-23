@@ -219,6 +219,18 @@ html.no-js(lang='en')
                     i.fa.fa-cog.fa-spin
         .page-overlay
         .gallery-modal.modal
+        .contact-modal.modal
+            h2.contact-modal__heading Thank you<br/>for your interest!
+            form(action="")
+                label.input-group(for="")
+                    .input-group__text name
+                    input(type="text", name="").input-group__name
+                label.input-group(for="")
+                    .input-group__text number
+                    input(type="tel", name="").input-group__tel
+                input(type="submit", value="submit").input-group__submit
+            p.contact-modal__text or
+            a(href="tel:777777").contact-modal__tel call us
         .fullpage-image
         .debug
             .debug__layouts
