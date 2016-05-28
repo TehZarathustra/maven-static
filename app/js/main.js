@@ -233,6 +233,11 @@
 						$('.gallery__prev').click(function() {
 							$('.owl-carousel').trigger('prev.owl.carousel');
 						})
+
+						$('.close-modals').bind(mobileCheck ? 'touchend' : 'click', function(){
+							$('.page-overlay, .modal').fadeOut(500);
+							destroySlideShow();
+						});
 					}
 
 					$('.page-overlay, '+modal+'').fadeIn(400);
@@ -266,6 +271,7 @@
 					+ 	'<div class="gallery__counter">'
 							+ '<span class="gallery__current">1</span>/<span class="gallery__total">' + pics.length + '</span>'
 						+ '</div>'
+						+ '<div class="gallery__close close-modals">close</div>'
 					+ '</div>')
 
 				return html;
