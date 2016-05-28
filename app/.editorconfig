@@ -13,9 +13,13 @@ trim_trailing_whitespace = true
 trim_trailing_whitespace = false
 
 [*.sass]
-indent_size = 2
-indent_style = space
+indent_size = 4
+indent_style = tab
 
 [*.json]
 indent_size = 2
+indent_style = space
+
+[*.jade]
+indent_size = 4
 indent_style = space
