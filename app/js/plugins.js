@@ -302,4 +302,11 @@
         }
 	})();
 
+	// scrollbar
+	(function() {
+		$('body').mCustomScrollbar({
+		    theme: 'minimal-dark'
+		});
+	})();
+
 })();
