@@ -19,7 +19,7 @@
 .fixed-heading-wrap
 	text-align: center
 	overflow: hidden
-	position: absolute
+	position: fixed
 	z-index: 2
 	+tablet-landskape
 		display: none
@@ -72,13 +72,13 @@
 	height: 100%
 	background: #d9d9d4
 	overflow: hidden
+	position: fixed
 	&_flex
 		flex-shrink: 0
 	+tablet-landskape
 		width: 100%
 		z-index: 220
 		height: 50px
-		position: fixed
 		+transition(.5s)
 		&_unfolded
 			height: 100%
@@ -109,13 +109,14 @@
 		&__link
 			padding: 15px 0 0 0
 .main-content
-	height: 100%
-	overflow-y: scroll
+	width: calc(100% - 280px)
+	margin-left: 280px
 	box-sizing: border-box
 	padding: 20px 100px
 	+tablet-landskape
 		flex-basis: 100%
 		flex-shrink: 0
+		margin-left: 0
 		width: 100%
 		margin-top: 60px
 		padding: 20px 20px
