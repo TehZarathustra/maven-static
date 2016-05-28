@@ -21,8 +21,9 @@
 .input-group
 	display: block
 	margin-bottom: 15px
-	&__name, &__tel, &__submit
+	&__name, &__tel, &__submit, &__email
 		box-sizing: border-box
+		margin-bottom: 5px
 		font-weight: lighter
 		display: block
 		width: 100%
@@ -37,9 +38,44 @@
 	font-family: 'FontAwesome'
 	pointer-events: none
 	position: fixed
-	top: 10px
+	top: 50px
 	right: 15px
 	font-size: 1.5em
+.contact-modal__corner-border-top,
+.contact-modal__corner-border-bottom
+	position: absolute
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+.contact-modal__corner-border-top
+	width: 67%
+	&:before
+		top: 0
+		width: 100%
+		left: -30px
+		height: 0
+		border-bottom: 1px solid #000
+	&:after
+		top: 0
+		left: -30px
+		height: 77px
+		border-left: 1px solid #000
+.contact-modal__corner-border-bottom
+	bottom: -50px
+	right: -50px
+	width: 80%
+	height: 62px
+	&:before
+		bottom: 0
+		width: 100%
+		height: 0
+		border-bottom: 1px solid #000
+	&:after
+		top: 0
+		height: 100%
+		right: 0
+		border-right: 1px solid #000
 .contact-modal__heading
 	font-weight: lighter
 	text-align: center
@@ -51,6 +87,8 @@
 	text-transform: uppercase
 	color: #000
 	font-size: 2em
+	font-weight: 300
+	text-decoration: none
 .gallery-modal
 	width: 90%
 	height: 80%
