@@ -197,7 +197,7 @@
 
 					e.preventDefault();
 
-					if (mobileCheck) {
+					if (mobileCheck && trigger != '.nav-menu__telephone') {
 						inClick++;
 
 						if (inClick == 1) {
