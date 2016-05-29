@@ -305,7 +305,8 @@
 	// scrollbar
 	(function() {
 		$('body').mCustomScrollbar({
-		    theme: 'minimal-dark'
+		    theme: 'minimal-dark',
+		    mouseWheel: { scrollAmount: 400 }
 		});
 	})();
 
