@@ -82,6 +82,10 @@
 			var width = $(this).parent().width(),
 				height = $(this).parent().height();
 
+			setTimeout(function() {
+				$('body').mCustomScrollbar("scrollTo", '90px');
+			}, 850);
+
 			$(this).css({
 				'width': width,
 				'height': height,
@@ -97,6 +101,8 @@
 					$(this).removeClass('scroll-item__image-wrap_fullscreen');
 					$(this).removeClass('no-pseudo');
 				});
+
+			
 		});
 
 		setTimeout(function() {
