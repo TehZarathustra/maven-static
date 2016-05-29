@@ -71,10 +71,7 @@
 		$('.nav-menu__link, .submenu__link').click(function(e) {
 			e.preventDefault();
 			var target = $(this).attr('href');
-			console.log($(target).offset().top);
-			$('html, body').animate({
-		        scrollTop: $(target).offset().top
-		    }, 500);
+			$('body').mCustomScrollbar("scrollTo", target);
 		});
 	})();
 
