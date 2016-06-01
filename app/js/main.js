@@ -338,7 +338,12 @@
 			$(this).addClass('active');
 			$('.tab-slider__image-item').removeClass('active');
 			$('.tab-slider__image-item_' + index).addClass('active');
-		})
+		});
+
+		$('.tab-slider__images-list').click(function() {
+			$('.tab-slider__select-item').removeClass('active');
+			$('.tab-slider__image-item').removeClass('active');
+		});
 	})();
 
 	// global helpers
