@@ -58,6 +58,10 @@ html.no-js(lang='en')
                                           .submenu__progress-bar
                                       a.submenu__link.submenu__link_default(href='#layout_'+i)= 'layout ' + i
                                 - }
+                        li.nav-menu__item
+                            .nav-menu__progress
+                                .nav-menu__progress-bar
+                            a.nav-menu__link.nav-menu__link_default(href="#contacts") contacts
 
             .social
                 ul.social__list
@@ -215,6 +219,68 @@ html.no-js(lang='en')
                                     img.scroll-item__image(src="img/home.jpg", alt="image")
                                 .scroll-item__image-wrap(data-animation="vertical-parallax-1", data-animation-type="onProgress")
                                     img.scroll-item__image(src="img/home.jpg", alt="image")
+                article.scroll-item#contacts
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading contacts
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .tab-slider
+                            .tab-slider__images-list
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Sarah-Reyes.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_1
+                                        a(href="#") sarah@mail.com
+                                        p 415-123-6903
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Carlos-Rodriguez.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_2
+                                        a(href="#") carlos@mail.com
+                                        p 415-123-6903
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Dave-Casto.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_3
+                                        a(href="#") dave@mail.com
+                                        p 415-123-6903
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Stacey-Herman.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_4
+                                        a(href="#") stacey@mail.com
+                                        p 415-123-6903
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Janel-Levadoux.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_5
+                                        a(href="#") janel@mail.com
+                                        p 415-123-6903
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Esther-Hahn.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_6
+                                        a(href="#") esther@mail.com
+                                        p 415-123-6903
+                            .tab-slider__select-list
+                                .tab-slider__select-item
+                                    h3 Sarah Reyes
+                                    p Showroom Manager
+                                .tab-slider__select-item
+                                    h3 Carlos Rodriguez
+                                    p San Francisco A&amp;D/East and North Bay Dealers
+                                .tab-slider__select-item
+                                    h3 Dave Casto
+                                    p San Francisco A&amp;D
+                                .tab-slider__select-item
+                                    h3 Stacey Herman
+                                    p Principal &amp; San Francisco Dealers
+                                .tab-slider__select-item
+                                    h3 Janel Levadoux
+                                    p South Bay - Monterey Bay
+                                .tab-slider__select-item
+                                    h3 Esther Hahn
+                                    p Sacremento, Fresno, Reno
+
                 .loader.loader_hidden
                     i.fa.fa-cog.fa-spin
         .page-overlay

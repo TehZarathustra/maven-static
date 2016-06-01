@@ -180,11 +180,11 @@
 						} else {
 							if (e.state == 'AFTER') {
 								$('.submenu').css({
-									'transform': 'translateY(-' + el.link.parent().height() * (el.link.parent().index() + 1) + 'px' + ')'
+									'margin-top': '-' + el.link.parent().height() * (el.link.parent().index() + 1) + 'px'
 								});
 							} else {
 								$('.submenu').css({
-									'transform': 'translateY(-' + el.link.parent().height() * (el.link.parent().index()) + 'px' + ')'
+									'margin-top': '-' + el.link.parent().height() * (el.link.parent().index()) + 'px'
 								});
 							}
 						}

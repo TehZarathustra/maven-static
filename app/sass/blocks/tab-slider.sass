@@ -1,0 +1,101 @@
+.tab-slider
+	display: flex
+	// flex-direction: column
+	align-items: stretch
+	width: 100%
+	min-height: 90vh
+
+.tab-slider__images-list,
+.tab-slider__select-list
+	box-sizing: border-box
+
+.tab-slider__images-list
+	width: 70%
+	position: relative
+	overflow: hidden
+	background:
+		image: url(../img/Original.jpg)
+		position: center
+		size: cover
+
+
+.tab-slider__image-item,
+.tab-slider__image
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	img
+		display: none
+
+.tab-slider__caption_1
+	right: 10%
+	bottom: 10%
+
+.tab-slider__caption_2
+	right: 40%
+	bottom: 10%
+
+.tab-slider__caption_3
+	right: 10%
+	top: 25%
+
+.tab-slider__caption_4
+	left: 40%
+	top: 30%
+
+.tab-slider__caption_5
+	left: 10%
+	bottom: 10%
+
+.tab-slider__caption_6
+	left: 10%
+	top: 25%
+
+.tab-slider__image-item
+	opacity: 0
+	+transition(.5s)
+	&.active
+		opacity: 1
+		z-index: 1
+
+.tab-slider__image
+	background-size: cover
+	background-position: center
+
+.tab-slider__caption
+	position: absolute
+	background: rgba(255,255,255,.3)
+	border-top: 2px solid #fff
+	text-align: right
+	padding: 1em
+	a, p
+		text-decoration: none
+		color: #fff
+		margin: 0
+
+
+.tab-slider__select-item
+	+transition(.5s)
+	opacity: .4
+	&.active
+		opacity: 1
+	cursor: pointer
+	h3, p
+		margin: 0
+		letter-spacing: 1px
+		font-weight: lighter
+	h3
+		font-size: 1.3em
+
+.tab-slider__select-list
+	width: 30%
+	padding: 1em
+	margin-top: 10%
+
+.tab-slider__select-item
+	margin-bottom: 20px
+

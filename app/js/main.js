@@ -322,6 +322,25 @@
 		}
 	})();
 
+	// tab-slider
+	(function() {
+		$('.tab-slider__select-item').each(function(index) {
+			$(this).data('item', index + 1);
+		});
+
+		$('.tab-slider__image-item').each(function(index) {
+			$(this).addClass('tab-slider__image-item_' + (index + 1));
+		});
+
+		$('.tab-slider__select-item').hover(function() {
+			var index = $(this).data('item');
+			$('.tab-slider__select-item').removeClass('active');
+			$(this).addClass('active');
+			$('.tab-slider__image-item').removeClass('active');
+			$('.tab-slider__image-item_' + index).addClass('active');
+		})
+	})();
+
 	// global helpers
 	function setImagesAsBackground() {
 		var images = $('.scroll-item__image');
