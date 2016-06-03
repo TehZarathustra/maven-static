@@ -11,6 +11,10 @@
 .tab-slider__select-list
 	box-sizing: border-box
 
+.tab-slider__select-list
+	+tablet-landskape
+		margin-top: 0 !important
+
 .tab-slider__images-list
 	width: 70%
 	position: relative
@@ -18,10 +22,13 @@
 	background:
 		image: url(../img/Original.jpg)
 		position: center
-		size: cover
+		size: contain
+		repeat: no-repeat
 	+tablet-landskape
 		width: 100%
-		height: 400px
+		height: 500px
+	+phones-portrait
+		height: 300px
 
 .tab-slider__image-item,
 .tab-slider__image
@@ -35,29 +42,66 @@
 	img
 		display: none
 
+.tab-slider__image-item 
+	&_1 .tab-slider__image
+		+tablet-landskape
+			background-position: center right !important
+	&_2 .tab-slider__image
+		+tablet-landskape
+			background-position: center !important
+	&_3 .tab-slider__image
+		+tablet-landskape
+			background-position: top right !important
+	&_4 .tab-slider__image
+		+tablet-landskape
+			background-position: top center !important
+	&_5 .tab-slider__image
+		+tablet-landskape
+			background-position: bottom left !important
+	&_6 .tab-slider__image
+		+tablet-landskape
+			background-position: top left !important
+
+.tab-slider__image
+	+tablet-landskape
+		background-size: cover !important
+
 .tab-slider__caption_1
 	right: 10%
 	bottom: 20%
+	+tablet-landskape
+		bottom: 5%
 
 .tab-slider__caption_2
 	right: 40%
 	bottom: 20%
+	+tablet-landskape
+		bottom: 15%
 
 .tab-slider__caption_3
 	right: 10%
 	top: 25%
+	+tablet-landskape
+		top: 30%
 
 .tab-slider__caption_4
 	left: 45%
 	top: 35%
+	+tablet-landskape
+		top: 50%
+		left: 25%
 
 .tab-slider__caption_5
 	left: 10%
 	bottom: 20%
+	+tablet-landskape
+		bottom: 8%
 
 .tab-slider__caption_6
 	left: 10%
 	top: 35%
+	+tablet-landskape
+		top: 45%
 
 .tab-slider__image-item
 	opacity: 0
@@ -67,8 +111,9 @@
 		z-index: 1
 
 .tab-slider__image
-	background-size: cover
+	background-size: contain
 	background-position: center
+	background-repeat: no-repeat
 
 .tab-slider__caption
 	position: absolute
@@ -94,6 +139,8 @@
 		font-weight: lighter
 	h3
 		font-size: 1.3em
+	+phones
+		font-size: .8em
 
 .tab-slider__select-list
 	width: 30%
@@ -101,6 +148,7 @@
 	margin-top: 10%
 	+tablet-landskape
 		width: 100%
+		text-align: center
 
 .tab-slider__select-item
 	margin-bottom: 20px
