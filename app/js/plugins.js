@@ -7,6 +7,55 @@
 		mobileCheck = false;
 	};
 
+	function showHeader() {
+		toggleHeader('show_header', 'hide_header');
+	}
+
+
+	function hideHeader() {
+		toggleHeader('hide_header', 'show_header');
+	}
+
+
+	function toggleHeader(classToAdd, classToRemove) {
+		var leftPanel = $('.left-pane');
+
+		if (leftPanel.hasClass(classToAdd) && !leftPanel.hasClass(classToRemove)) {
+			return ;
+		} else {
+			leftPanel.removeClass(classToRemove).addClass(classToAdd)
+		}
+	}
+
+	function throttle(func, ms) {
+        var isThrottled = false,
+            savedArgs,
+            savedThis;
+
+        function wrapper() {
+
+            if (isThrottled) {
+                savedArgs = arguments;
+                savedThis = this;
+                return;
+            }
+
+            func.apply(this, arguments);
+
+            isThrottled = true;
+
+            setTimeout(function() {
+                isThrottled = false;
+                if (savedArgs) {
+                    wrapper.apply(savedThis, savedArgs);
+                    savedArgs = savedThis = null;
+                }
+            }, ms);
+        }
+
+        return wrapper;
+    }
+
 	// scroll magic
 	(function() {
 		var CONTENT_BLOCK = $('.main-content'),
@@ -47,7 +96,7 @@
 			// 					_makeScene(item[item.length - 1]);
 			// 					$('.loader').hide();
 			// 				}, 1000);
-							
+
 			// 			}
 
 			// 			dataFlag = true;
@@ -79,7 +128,7 @@
 									});
 								}
 							}
-							
+
 							if (animation === 'vertical-parallax-2' && !mobileCheck) {
 								$(this).css({
 									'transform': 'translateY(' + e.progress.toFixed(2).replace(/\d\./, '') + 'px)'
@@ -90,7 +139,7 @@
 									});
 								}
 							}
-							
+
 							if (animation === 'vertical-parallax-3' && !mobileCheck) {
 								$(this).css({
 									'transform': 'translateY(-' + e.progress.toFixed(2).replace(/\d\./, '') + 'px)'
@@ -116,10 +165,8 @@
 
 					if (el.image.data('animationType') === 'onProgress') {
 						var animation = el.image.data('animation');
-
-						
 					}
-					
+
 
 					if (e.progress.toFixed(2) >= 0.48) {
 						FIXED_HEADING.text(el.titleText);
@@ -154,7 +201,7 @@
 						}
 
 			            if (el.submenu) {
-			            	el.submenu.removeClass('submenu_hidden');	
+			            	el.submenu.removeClass('submenu_hidden');
 			            }
 
 					} else {
@@ -237,9 +284,9 @@
 			items.each(function() {
 				var block = $(this).attr('class').match(/^\w+-\w+(\-\w+)?/)[0],
 					animation = $(this).data('animation');
-				
+
 				var animationClass = (block + '_' + animation);
-				
+
 				$(this).addClass(animationClass);
 			});
 		}
@@ -271,42 +318,39 @@
 		function _getContentWidth() {
 			return CONTENT_BLOCK.width();
 		}
-
-		function throttle(func, ms) {
-            var isThrottled = false,
-                savedArgs,
-                savedThis;
-
-            function wrapper() {
-
-                if (isThrottled) {
-                    savedArgs = arguments;
-                    savedThis = this;
-                    return;
-                }
-
-                func.apply(this, arguments);
-
-                isThrottled = true;
-
-                setTimeout(function() {
-                    isThrottled = false;
-                    if (savedArgs) {
-                        wrapper.apply(savedThis, savedArgs);
-                        savedArgs = savedThis = null;
-                    }
-                }, ms);
-            }
-
-            return wrapper;
-        }
 	})();
 
 	// scrollbar
 	(function() {
+		var scrollPosition = 0;
 		$('body').mCustomScrollbar({
 		    theme: 'minimal-dark',
-		    mouseWheel: { scrollAmount: 400 }
+		    mouseWheel: { scrollAmount: 400 },
+		    callbacks: {
+			    onScrollStart: function(){
+			    	scrollPosition = this.mcs.top;
+				},
+				whileScrolling: throttle(function() {
+					var currentPosition = this.mcs.top;
+					if (currentPosition < scrollPosition) {
+						// scroll down
+						hideHeader();
+					} else {
+						// scroll up
+						showHeader();
+					}
+				}, 200),
+				onScroll: throttle(function() {
+					var HEIGHT_HEADER = 60;
+					if (this.mcs.top > - HEIGHT_HEADER) {
+						showHeader();
+					} else {
+						hideHeader();
+					}
+
+				}, 200)
+		    }
+
 		});
 	})();
 })();
