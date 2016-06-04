@@ -339,6 +339,7 @@
 			$(this).addClass('active');
 			$('.tab-slider__image-item').removeClass('active');
 			$('.tab-slider__image-item_' + index).addClass('active');
+
 			if (mobileCheck) {
 				mainImage.attr('class', 'tab-slider__images-list');
 				mainImage.addClass('tab-slider__images-list_pos-' + index);
