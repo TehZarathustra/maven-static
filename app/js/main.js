@@ -334,10 +334,15 @@
 
 		$('.tab-slider__select-item').hover(function() {
 			var index = $(this).data('item');
+			var mainImage = $('.tab-slider__images-list');
 			$('.tab-slider__select-item').removeClass('active');
 			$(this).addClass('active');
 			$('.tab-slider__image-item').removeClass('active');
 			$('.tab-slider__image-item_' + index).addClass('active');
+			if (mobileCheck) {
+				mainImage.attr('class', 'tab-slider__images-list');
+				mainImage.addClass('tab-slider__images-list_pos-' + index);
+			}
 		});
 
 		$('.tab-slider__images-list').click(function() {
