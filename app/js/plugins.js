@@ -309,5 +309,4 @@
 		    mouseWheel: { scrollAmount: 400 }
 		});
 	})();
-
 })();

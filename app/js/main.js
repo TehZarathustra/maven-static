@@ -77,14 +77,14 @@
 
 	// home image
 	(function() {
-		$('.scroll-item__image-wrap_fullscreen').click(function() {
+		$('.scroll-item__image-wrap_fullscreen, .intro-slider_fullscreen').click(function() {
 			enableTransition();
 			var width = $(this).parent().width(),
 				height = $(this).parent().height();
 
-			setTimeout(function() {
-				$('body').mCustomScrollbar("scrollTo", '90px');
-			}, 850);
+			// setTimeout(function() {
+			// 	$('body').mCustomScrollbar("scrollTo", '90px');
+			// }, 850);
 
 			$(this).css({
 				'width': width,
@@ -99,10 +99,9 @@
 			$(this).bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd',
 				function(){
 					$(this).removeClass('scroll-item__image-wrap_fullscreen');
+					$(this).removeClass('intro-slider_fullscreen');
 					$(this).removeClass('no-pseudo');
 				});
-
-			
 		});
 
 		setTimeout(function() {
@@ -222,7 +221,7 @@
 					if (gallery) {
 						$(modal).html(buildSlideshow(self));
 
-						$('.owl-carousel').owlCarousel({
+						$('.gallery').owlCarousel({
 							items: 1
 						})
 						.on('changed.owl.carousel', function(e) {
@@ -230,11 +229,11 @@
 						});
 
 						$('.gallery__next').click(function() {
-							$('.owl-carousel').trigger('next.owl.carousel');
+							$('.gallery').trigger('next.owl.carousel');
 						})
 
 						$('.gallery__prev').click(function() {
-							$('.owl-carousel').trigger('prev.owl.carousel');
+							$('.gallery').trigger('prev.owl.carousel');
 						})
 
 						$('.close-modals').bind(mobileCheck ? 'touchend' : 'click', function(){
@@ -252,7 +251,7 @@
 			};
 
 			function destroySlideShow() {
-				$('.owl-carousel').trigger('destroy.owl.carousel');
+				$('.gallery').trigger('destroy.owl.carousel');
 				$('.gallery__next').remove();
 				$('.gallery__prev').remove();
 				$('.gallery__counter-wrap').remove();
@@ -260,7 +259,7 @@
 
 			function buildSlideshow(el) {
 				var pics = el.data('slideshow').split(' ');
-				var html = '<div class="owl-carousel">'
+				var html = '<div class="owl-carousel gallery">'
 					+ pics.map(function(pic) {
 						return '<div class="gallery__image-wrap">'
 							+ '<img class="gallery__image" src="' + pic + '"/>' +
@@ -351,6 +350,16 @@
 			$('.tab-slider__image-item').removeClass('active');
 		});
 	})();
+
+	// intro slider
+	$('.intro-slider').owlCarousel({
+		items: 1,
+		autoplay: true,
+		autoplayTimeout: 3000,
+		loop: true,
+		animateOut: 'fadeOut',
+		center: true
+	});
 
 	// global helpers
 	function setImagesAsBackground() {

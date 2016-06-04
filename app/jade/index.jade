@@ -80,11 +80,21 @@ html.no-js(lang='en')
                         h2.scroll-item__heading about
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__left-column.scroll-item__left-column_flex(data-layout="1")
-                            .scroll-item__image-wrap(data-layout="fullscreen")
-                                img.scroll-item__image(src="img/home.jpg", alt="image")
+                            .owl-carousel.intro-slider.intro-slider_fullscreen
+                                .intro-slider__item
+                                    .intro-slider__image
+                                        img(src="img/Allemuir_MAVEN.png", alt="")
+                                    .intro-slider__sub-image
+                                        img(src="img/Allemuir_NoText.png", alt="")
+                                .intro-slider__item
+                                    .intro-slider__image
+                                        img(src="img/Izzy+_MAVEN.png", alt="")
+                                    .intro-slider__sub-image
+                                        img(src="img/Izzy+_NOTEXT.png", alt="")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="1")
-                            h3.scroll-item__subheading About MAVEN
-                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                            .scroll-item__wrap-text
+                                h3.scroll-item__subheading About MAVEN
+                                p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
                 article.scroll-item#contracts
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading contracts
