@@ -82,6 +82,17 @@
 			opacity: 0
 		.intro-slider__image
 			opacity: 1
+		+tablet-landskape
+			margin-top: 50%
+			transform: translateY(-50%)
+			height: auto !important
+			transform: none !important
+			position: relative !important
+			z-index: 1 !important
+			cursor: default
+		+phones-portrait
+			margin-top: 0
+			transform: none
 	&_shrink
 		transform: translateX(0) translateY(0)
 		-ms-transform: translateX(0) translateY(0)
@@ -469,6 +480,7 @@
 			align-items: center
 			+transition(.52s)
 			+phones
+				min-height: 0
 				flex-direction: row 
 				flex-wrap: wrap
 	&__left-column
@@ -742,13 +754,18 @@
 	height: 90%
 
 .scroll-item:first-child
-	padding-top: 0
+	padding: 0
 	.scroll-item__columns-wrap_flex
 		align-items: flex-start
 	.scroll-item__right-column
 		display: flex
 		align-items: center
 		min-height: 90vh
+		+phones-portrait
+			min-height: 0
+	.scroll-item__left-column
+		+phones-portrait
+			min-height: 0
 .social
 	&__list
 		margin: 0

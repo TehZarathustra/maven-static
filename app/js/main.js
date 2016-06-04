@@ -86,22 +86,24 @@
 			// 	$('body').mCustomScrollbar("scrollTo", '90px');
 			// }, 850);
 
-			$(this).css({
-				'width': width,
-				'height': height,
-				'transform': 'translateX(0) translateY(0)',
-				'-ms-transform': 'translateX(0) translateY(0)',
-				'-webkit-transform': 'translateX(0) translateY(0)'
-			})
+			if (!mobileCheck) {
+				$(this).css({
+					'width': width,
+					'height': height,
+					'transform': 'translateX(0) translateY(0)',
+					'-ms-transform': 'translateX(0) translateY(0)',
+					'-webkit-transform': 'translateX(0) translateY(0)'
+				})
 
-			$(this).addClass('no-pseudo');
-			
-			$(this).bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd',
-				function(){
-					$(this).removeClass('scroll-item__image-wrap_fullscreen');
-					$(this).removeClass('intro-slider_fullscreen');
-					$(this).removeClass('no-pseudo');
-				});
+				$(this).addClass('no-pseudo');
+				
+				$(this).bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd',
+					function(){
+						$(this).removeClass('scroll-item__image-wrap_fullscreen');
+						$(this).removeClass('intro-slider_fullscreen');
+						$(this).removeClass('no-pseudo');
+					});
+			}
 		});
 
 		setTimeout(function() {
@@ -116,10 +118,10 @@
 
 		if (!intro) {
 			// alert(window.location.href.split('#')[1]);
-			var width = $('.scroll-item__image-wrap_fullscreen').parent().width(),
-				height = $('.scroll-item__image-wrap_fullscreen').parent().height();
+			var width = $('.scroll-item__image-wrap_fullscreen, .intro-slider_fullscreen').parent().width(),
+				height = $('.scroll-item__image-wrap_fullscreen, .intro-slider_fullscreen').parent().height();
 
-			$('.scroll-item__image-wrap_fullscreen').css({
+			$('.scroll-item__image-wrap_fullscreen, .intro-slider_fullscreen').css({
 				'width': width,
 				'height': height,
 				'transform': 'translateX(0) translateY(0)',
@@ -127,6 +129,7 @@
 				'-webkit-transform': 'translateX(0) translateY(0)'
 			})
 			$('.scroll-item__image-wrap').removeClass('scroll-item__image-wrap_fullscreen');
+			$('.intro-slider').removeClass('intro-slider_fullscreen');
 		}
 	})();
 
