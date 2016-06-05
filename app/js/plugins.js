@@ -325,7 +325,6 @@
 		var scrollPosition = 0;
 		$('body').mCustomScrollbar({
 		    theme: 'minimal-dark',
-		    mouseWheel: { scrollAmount: 400 },
 		    callbacks: {
 			    onScrollStart: function(){
 			    	scrollPosition = this.mcs.top;
