@@ -225,7 +225,9 @@
 						$(modal).html(buildSlideshow(self));
 
 						$('.gallery').owlCarousel({
-							items: 1
+							items: 1,
+							autoplay: true,
+							autoplayTimeout: 3000
 						})
 						.on('changed.owl.carousel', function(e) {
 							$('.gallery__current').text(e.item.index + 1);
