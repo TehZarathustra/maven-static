@@ -48,18 +48,44 @@ html.no-js(lang='en')
                                 .nav-menu__progress-bar
                             a.nav-menu__link.nav-menu__link_default(href="#manufacturers") manufacturers
                             ul.submenu.submenu__list.submenu_hidden
-                                li.submenu__item
+                                li.submenu__item.submenu__item_continue
                                   .submenu__progress
                                       .submenu__progress-bar
                                   a.submenu__link.submenu__link_default(href='#senator_group') senator group
-                                li.submenu__item
+                                  ul.thirdmenu.thirdmenu__list.thirdmenu_hidden
+                                    li.thirdmenu__item
+                                        a(href="#allermuir").thirdmenu__link allermuir
+                                    li.thirdmenu__item
+                                        a(href="#senator").thirdmenu__link senator
+                                li.submenu__item.submenu__item_continue
                                   .submenu__progress
                                       .submenu__progress-bar
                                   a.submenu__link.submenu__link_default(href='#ofs') ofs brands
-                                li.submenu__item
+                                  ul.thirdmenu.thirdmenu__list.thirdmenu_hidden
+                                    li.thirdmenu__item
+                                        a(href="#ofs_item").thirdmenu__link OFS
+                                    li.thirdmenu__item
+                                        a(href="#first_office").thirdmenu__link First Office
+                                    li.thirdmenu__item
+                                        a(href="#highmark").thirdmenu__link Highmark
+                                    li.thirdmenu__item
+                                        a(href="#loewenstein").thirdmenu__link Loewenstein
+                                    li.thirdmenu__item
+                                        a(href="#carolina").thirdmenu__link Carolina
+                                li.submenu__item.submenu__item_continue
                                   .submenu__progress
                                       .submenu__progress-bar
-                                  a.submenu__link.submenu__link_default(href='#izzy+') izzy+
+                                  a.submenu__link.submenu__link_default(href='#izzy') izzy+
+                                  ul.thirdmenu.thirdmenu__list.thirdmenu_hidden
+                                    li.thirdmenu__item
+                                        a(href="#fixtures").thirdmenu__link fixtures
+                                    li.thirdmenu__item
+                                        a(href="#hag").thirdmenu__link hag
+                                    li.thirdmenu__item
+                                        a(href="#harter").thirdmenu__link harter
+                                    li.thirdmenu__item
+                                        a(href="#izzy_item").thirdmenu__link izzy
+                                    li.thirdmenu__item
                                 li.submenu__item
                                   .submenu__progress
                                       .submenu__progress-bar
@@ -67,7 +93,7 @@ html.no-js(lang='en')
                                 li.submenu__item
                                   .submenu__progress
                                       .submenu__progress-bar
-                                  a.submenu__link.submenu__link_default(href='#peter_pepper') kristalia
+                                  a.submenu__link.submenu__link_default(href='#peter_pepper') peter pepper
                                 li.submenu__item
                                   .submenu__progress
                                       .submenu__progress-bar
@@ -212,9 +238,12 @@ html.no-js(lang='en')
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading carolina
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
-                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="3")
-                            h3.scroll-item__subheading carolina (layout in development...)
-                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                        .scroll-item__full-column.scroll-item__text.scroll-item__full-column_flex(data-layout="10")
+                            h3.scroll-item__subheading carolina
+                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                            .scroll-item__image-bundle(data-layout="11")
+                                .scroll-item__image-wrap(data-animation="vertical-parallax-1", data-animation-type="onProgress")
+                                    img.scroll-item__image(src="img/home.jpg", alt="image")
                 article.scroll-item#izzy
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading izzy
@@ -262,11 +291,14 @@ html.no-js(lang='en')
                                     img.scroll-item__image(src="img/home.jpg", alt="image")
                 article.scroll-item#izzy_item
                     .scroll-item__heading-wrap
-                        h2.scroll-item__heading izzy
+                        h2.scroll-item__heading Izzy
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
-                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="3")
-                            h3.scroll-item__subheading izzy (layout in development...)
-                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                        .scroll-item__full-column.scroll-item__text.scroll-item__full-column_flex(data-layout="10")
+                            h3.scroll-item__subheading Izzy
+                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                            .scroll-item__image-bundle(data-layout="11")
+                                .scroll-item__image-wrap(data-animation="vertical-parallax-1", data-animation-type="onProgress")
+                                    img.scroll-item__image(src="img/home.jpg", alt="image")
                 article.scroll-item#kristalia
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading kristalia

@@ -183,6 +183,7 @@
 						el.barParent.show();
 
 						el.link.removeClass('nav-menu__link_black');
+						// el.link.parent().find('.thirdmenu').addClass('thirdmenu_hidden');
 
 						if (el.subBarParent) el.subBarParent.show();
 
@@ -226,10 +227,18 @@
 							if (e.state == 'AFTER') el.link.addClass('nav-menu__link_black');
 						} else {
 							if (e.state == 'AFTER') {
+								$('.thirdmenu').addClass('thirdmenu_hidden');
+								if (el.parent.hasClass('submenu__item_continue')) {
+									el.parent.find('.thirdmenu').removeClass('thirdmenu_hidden');
+									return el.link.addClass('nav-menu__link_black');
+								}
 								$('.submenu').css({
 									'margin-top': '-' + el.link.parent().height() * (el.link.parent().index() + 1) + 'px'
 								});
 							} else {
+								if (el.isInSubMenu) {
+									el.parent.find('.thirdmenu').addClass('thirdmenu_hidden');
+								}
 								$('.submenu').css({
 									'margin-top': '-' + el.link.parent().height() * (el.link.parent().index()) + 'px'
 								});

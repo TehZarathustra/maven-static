@@ -68,7 +68,7 @@
 
 	// anchor scroll
 	(function() {
-		$('.nav-menu__link, .submenu__link').click(function(e) {
+		$('.nav-menu__link, .submenu__link, .thirdmenu__link').click(function(e) {
 			e.preventDefault();
 			var target = $(this).attr('href');
 			$('body').mCustomScrollbar("scrollTo", target);
