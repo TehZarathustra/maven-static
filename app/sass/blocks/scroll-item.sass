@@ -183,6 +183,10 @@
 			.scroll-item__image-wrap:nth-child(2),
 			.scroll-item__image-wrap:nth-child(3)
 				width: 22%
+		&_layout-12
+			height: 62vh
+			.scroll-item__image-wrap
+				height: 62vh
 		.scroll-item__image-wrap
 			&_vertical-parallax-1
 				background-size: auto 115%
@@ -325,6 +329,16 @@
 
 	&__logo-image
 		width: 100%
+
+.scroll-item__text-bundle
+	display: flex
+	> div
+		text-align: left
+		box-sizing: border-box
+		padding: 0 1em 1em 1em
+	+phones
+		display: block
+
 
 .no-pseudo
 	&:before
