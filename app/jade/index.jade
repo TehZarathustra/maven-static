@@ -98,10 +98,15 @@ html.no-js(lang='en')
                                   .submenu__progress
                                       .submenu__progress-bar
                                   a.submenu__link.submenu__link_default(href='#quickship') quickship
-                        li.nav-menu__item
-                            .nav-menu__progress
-                                .nav-menu__progress-bar
-                            a.nav-menu__link.nav-menu__link_default(href="#contacts") contacts
+                                li.submenu__item.submenu__item_continue
+                                  .submenu__progress
+                                      .submenu__progress-bar
+                                  a.submenu__link.submenu__link_default(href='#contacts') contacts
+                                  ul.thirdmenu.thirdmenu__list.thirdmenu_hidden
+                                    li.thirdmenu__item
+                                        a(href="#showroom").thirdmenu__link showroom
+                                    li.thirdmenu__item
+                                        a(href="#team").thirdmenu__link team
             .social
                 ul.social__list
                     li.social__item
@@ -264,11 +269,16 @@ html.no-js(lang='en')
                                     img.scroll-item__image(src="img/home.jpg", alt="image")
                 article.scroll-item#izzy
                     .scroll-item__heading-wrap
-                        h2.scroll-item__heading izzy
+                        h2.scroll-item__heading Izzy
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
-                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="3")
-                            h3.scroll-item__subheading izzy (layout in development...)
-                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                        .scroll-item__full-column.scroll-item__text.scroll-item__full-column_flex(data-layout="10")
+                            //- h3.scroll-item__subheading Izzy
+                            .scroll-item__logo-section
+                                img.scroll-item__logo-image(src="img/logos/Izzy/izzyplus.jpg" alt="Izzy+")
+                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam.
+                            .scroll-item__image-bundle(data-layout="11")
+                                .scroll-item__image-wrap(data-animation="vertical-parallax-1", data-animation-type="onProgress")
+                                    img.scroll-item__image(src="img/home.jpg", alt="image")
                 article.scroll-item#fixtures
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading layout fixtures
@@ -374,6 +384,23 @@ html.no-js(lang='en')
                 article.scroll-item#contacts
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading contacts
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="3")
+                            h3.scroll-item__subheading Contacts
+                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                article.scroll-item#showroom
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading showroom
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .scroll-item__left-column.scroll-item__left-column_flex(data-layout="2")
+                            .scroll-item__image-wrap(data-animation="shortened", data-animation-type="onEnter")
+                                img.scroll-item__image(src="img/home.jpg", alt="image")
+                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="2")
+                            h3.scroll-item__subheading Main title
+                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                article.scroll-item#team
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading our team
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .tab-slider
                             .tab-slider__images-list
