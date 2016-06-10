@@ -75,6 +75,8 @@
 		});
 	})();
 
+	$('body').mCustomScrollbar("scrollTo", '#' + window.location.href.split('#')[1]);
+
 	// home image
 	(function() {
 		$('.scroll-item__image-wrap_fullscreen, .intro-slider_fullscreen').click(function() {
