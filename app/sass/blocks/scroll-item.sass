@@ -125,6 +125,10 @@
 			width: 30%
 		+phones
 			width: 100% !important
+		&_layout-13
+			width: 35%
+			+phones
+				width: 100%
 	&__image-bundle
 		height: 100vh
 		display: flex
@@ -183,10 +187,29 @@
 			.scroll-item__image-wrap:nth-child(2),
 			.scroll-item__image-wrap:nth-child(3)
 				width: 22%
-		&_layout-12
+		&_layout-12, &_layout-13
 			height: 62vh
 			.scroll-item__image-wrap
 				height: 62vh
+				background-size: auto 130% !important
+		&_layout-14
+			justify-content: space-between
+			align-items: center
+			.scroll-item__image-wrap
+				position: relative
+			.scroll-item__image-wrap:first-child
+				width: 37%
+				height: 90%
+			.scroll-item__image-wrap:last-child
+				width: 60%
+				height: 70%
+				&:after
+					text-align: right
+			+phones
+				flex-wrap: wrap
+				.scroll-item__image-wrap
+					height: 40% !important
+					width: 100% !important
 		.scroll-item__image-wrap
 			&_vertical-parallax-1
 				background-size: auto 115%
@@ -329,7 +352,11 @@
 
 	&__logo-image
 		width: 100%
-
+	&__full-column_layout-14
+		.scroll-item__paragraph
+			width: 60%
+			float: right
+			margin-top: -10%
 .scroll-item__text-bundle
 	display: flex
 	> div
