@@ -13,6 +13,7 @@
 
 
 	function hideHeader() {
+		if ($('.left-pane').hasClass('left-pane_unfolded')) return;
 		toggleHeader('hide_header', 'show_header');
 	}
 
@@ -238,7 +239,7 @@
 							}
 						}
 
-						 
+
 					} else {
 						if (el.isInThirdMenu && e.state == 'BEFORE') {
 							$('.submenu').css({
@@ -254,7 +255,7 @@
 								el.parent.find('.thirdmenu').removeClass('thirdmenu_hidden');
 								return el.link.addClass('nav-menu__link_black');
 							}
-							
+
 						}
 					}
 				});
