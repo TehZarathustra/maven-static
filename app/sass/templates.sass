@@ -682,6 +682,20 @@
 				transform: translateY(-50%) translateX(-50%)
 				-webkit-transform: translateY(-50%) translateX(-50%)
 				-moz-transform: translateY(-50%) translateX(-50%)
+		&.clicked
+			opacity: .7
+			&:before
+				content: 'click to enlarge'
+				font-weight: lighter
+				position: absolute
+				top: 50%
+				left: 50%
+				color: #fff
+				text-transform: uppercase
+				text-align: center
+				transform: translateY(-50%) translateX(-50%)
+				-webkit-transform: translateY(-50%) translateX(-50%)
+				-moz-transform: translateY(-50%) translateX(-50%)
 		+phones
 			background-position: center
 			transform: none !important
