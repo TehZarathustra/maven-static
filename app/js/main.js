@@ -7,7 +7,6 @@
 		mobileCheck = false;
 	};
 
-
 	function enableTransition() {
 		$('.scroll-item__image-wrap').addClass('scroll-item__image-wrap_transition');
 	}
@@ -75,12 +74,20 @@
 		});
 	})();
 
-	if (window.location.href.split('#')[1] != 'about') {
-		$('body').mCustomScrollbar("scrollTo", '#' + window.location.href.split('#')[1]);
-	}
+	setTimeout(function() {
+		if (window.location.href.split('#')[1] != 'about') {
+			$('body').mCustomScrollbar("update");
+			$('body').mCustomScrollbar("scrollTo", '#' + window.location.href.split('#')[1]);
+		}
+	}, 1000);
 
 	// home image
 	(function() {
+		setTimeout(function() {
+			$('body').mCustomScrollbar("disable");
+		}, 500);
+		
+
 		$('.scroll-item__image-wrap_fullscreen, .intro-slider_fullscreen').click(function() {
 			enableTransition();
 			var width = $(this).parent().width(),
@@ -88,7 +95,6 @@
 				self = $(this);
 
 			if (!mobileCheck) {
-
 				$(this).addClass('intro-slider_show-sub');
 
 				setTimeout(function() {
@@ -113,7 +119,9 @@
 				'transform': 'translateX(0) translateY(0)',
 				'-ms-transform': 'translateX(0) translateY(0)',
 				'-webkit-transform': 'translateX(0) translateY(0)'
-			})
+			});
+
+			$('body').mCustomScrollbar("update");
 		}
 
 		setTimeout(function() {
@@ -198,6 +206,7 @@
 			$('.m-close, .page-overlay').bind(mobileCheck ? 'touchend' : 'click', function(){
 				$('.page-overlay, .modal').fadeOut(500);
 				destroySlideShow();
+				$('body').mCustomScrollbar("update");
 			});
 
 			var inClick = 0;
@@ -207,7 +216,7 @@
 				gallery = gallery || '';
 				$(trigger).bind(mobileCheck ? 'touchend' : 'click', function(e) {
 					var self = $(this);
-
+					$('body').mCustomScrollbar("disable");
 					e.preventDefault();
 
 					if (mobileCheck && trigger != '.nav-menu__telephone') {
@@ -298,21 +307,38 @@
 	(function() {
 		var click = 0;
 
-		var activeClass = mobileCheck ? 'tapped' : 'clicked';
+		var activeClass = mobileCheck ? 'tapped' : '';
 
 		$('.scroll-item__image-wrap:not(.scroll-item__image-wrap_fullscreen):not(.scroll-item__image-wrap_gallery-trigger)').click(function() {
 			click++;
 			var self = $(this);
 			self.addClass(activeClass);
 
-			if (click === 2) {
-				$('.page-overlay').fadeIn(500);
-				$('.fullpage-image').css({
-					'background-image': 'url(' + self.find('img').attr('src') + ')'
-				}).fadeIn(1000);
+			if (click === 2 || !mobileCheck) {
+				if (mobileCheck) {
+					$('.page-overlay').fadeIn(500);
+					$('.fullpage-image').css({
+						'background-image': 'url(' + self.find('img').attr('src') + ')'
+					}).fadeIn(1000);
 
-				click = 0;
-				self.removeClass(activeClass);
+					$('body').mCustomScrollbar("disable");
+
+					click = 0;
+					self.removeClass(activeClass);
+				} else {
+					$('body').mCustomScrollbar("disable");
+
+					var coordinate = {
+							top: self.offset().top,
+							left: self.offset().left,
+							width: self.width(),
+							height: self.height(),
+							style: self.attr('style')
+						},
+						clone = self.clone().prependTo(self);
+
+					cloneExpandAndClose(clone, coordinate, self);
+				}
 			}
 
 			resetClick(self);
@@ -320,8 +346,55 @@
 
 		$('.fullpage-image').click(function() {
 			$('.page-overlay').fadeOut(500);
+			$('body').mCustomScrollbar("update");
 			$(this).fadeOut(500);
-		})
+		});
+
+		function cloneExpandAndClose(el, coordinate, origin) {
+			el.removeClass('scroll-item__image-wrap_transition');
+
+			origin.addClass('background-center');
+
+			setInitPosition();
+
+			setTimeout(function() {
+				el.css('transition', 'all 1s ease-in-out');
+				setTimeout(function() {
+					el.css({
+						width: '100%',
+						left: 0,
+						top: 0,
+						height: '100%',
+						'background-position': 'center'
+					});
+				}, 100);
+			}, 150);
+
+			el.click(function() {
+				setInitPosition();
+
+				setTimeout(function() {
+					el.remove();
+					$('body').mCustomScrollbar("update");
+					setTimeout(function() {
+						origin.removeClass('background-center');
+					}, 1500);
+				}, 1000);
+
+				return false;
+			});
+
+			function setInitPosition() {
+				return el.css({
+					position: 'fixed',
+					top: coordinate.top,
+					left: coordinate.left,
+					width: coordinate.width,
+					height: coordinate.height,
+					'z-index': '300'
+				});
+			}
+		}
 
 		function resetClick(node) {
 			setTimeout(function() {
