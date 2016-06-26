@@ -169,7 +169,7 @@
 					}
 
 
-					if (e.progress.toFixed(2) >= 0.48) {
+					if (e.progress.toFixed(2) >= 0.42) {
 						FIXED_HEADING.text(el.titleText);
 						el.title.addClass('scroll-item__heading_hidden');
 					} else {
