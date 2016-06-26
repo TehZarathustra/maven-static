@@ -70,6 +70,40 @@
 	background-repeat: no-repeat
 	background-size: contain
 	background-position: center
+
+.closable
+	&:before
+		content: ''
+		position: absolute
+		width: 30px
+		height: 2px
+		background: #000
+		box-shadow: 0 0 10px 0px rgba(255,255,255,.2)
+		right: 2em
+		top: 2em
+		+rotate(45*5)
+		+transition(.5s)
+		opacity: 0
+	&:after
+		content: ''
+		position: absolute
+		width: 30px
+		height: 2px
+		background: #000
+		box-shadow: 0 0 10px 0px rgba(255,255,255,.2)
+		right: 2em
+		top: 2em
+		+rotate(-45*5)
+		+transition(.5s)
+		opacity: 0
+	&.closable-show
+		&:before
+			opacity: 1
+			+rotate(45)
+		&:after
+			opacity: 1
+			+rotate(-45)
+
 .intro-slider
 	// height: 100% !important
 	+transition(1s)
@@ -225,14 +259,6 @@
 	&__text
 		font-weight: lighter
 		font-size: .8em
-.contact-modal:before
-	content: '\f00d'
-	font-family: 'FontAwesome'
-	pointer-events: none
-	position: fixed
-	top: 50px
-	right: 15px
-	font-size: 1.5em
 .contact-modal__corner-border-top,
 .contact-modal__corner-border-bottom
 	position: absolute

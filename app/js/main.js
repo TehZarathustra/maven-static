@@ -205,6 +205,7 @@
 
 			$('.m-close, .page-overlay').bind(mobileCheck ? 'touchend' : 'click', function(){
 				$('.page-overlay, .modal').fadeOut(500);
+				$('.page-overlay').removeClass('closable-show');
 				destroySlideShow();
 				$('body').mCustomScrollbar("update");
 			});
@@ -262,6 +263,11 @@
 					}
 
 					$('.page-overlay, '+modal+'').fadeIn(400);
+
+					setTimeout(function() {
+						$('.page-overlay').addClass('closable-show');
+					}, 200);
+
 					$(modal).center();
 					$('.image-pop').center();
 
@@ -368,11 +374,17 @@
 						height: '100%',
 						'background-position': 'center'
 					});
+					el.addClass('closable');
+					setTimeout(function() {
+						el.addClass('closable-show');
+					}, 1000);
 				}, 100);
 			}, 150);
 
 			el.click(function() {
 				setInitPosition();
+
+				el.removeClass('closable-show');
 
 				setTimeout(function() {
 					el.remove();
