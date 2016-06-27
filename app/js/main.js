@@ -377,6 +377,7 @@
 					el.addClass('closable');
 					setTimeout(function() {
 						el.addClass('closable-show');
+						caption.show(origin.data('title'), origin.data('text'));
 					}, 1000);
 				}, 100);
 			}, 150);
@@ -385,6 +386,7 @@
 				setInitPosition();
 
 				el.removeClass('closable-show');
+				caption.hide();
 
 				setTimeout(function() {
 					el.remove();
@@ -416,6 +418,40 @@
 			},1500);
 		}
 	})();
+
+	// caption
+	var Caption = function(node, titleNode, captionNode) {
+		this.node = node;
+		this.nodeClass = node.attr('class');
+		this.initMod = node.attr('class') + '_init';
+		this.showMod = node.attr('class') + '_show';
+		this.titleNode = node.find('h2');
+		this.textNode = node.find('p');
+	}
+
+	Caption.prototype.show = function(title, text) {
+		this.node.addClass(this.initMod);
+
+		var self = this;
+		self.titleNode.html(title || 'Main title');
+		self.textNode.html(text || 'Lorem ipsum dolor sit amet.');
+
+		setTimeout(function() {
+			self.node.addClass(self.showMod);
+		}, 100);
+	}
+
+	Caption.prototype.hide = function() {
+		this.node.removeClass(this.showMod);
+		var self = this;
+
+		setTimeout(function() {
+			self.node.removeClass(self.initMod);
+		}, 500);
+	}
+
+	var caption = new Caption($('.dynamic-caption'), $('.dynamic-caption h2'), $('.dynamic-caption p'));
+
 
 	// tab-slider
 	(function() {

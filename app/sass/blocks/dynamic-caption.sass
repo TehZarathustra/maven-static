@@ -1,0 +1,22 @@
+.dynamic-caption
+	position: fixed
+	background: rgba(255,255,255,.6)
+	display: none
+	width: 25%
+	bottom: 2em
+	right: 4em
+	padding: 0 1em 1.5em 1em
+	z-index: 300
+	border-top: 1px solid #000
+	+transition(.5s)
+	transform: translateY(100%)
+	opacity: 0
+	&_init
+		display: block
+	&_show
+		opacity: 1
+		transform: translateY(0)
+	h2
+		margin-bottom: .2em
+	p
+		margin-top: 0
