@@ -229,11 +229,11 @@
 						} else {
 							if (e.state == 'AFTER') {
 								$('.thirdmenu').addClass('thirdmenu_hidden');
-								$('.submenu').css({
+								el.link.parent().parent().parent().find('.submenu').css({
 									'margin-top': '-' + el.link.parent().height() * (el.link.parent().index() + 1) + 'px'
 								});
 							} else {
-								$('.submenu').css({
+								el.link.parent().parent().parent().find('.submenu').css({
 									'margin-top': '-' + el.link.parent().height() * (el.link.parent().index()) + 'px'
 								});
 							}

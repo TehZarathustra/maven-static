@@ -43,6 +43,15 @@ html.no-js(lang='en')
                             .nav-menu__progress
                                 .nav-menu__progress-bar
                             a.nav-menu__link.nav-menu__link_default(href="#about") about
+                            ul.submenu.submenu__list.submenu_hidden
+                                li.submenu__item
+                                  .submenu__progress
+                                      .submenu__progress-bar
+                                  a.submenu__link.submenu__link_default(href="#team") team
+                                li.submenu__item
+                                  .submenu__progress
+                                      .submenu__progress-bar
+                                  a.submenu__link.submenu__link_default(href="#showroom") showroom
                         li.nav-menu__item
                             .nav-menu__progress
                                 .nav-menu__progress-bar
@@ -98,14 +107,6 @@ html.no-js(lang='en')
                             .nav-menu__progress
                                 .nav-menu__progress-bar
                             a.nav-menu__link.nav-menu__link_default(href="#quickship") quickship
-                        li.nav-menu__item
-                            .nav-menu__progress
-                                .nav-menu__progress-bar
-                            a.nav-menu__link.nav-menu__link_default(href="#showroom") showroom
-                        li.nav-menu__item
-                            .nav-menu__progress
-                                .nav-menu__progress-bar
-                            a.nav-menu__link.nav-menu__link_default(href="#team") our team
             .social
                 ul.social__list
                     li.social__item
@@ -148,6 +149,77 @@ html.no-js(lang='en')
                             .scroll-item__wrap-text
                                 h3.scroll-item__subheading About MAVEN
                                 p.scroll-item__paragraph MAVEN is a design-loving, Independent Manufacturer’s Representative Group located in San Francisco, CA. MAVEN represents a small, curated group of innovative, design-focused furniture manufacturers from around the world. Our products can be found extensively throughout our community and our reach extends into all types of environments from small start up’s to global technology companies, law firms, healthcare environments, airports and restaurants.
+                article.scroll-item#team
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading our team
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .tab-slider
+                            .tab-slider__images-list
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Sarah-Reyes.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_1
+                                        a(href="mailto:sarah@mavenwest.com") sarah@mavenwest.com
+                                        a(href="tel:#") 415-621-3232
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Carlos-Rodriguez.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_2
+                                        a(href="mailto:carlos@mavenwest.com") carlos@mavenwest.com
+                                        a(href="tel:#") 805-407-4068
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Dave-Casto.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_3
+                                        a(href="mailto:dave@mavenwest.com") dave@mavenwest.com
+                                        a(href="tel:#") 415-225-3430
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Stacey-Herman.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_4
+                                        a(href="mailto:stacey@mavenwest.com") stacey@mavenwest.com
+                                        a(href="tel:#") 415-940-8035
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Janel-Levadoux.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_5
+                                        a(href="mailto:janel@mavenwest.com") janel@mavenwest.com
+                                        a(href="tel:#") 650-293-1861
+                                .tab-slider__image-item
+                                    .tab-slider__image
+                                        img.scroll-item__image(src="img/Esther-Hahn.jpg", alt="image")
+                                    .tab-slider__caption.tab-slider__caption_6
+                                        a(href="mailto:esther@mavenwest.com") esther@mavenwest.com
+                                        a(href="tel:#") 916-591-4348
+                            .tab-slider__select-list
+                                .tab-slider__select-item
+                                    h3 Sarah Reyes
+                                    p Showroom Manager
+                                .tab-slider__select-item
+                                    h3 Carlos Rodriguez
+                                    p San Francisco A&amp;D/East and North Bay Dealers
+                                .tab-slider__select-item
+                                    h3 Dave Casto
+                                    p San Francisco A&amp;D
+                                .tab-slider__select-item
+                                    h3 Stacey Herman
+                                    p Principal &amp; San Francisco Dealers
+                                .tab-slider__select-item
+                                    h3 Janel Levadoux
+                                    p South Bay - Monterey Bay
+                                .tab-slider__select-item
+                                    h3 Esther Hahn
+                                    p Sacremento, Fresno, Reno
+                article.scroll-item#showroom
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading showroom
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .scroll-item__left-column.scroll-item__left-column_flex(data-layout="2")
+                            .scroll-item__image-wrap(data-animation="shortened", data-animation-type="onEnter")
+                                img.scroll-item__image(src="img/maven-showroom.jpg", alt="image")
+                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="2")
+                            h3.scroll-item__subheading Our Address
+                            p.scroll-item__paragraph 923 Harrison St <br/>San Francisco CA 94107<br/>415-621-3232 <br/>email: <a href="mailto:info@mavenwest.com">info@mavenwest.com</a>
                 article.scroll-item#manufacturers
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading manufacturers
@@ -406,78 +478,6 @@ html.no-js(lang='en')
                                 .scroll__item-text-bundle-item
                                     h3.scroll-item__subheading Peter Pepper
                                     p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime
-                article.scroll-item#showroom
-                    .scroll-item__heading-wrap
-                        h2.scroll-item__heading showroom
-                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
-                        .scroll-item__left-column.scroll-item__left-column_flex(data-layout="2")
-                            .scroll-item__image-wrap(data-animation="shortened", data-animation-type="onEnter")
-                                img.scroll-item__image(src="img/maven-showroom.jpg", alt="image")
-                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="2")
-                            h3.scroll-item__subheading Our Address
-                            p.scroll-item__paragraph 923 Harrison St <br/>San Francisco CA 94107<br/>415-621-3232 <br/>email: <a href="mailto:info@mavenwest.com">info@mavenwest.com</a>
-                article.scroll-item#team
-                    .scroll-item__heading-wrap
-                        h2.scroll-item__heading our team
-                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
-                        .tab-slider
-                            .tab-slider__images-list
-                                .tab-slider__image-item
-                                    .tab-slider__image
-                                        img.scroll-item__image(src="img/Sarah-Reyes.jpg", alt="image")
-                                    .tab-slider__caption.tab-slider__caption_1
-                                        a(href="mailto:sarah@mavenwest.com") sarah@mavenwest.com
-                                        a(href="tel:#") 415-621-3232
-                                .tab-slider__image-item
-                                    .tab-slider__image
-                                        img.scroll-item__image(src="img/Carlos-Rodriguez.jpg", alt="image")
-                                    .tab-slider__caption.tab-slider__caption_2
-                                        a(href="mailto:carlos@mavenwest.com") carlos@mavenwest.com
-                                        a(href="tel:#") 805-407-4068
-                                .tab-slider__image-item
-                                    .tab-slider__image
-                                        img.scroll-item__image(src="img/Dave-Casto.jpg", alt="image")
-                                    .tab-slider__caption.tab-slider__caption_3
-                                        a(href="mailto:dave@mavenwest.com") dave@mavenwest.com
-                                        a(href="tel:#") 415-225-3430
-                                .tab-slider__image-item
-                                    .tab-slider__image
-                                        img.scroll-item__image(src="img/Stacey-Herman.jpg", alt="image")
-                                    .tab-slider__caption.tab-slider__caption_4
-                                        a(href="mailto:stacey@mavenwest.com") stacey@mavenwest.com
-                                        a(href="tel:#") 415-940-8035
-                                .tab-slider__image-item
-                                    .tab-slider__image
-                                        img.scroll-item__image(src="img/Janel-Levadoux.jpg", alt="image")
-                                    .tab-slider__caption.tab-slider__caption_5
-                                        a(href="mailto:janel@mavenwest.com") janel@mavenwest.com
-                                        a(href="tel:#") 650-293-1861
-                                .tab-slider__image-item
-                                    .tab-slider__image
-                                        img.scroll-item__image(src="img/Esther-Hahn.jpg", alt="image")
-                                    .tab-slider__caption.tab-slider__caption_6
-                                        a(href="mailto:esther@mavenwest.com") esther@mavenwest.com
-                                        a(href="tel:#") 916-591-4348
-                            .tab-slider__select-list
-                                .tab-slider__select-item
-                                    h3 Sarah Reyes
-                                    p Showroom Manager
-                                .tab-slider__select-item
-                                    h3 Carlos Rodriguez
-                                    p San Francisco A&amp;D/East and North Bay Dealers
-                                .tab-slider__select-item
-                                    h3 Dave Casto
-                                    p San Francisco A&amp;D
-                                .tab-slider__select-item
-                                    h3 Stacey Herman
-                                    p Principal &amp; San Francisco Dealers
-                                .tab-slider__select-item
-                                    h3 Janel Levadoux
-                                    p South Bay - Monterey Bay
-                                .tab-slider__select-item
-                                    h3 Esther Hahn
-                                    p Sacremento, Fresno, Reno
-
                 .loader.loader_hidden
                     i.fa.fa-cog.fa-spin
         .page-overlay.closable
