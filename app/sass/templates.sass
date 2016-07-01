@@ -1075,6 +1075,9 @@
 	border-top: 2px solid #fff
 	text-align: right
 	padding: 1em
+	display: none
+	+phones
+		display: block
 	+phones-portrait
 		left: 0 !important
 		right: 0 !important
@@ -1095,13 +1098,21 @@
 	opacity: .4
 	&.active
 		opacity: 1
-	cursor: pointer
-	h3, p
+	h3, p, a
 		margin: 0
 		letter-spacing: 1px
 		font-weight: lighter
+	p
+		font-size: .9em
+	a
+		font-size: .8em
+		text-decoration: none
+		color: #000
+		display: block
+		&:hover
+			text-decoration: underline
 	h3
-		font-size: 1.3em
+		font-size: 1.2em
 	+phones
 		font-size: .8em
 
