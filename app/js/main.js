@@ -113,6 +113,10 @@
 			$('.intro-slider .intro-slider__image').css({
 				'opacity': '0'
 			})
+
+			$('.intro-slider .intro-slider__image, .intro-slider .intro-slider__sub-image').css({
+				'z-index': '0'
+			})
 		}, 10);
 
 		setTimeout(function() {
