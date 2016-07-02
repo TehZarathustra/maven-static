@@ -366,6 +366,8 @@
 					setTimeout(function() {
 						el.addClass('closable-show');
 						caption.show(origin.data('title'), origin.data('text'));
+						pin.fillMeta(el);
+						pin.show();
 					}, 1000);
 				}, 100);
 			}, 150);
@@ -375,6 +377,7 @@
 
 				el.removeClass('closable-show');
 				caption.hide();
+				pin.hide();
 
 				setTimeout(function() {
 					el.remove();
@@ -406,6 +409,44 @@
 			},1500);
 		}
 	})();
+
+	// pin button
+	var PinButton = function(selector) {
+		this.node = $(selector);
+		this.selector = selector.replace(/\.|\#/, '');
+		self = this;
+
+		this.node.click(function() {
+			self.pinIt(self.url, self.pic, self.description);
+		});
+	}
+
+	PinButton.prototype.fillMeta = function(el) {
+		var url = window.location.href;
+		var src = el.find('img').attr('src');
+
+		this.url = url;
+		this.pic = window.location.origin + window.location.pathname + src;
+		this.description = el.find('img').attr('alt');
+	}
+
+	PinButton.prototype.show = function() {
+		this.node.addClass(this.selector + '_active');
+	}
+
+	PinButton.prototype.hide = function() {
+		this.node.removeClass(this.selector + '_active');
+	}
+
+	PinButton.prototype.pinIt = function(url, media, description) {
+		PinUtils.pinOne({
+			url: url,
+        	media: media,
+        	description: description
+    	});
+	}
+
+	var pin = new PinButton('.pin-button');
 
 	// caption
 	var Caption = function(node, titleNode, captionNode) {

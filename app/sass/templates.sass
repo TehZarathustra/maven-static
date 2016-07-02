@@ -473,6 +473,24 @@
 		display: flex
 		+tablet-landskape
 			flex-direction: column
+.pin-button
+	position: fixed
+	top: -100%
+	left: 1em
+	z-index: 300
+	+transition(1s)
+	cursor: pointer
+	&:before
+		content: '\f0d3'
+		font-size: 3em
+		color: red
+		font-family: 'FontAwesome'
+		opacity: .5
+		+transition(.5s)
+	&:hover:before
+		opacity: 1
+	&_active
+		top: 1em
 .request-more
 	text-decoration: none
 	color: #000
