@@ -132,6 +132,17 @@
 			$('.intro-slider').css({
 				'position': 'static'
 			});
+
+			var preview = $('.intro-slider').data('preview');
+
+			if (preview) {
+				$('.intro-slider').append('<div class="intro-slider__preview"></div>');
+				$('.intro-slider__preview').css('background', 'url(' + preview + ')');
+				setTimeout(function() {
+					$('.intro-slider__preview').addClass('intro-slider__preview_show');
+				}, 100);
+			}
+
 			$('body').mCustomScrollbar("update");
 		}, 2000);
 	}

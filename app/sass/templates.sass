@@ -171,6 +171,18 @@
 	top: 0
 	left: 0
 	width: 100%
+
+.intro-slider__preview
+	position: absolute
+	top: 80%
+	left: 0
+	right: 0
+	bottom: 0
+	opacity: 0
+	+transition(.7s)
+	&_show
+		opacity: 1
+		top: 0
 .left-pane
 	width: 280px
 	height: 100%
