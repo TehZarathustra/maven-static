@@ -580,7 +580,14 @@
 		items: 1,
 		autoplay: true,
 		autoplayTimeout: 4000,
-		loop: true
+		loop: true,
+		nav: true,
+		navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+				  '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
+	});
+
+	$('.owl-prev, .owl-next').click(function(e) {
+		return false;
 	});
 
 	// global helpers

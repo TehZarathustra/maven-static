@@ -6,5 +6,29 @@
 	&-image
 		height: 100%
 		background-size: cover
+	&:hover
+		.owl-nav
+			> div
+				opacity: 1
+		.owl-prev
+			transform: translateX(0px)
+			-webkit-transform: translateX(0px)
+			-moz-transform: translateX(0px)
+			-ms-transform: translateX(0px)
+		.owl-next
+			transform: translateX(20px)
+			-webkit-transform: translateX(20px)
+			-moz-transform: translateX(20px)
+			-ms-transform: translateX(20px)
 	.owl-stage-outer, .owl-stage, .owl-item
 		height: 100%
+	.owl-nav
+		> div
+			+transition(.5s)
+			opacity: 0
+			display: inline-block
+			transform: translateX(10px)
+			-webkit-transform: translateX(10px)
+			-moz-transform: translateX(10px)
+			-ms-transform: translateX(10px)
+			position: absolute
