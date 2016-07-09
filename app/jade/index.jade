@@ -54,8 +54,12 @@ html.no-js(lang='en')
                                   a.submenu__link.submenu__link_default(href='#senator_group') senator group
                                   ul.thirdmenu.thirdmenu__list.thirdmenu_hidden
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#allermuir").thirdmenu__link allermuir
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#senator").thirdmenu__link senator
                                 li.submenu__item.submenu__item_continue
                                   .submenu__progress
@@ -63,14 +67,24 @@ html.no-js(lang='en')
                                   a.submenu__link.submenu__link_default(href='#ofs') ofs brands
                                   ul.thirdmenu.thirdmenu__list.thirdmenu_hidden
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#ofs_item").thirdmenu__link OFS
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#first_office").thirdmenu__link First Office
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#highmark").thirdmenu__link Highmark
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#loewenstein").thirdmenu__link Loewenstein
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#carolina").thirdmenu__link Carolina
                                 li.submenu__item.submenu__item_continue
                                   .submenu__progress
@@ -78,12 +92,20 @@ html.no-js(lang='en')
                                   a.submenu__link.submenu__link_default(href='#izzy') izzy+
                                   ul.thirdmenu.thirdmenu__list.thirdmenu_hidden
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#fixtures").thirdmenu__link fixtures
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#hag").thirdmenu__link hag
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#harter").thirdmenu__link harter
                                     li.thirdmenu__item
+                                        .thirdmenu__progress
+                                            .thirdmenu__progress-bar
                                         a(href="#izzy_item").thirdmenu__link izzy
                                     li.thirdmenu__item
                                 li.submenu__item
@@ -266,7 +288,17 @@ html.no-js(lang='en')
                         h2.scroll-item__heading senator
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__left-column.scroll-item__left-column_flex(data-layout="1")
-                            .scroll-item__image-wrap.scroll-item__image-wrap_shortened.scroll-item__image-wrap_gallery-trigger(data-slideshow="img/manufacturers/SenatorsGroup/Senator_1.jpg img/manufacturers/SenatorsGroup/Senator_2.jpg img/manufacturers/SenatorsGroup/Senator_3.jpg img/manufacturers/SenatorsGroup/Senator_4.jpg img/manufacturers/SenatorsGroup/Senator_5.jpg", data-animation="vertical-parallax-2", data-animation-type="onProgress")
+                            .scroll-item__slider(data-title="Senator", data-text="Lorem ipsum dolor sit amet.").owl-carousel
+                                .scroll-item__slider-item
+                                    .scroll-item__slider-image
+                                        img(src="img/manufacturers/SenatorsGroup/Senator_1.jpg", alt="SenatorsGroup")
+                                .scroll-item__slider-item
+                                    .scroll-item__slider-image
+                                        img(src="img/manufacturers/SenatorsGroup/Senator_2.jpg", alt="SenatorsGroup")
+                                .scroll-item__slider-item
+                                    .scroll-item__slider-image
+                                        img(src="img/manufacturers/SenatorsGroup/Senator_3.jpg", alt="SenatorsGroup")
+                            //- .scroll-item__image-wrap.scroll-item__image-wrap_shortened.scroll-item__image-wrap_gallery-trigger(data-slideshow="img/manufacturers/SenatorsGroup/Senator_1.jpg img/manufacturers/SenatorsGroup/Senator_2.jpg img/manufacturers/SenatorsGroup/Senator_3.jpg img/manufacturers/SenatorsGroup/Senator_4.jpg img/manufacturers/SenatorsGroup/Senator_5.jpg", data-animation="vertical-parallax-2", data-animation-type="onProgress")
                                 img.scroll-item__image(src="img/manufacturers/SenatorsGroup/Senator_1.jpg", alt="image")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="1")
                             //- h3.scroll-item__subheading senator

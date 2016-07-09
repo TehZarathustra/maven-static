@@ -158,6 +158,10 @@
 						el.link.parent().find('.submenu__progress-bar').css({
 							'height': e.progress.toFixed(2).replace(/\d\./, '')
 						})
+					} else if (el.isInThirdMenu) {
+						el.link.parent().find('.thirdmenu__progress-bar').css({
+							'height': e.progress.toFixed(2).replace(/\d\./, '')
+						})
 					} else {
 						el.bar.css({
 							'height': e.progress.toFixed(2).replace(/\d\./, '')
