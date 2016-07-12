@@ -74,7 +74,10 @@ gulp.task('copyModernizr', function() {
 gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        server: "./app"
+        server: {
+        	baseDir: "./app",
+        	https: true
+        }
     });
 
     gulp.watch(['app/sass/*.sass','app/sass/blocks/*.sass'], ['sass']);
