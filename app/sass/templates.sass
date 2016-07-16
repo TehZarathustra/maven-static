@@ -125,7 +125,7 @@
 		+transition(.5s)
 		opacity: 0
 	&.closable-show
-		background-color: rgba(255,255,255,.7)
+		background-color: rgba(255,255,255,.4)
 		&:before
 			opacity: 1
 			+rotate(45)
@@ -923,7 +923,13 @@
 		height: 100%
 	&-image
 		height: 100%
-		background-size: cover
+		background-size: auto 125%
+		background-position: left center
+		background-repeat: no-repeat
+		+transition(.5s)
+	&.refreshed
+		.scroll-item__slider-image
+			background-position: center center
 	&:hover
 		.owl-nav
 			> div
