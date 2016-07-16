@@ -492,6 +492,10 @@
 	}
 
 	PinButton.prototype.pinIt = function(url, media, description) {
+		if ($('.scroll-item__slider_active').length) {
+			media = window.location.origin + window.location.pathname + $('.scroll-item__slider_active .owl-item.active').find('img').attr('src');
+		}
+
 		PinUtils.pinOne({
 			url: url,
         	media: media,
