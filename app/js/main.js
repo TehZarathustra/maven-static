@@ -141,6 +141,9 @@
 				$('.intro-slider__preview').css('background-image', 'url(' + preview + ')');
 				setTimeout(function() {
 					$('.intro-slider__preview').addClass('intro-slider__preview_show');
+					setTimeout(function() {
+						$('.intro-slider .intro-slider__item').css('opacity', '0');
+					}, 300);
 				}, 100);
 			}
 
