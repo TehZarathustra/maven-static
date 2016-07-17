@@ -2,7 +2,7 @@
 	position: fixed
 	top: -100%
 	left: 1em
-	z-index: 300
+	z-index: 303
 	+transition(1s)
 	cursor: pointer
 	&:before
@@ -16,3 +16,5 @@
 		opacity: 1
 	&_active
 		top: 1em
+		+phones
+			top: .25em

@@ -335,6 +335,12 @@
 
 					$('body').mCustomScrollbar("disable");
 
+					pin.fillMeta(self);
+					pin.show();
+					caption.show(self.data('title'), self.data('text'));
+					$('.fullpage-image').addClass('closable');
+					$('.fullpage-image').addClass('closable-show');
+
 					click = 0;
 					self.removeClass(activeClass);
 				} else {
@@ -358,6 +364,8 @@
 
 		$('.fullpage-image').click(function() {
 			$('.page-overlay').fadeOut(500);
+			pin.hide();
+			caption.hide();
 			$('body').mCustomScrollbar("update");
 			$(this).fadeOut(500);
 		});
@@ -587,9 +595,10 @@
 	setTimeout(function() {
 		$('.scroll-item__slider').owlCarousel({
 			items: 1,
-			autoplay: true,
+			autoplay: !mobileCheck,
 			autoplayTimeout: 4000,
 			loop: true,
+			touchDrag: true,
 			nav: true,
 			navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>',
 					  '<i class="fa fa-chevron-right" aria-hidden="true"></i>']

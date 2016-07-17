@@ -24,11 +24,25 @@
 	bottom: 2em
 	right: 4em
 	padding: 0 1em 1.5em 1em
-	z-index: 300
+	box-sizing: border-box
+	z-index: 303
 	border-top: 1px solid #000
 	+transition(.5s)
 	transform: translateY(100%)
 	opacity: 0
+	+phones
+		width: 90%
+		right: 5%
+		bottom: 0
+	.request-more
+		+phones
+			position: absolute
+			right: 1em
+			bottom: 1.5em
+		+phones-portrait
+			position: relative
+			right: auto
+			bottom: auto
 	&_init
 		display: block
 	&_show
@@ -90,7 +104,7 @@
 	z-index: 1
 	box-sizing: border-box
 	padding: 2em
-	z-index: 100
+	z-index: 302
 	cursor: pointer
 	display: none
 	background-repeat: no-repeat
@@ -494,7 +508,7 @@
 	position: fixed
 	top: -100%
 	left: 1em
-	z-index: 300
+	z-index: 303
 	+transition(1s)
 	cursor: pointer
 	&:before
@@ -508,6 +522,8 @@
 		opacity: 1
 	&_active
 		top: 1em
+		+phones
+			top: .25em
 .request-more
 	text-decoration: none
 	color: #000
@@ -927,9 +943,24 @@
 		background-position: left center
 		background-repeat: no-repeat
 		+transition(.5s)
+		+phones
+			background-size: auto 155%
+			background-position: center center
+		+phones-portrait
+			background-position: left center
+			background-size: auto 125%
 	&.refreshed
 		.scroll-item__slider-image
 			background-position: center center
+		+phones
+			.owl-prev
+				top: 40%
+				left: 5px
+				font-size: 2em
+			.owl-next
+				top: 40%
+				right: 25px
+				font-size: 2em
 	&:hover
 		.owl-nav
 			> div

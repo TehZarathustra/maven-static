@@ -6,11 +6,25 @@
 	bottom: 2em
 	right: 4em
 	padding: 0 1em 1.5em 1em
-	z-index: 300
+	box-sizing: border-box
+	z-index: 303
 	border-top: 1px solid #000
 	+transition(.5s)
 	transform: translateY(100%)
 	opacity: 0
+	+phones
+		width: 90%
+		right: 5%
+		bottom: 0
+	.request-more
+		+phones
+			position: absolute
+			right: 1em
+			bottom: 1.5em
+		+phones-portrait
+			position: relative
+			right: auto
+			bottom: auto
 	&_init
 		display: block
 	&_show
