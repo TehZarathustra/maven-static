@@ -400,11 +400,18 @@
 					}
 				}, 200),
 				onScroll: throttle(function() {
-					var HEIGHT_HEADER = 60;
+					var HEIGHT_HEADER = 60,
+						pause = false;
 					if (this.mcs.top > - HEIGHT_HEADER) {
 						showHeader();
+						setTimeout(function() {
+							pause = true;
+						}, 500);
 					} else {
-						hideHeader();
+						if (pause) {
+							hideHeader();
+							pause = true;
+						}
 					}
 
 				}, 200)
