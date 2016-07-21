@@ -131,14 +131,14 @@
 							}
 
 							if (animation === 'vertical-parallax-2' && !mobileCheck) {
-								$(this).css({
-									'transform': 'translateY(' + e.progress.toFixed(2).replace(/\d\./, '') + 'px)'
-								});
-								if (e.progress.toFixed(2) >= 1) {
-									$(this).css({
-										'transform': 'translateY(100px)'
-									});
-								}
+								// $(this).css({
+								// 	'transform': 'translateY(' + e.progress.toFixed(2).replace(/\d\./, '') + 'px)'
+								// });
+								// if (e.progress.toFixed(2) >= 1) {
+								// 	$(this).css({
+								// 		'transform': 'translateY(100px)'
+								// 	});
+								// }
 							}
 
 							if (animation === 'vertical-parallax-3' && !mobileCheck) {

@@ -705,14 +705,6 @@
 		&_layout-5
 			justify-content: space-between
 			align-items: center
-			.scroll-item__image-wrap
-				position: relative
-				&:after
-					position: absolute
-					bottom: -30px
-					font-weight: lighter
-					width: 100%
-					content: attr(data-caption)
 			.scroll-item__image-wrap:first-child
 				width: 37%
 				height: 90%
@@ -779,8 +771,8 @@
 				background-position: center top
 				+transition(.1s)
 			&_vertical-parallax-2
-				+transition(.2s)
-				transform: translateY(0)
+				// +transition(.2s)
+				// transform: translateY(0)
 			&_vertical-parallax-3
 				+transition(.2s)
 				margin-top: 100px
@@ -989,6 +981,7 @@
 	&.refreshed
 		.scroll-item__slider-image
 			background-position: center center
+			background-size: auto 100%
 		+phones
 			.owl-prev
 				top: 40%
