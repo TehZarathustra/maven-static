@@ -119,6 +119,21 @@
 			text-align: center
 		+phones
 			flex-wrap: wrap
+		&_layout-contacts
+			align-items: center
+			background:
+				image: url(../img/Request-More-Info.jpg)
+				position: center
+				size: cover
+			text-align: right
+			h2, p
+				margin-right: 8%
+			h2
+				margin-top: 20%
+			+phones
+				h2, p
+					margin-right: 0
+				text-align: center
 	&__text
 		font-weight: lighter
 	&__text-bundle
@@ -365,6 +380,26 @@
 		flex-direction: column
 		> div
 			padding: 0
+
+.scroll-item__form
+	width: 30%
+	padding-right: 8%
+	box-sizing: border-box
+	input, textarea
+		padding: .5em
+		width: 100%
+		margin-bottom: 10px
+		display: block
+		box-sizing: border-box
+	&_right
+		margin-left: 70%
+	+phones
+		width: 90%
+		textarea
+			display: none
+		&_right
+			margin: 0 auto
+		padding-right: 0
 
 .scroll-item__paragraph
 	a

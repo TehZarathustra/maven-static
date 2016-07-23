@@ -610,6 +610,13 @@
 		$('.owl-prev, .owl-next').click(function(e) {
 			return false;
 		});
+
+		$('.brand-slider').owlCarousel({
+			items: 4,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			loop: true
+		});
 	}, 800);
 
 	// global helpers

@@ -534,7 +534,24 @@ html.no-js(lang='en')
                             .scroll-item__image-bundle(data-layout="12")
                                 .scroll-item__image-wrap(data-animation="vertical-parallax-1", data-animation-type="onProgress")
                                     img.scroll-item__image(src="img/quickships.png", alt="image")
-                            .scroll-item__text-bundle(data-layout="12")
+                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur rem esse nostrum tenetur enim voluptates?
+                            .brand-slider.owl-carousel
+                                div.brand-slider__item
+                                    a(href="http://www.thesenatorgroup.com/americas/resource-library/allermuir-xpress-brochure/")
+                                        img(src="img/manufacturers/SenatorsGroup/SenatorGroup.jpg", alt="")
+                                div.brand-slider__item
+                                    a(href="http://ofsbrands.com/products/quickship")
+                                        img(src="img/manufacturers/OFSBrands/OFSBrands.jpg", alt="")
+                                div.brand-slider__item
+                                    a(href="http://highmarkergo.com/")
+                                        img(src="img/highmark.png", alt="")
+                                div.brand-slider__item
+                                    a(href="http://www.peterpepper.com/")
+                                        img(src="img/manufacturers/PeterPepper/peter_pepper.png", alt="")
+                                div.brand-slider__item
+                                    a(href="http://izzyplus.com/")
+                                        img(src="img/manufacturers/Izzy/izzyplus.jpg", alt="")
+                            //- .scroll-item__text-bundle(data-layout="12")
                                 .scroll__item-text-bundle-item
                                     h3.scroll-item__subheading Senator Group
                                     p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime
@@ -544,6 +561,19 @@ html.no-js(lang='en')
                                 .scroll__item-text-bundle-item
                                     h3.scroll-item__subheading Peter Pepper
                                     p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime
+                article.scroll-item#contacts
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading contact us
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .scroll-item__full-column.scroll-item__text.scroll-item__full-column_flex(data-layout="contacts")
+                            h2.scroll-item__subheading Thank you for your interest
+                            p.scroll-item__paragraph if you wish contact us please fill out the form below and<br/>our representatives will git in touch you soon
+                            form.scroll-item__form.scroll-item__form_right
+                                input(type="text", placeholder="Your Name")
+                                input(type="text", placeholder="Email")
+                                input(type="text", placeholder="Phone Number")
+                                textarea(type="text", placeholder="Message")
+                                input(type="submit", value="submit")
                 .loader.loader_hidden
                     i.fa.fa-cog.fa-spin
         .page-overlay.closable
