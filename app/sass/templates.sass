@@ -1,3 +1,17 @@
+.brand-grid
+	display: flex
+	justify-content: space-around
+	align-content: space-around
+	max-width: 1300px
+	margin: 0 auto
+	// flex-direction: column
+	align-items: center
+	flex-wrap: wrap
+	&__item
+		flex-basis: 28%
+		max-width: 28%
+		img
+			width: 100%
 .brand-slider
 	&__item
 		text-align: center
@@ -12,6 +26,8 @@
 			text-decoration: none
 			height: 100%
 			background: none !important
+			display: flex
+			align-items: center
 .debug
 	display: none
 	position: fixed
@@ -201,6 +217,8 @@
 	top: 0
 	left: 0
 	width: 100%
+	&:hover
+		cursor: url(../img/arrows.png), auto
 
 .intro-slider__preview
 	position: absolute
@@ -217,9 +235,9 @@
 	+transition(.7s)
 	&_show
 		opacity: 1
-		transform: translateY(-5%)
-		-webkit-transform: translateY(-5%)
-		-moz-transform: translateY(-5%)
+		transform: translateY(0)
+		-webkit-transform: translateY(0)
+		-moz-transform: translateY(0)
 .left-pane
 	width: 280px
 	height: 100%
@@ -295,12 +313,7 @@
 	position: fixed
 	display: none
 	z-index: 301
-	max-width: 1200px
-.m-close
-	position: absolute
-	top: -35px
-	right: 0px
-	cursor: pointer
+	width: 100%
 .input-group
 	display: block
 	margin-bottom: 15px
@@ -316,41 +329,7 @@
 	&__text
 		font-weight: lighter
 		font-size: .8em
-.contact-modal__corner-border-top,
-.contact-modal__corner-border-bottom
-	position: absolute
-	&:before,
-	&:after
-		content: ''
-		position: absolute
-.contact-modal__corner-border-top
-	width: 67%
-	&:before
-		top: 0
-		width: 100%
-		left: -30px
-		height: 0
-		border-bottom: 1px solid #000
-	&:after
-		top: 0
-		left: -30px
-		height: 77px
-		border-left: 1px solid #000
-.contact-modal__corner-border-bottom
-	bottom: -50px
-	right: -50px
-	width: 80%
-	height: 62px
-	&:before
-		bottom: 0
-		width: 100%
-		height: 0
-		border-bottom: 1px solid #000
-	&:after
-		top: 0
-		height: 100%
-		right: 0
-		border-right: 1px solid #000
+
 .contact-modal__heading
 	font-weight: lighter
 	text-align: center
@@ -1017,20 +996,26 @@
 		height: 100%
 	&-image
 		height: 100%
-		background-size: auto 125%
-		background-position: left center
+		background-size: contain
+		background-position: center
 		background-repeat: no-repeat
+		-webkit-filter: grayscale(100%)
+		filter: grayscale(100%)
 		+transition(.5s)
 		+phones
 			background-size: auto 155%
-			background-position: center center
 		+phones-portrait
-			background-position: left center
 			background-size: auto 125%
+		&:hover
+			-webkit-filter: grayscale(0)
+			filter: grayscale(0)
+	&.active .scroll-item__slider-image
+		-webkit-filter: grayscale(0)
+		filter: grayscale(0)
 	&.refreshed
 		.scroll-item__slider-image
 			background-position: center center
-			background-size: auto 100%
+			background-size: contain
 		+phones
 			.owl-prev
 				top: 40%
@@ -1054,8 +1039,15 @@
 			-webkit-transform: translateX(20px)
 			-moz-transform: translateX(20px)
 			-ms-transform: translateX(20px)
+			
 	.owl-stage-outer, .owl-stage, .owl-item
 		height: 100%
+	.owl-prev
+		top: 50%
+		left: -15px
+	.owl-next
+		top: 50%
+		right: 0
 	.owl-nav
 		> div
 			+transition(.5s)

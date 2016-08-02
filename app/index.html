@@ -295,7 +295,7 @@
             </div>
             <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
               <div data-layout="7" class="scroll-item__left-column scroll-item__left-column_flex">
-                <div data-title="allermuir" data-text="Lorem ipsum dolor sit amet." class="scroll-item__slider owl-carousel">
+                <div data-title="allermuir" data-text="Lorem ipsum dolor sit amet." class="scroll-item__slider owl-carousel scroll-item__slider_natural">
                   <div class="scroll-item__slider-item">
                     <div class="scroll-item__slider-image"><img src="img/final/SenatorGroup/Allermuir/Cardita_Hero-copy.jpg" alt="Allermuir"></div>
                   </div>
@@ -429,7 +429,7 @@
               <div data-layout="7" class="scroll-item__left-column scroll-item__left-column_flex">
                 <div data-animation="vertical-parallax-1" data-animation-type="onProgress" class="scroll-item__image-wrap"><img src="img/final/OFSBrands/Carolina/Carolina.jpg" alt="image" class="scroll-item__image"></div>
               </div>
-              <div data-layout="7" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex"><a href="http://carolinabusinessfurniture.com/" target="_blank" class="scroll-item__logo-section"><img src="img/manufacturers/OFSBrands/Carolina.gif" alt="Carolina" class="scroll-item__logo-image"></a>
+              <div data-layout="7" class="scroll-item__right-column scroll-item__text scroll-item__right-column_flex"><a href="http://carolinabusinessfurniture.com/" target="_blank" class="scroll-item__logo-section"><img src="img/manufacturers/OFSBrands/carolina.png" alt="Carolina" class="scroll-item__logo-image"></a>
                 <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.</p><a href="#" class="request-more">Request more info</a>
               </div>
             </div>
@@ -573,12 +573,12 @@
                   <div data-animation="vertical-parallax-1" data-animation-type="onProgress" class="scroll-item__image-wrap"><img src="img/quickships.png" alt="image" class="scroll-item__image"></div>
                 </div>
                 <p class="scroll-item__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur rem esse nostrum tenetur enim voluptates?</p>
-                <div class="brand-slider owl-carousel">
-                  <div class="brand-slider__item"><a href="http://www.thesenatorgroup.com/americas/resource-library/allermuir-xpress-brochure/"><img src="img/manufacturers/SenatorsGroup/SenatorGroup.jpg" alt=""></a></div>
-                  <div class="brand-slider__item"><a href="http://ofsbrands.com/products/quickship"><img src="img/manufacturers/OFSBrands/OFSBrands.jpg" alt=""></a></div>
-                  <div class="brand-slider__item"><a href="http://highmarkergo.com/"><img src="img/highmark.png" alt=""></a></div>
-                  <div class="brand-slider__item"><a href="http://www.peterpepper.com/"><img src="img/manufacturers/PeterPepper/peter_pepper.png" alt=""></a></div>
-                  <div class="brand-slider__item"><a href="http://izzyplus.com/"><img src="img/manufacturers/Izzy/izzyplus.jpg" alt=""></a></div>
+                <div class="brand-grid">
+                  <div class="brand-grid__item"><a href="http://www.thesenatorgroup.com/americas/resource-library/allermuir-xpress-brochure/"><img src="img/logos/The-Senator-Group.jpg" alt=""></a></div>
+                  <div class="brand-grid__item"><a href="http://izzyplus.com/"><img src="img/logos/Izzy-plus.jpg" alt=""></a></div>
+                  <div class="brand-grid__item"><a href="http://ofsbrands.com/products/quickship"><img src="img/logos/OFS-Brands.jpg" alt=""></a></div>
+                  <div class="brand-grid__item"><a href="http://highmarkergo.com/"><img src="img/logos/Highmark.jpg" alt=""></a></div>
+                  <div class="brand-grid__item"><a href="http://www.peterpepper.com/"><img src="img/logos/Peter-Pepper-Products.jpg" alt=""></a></div>
                 </div>
               </div>
             </div>
@@ -611,17 +611,21 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, ab?</p><a href="#" class="request-more">Request more info</a>
       </div>
       <div class="gallery-modal modal"></div>
-      <div class="contact-modal modal">
-        <div class="contact-modal__corner-border-top"></div>
-        <h2 class="contact-modal__heading">Thank you<br/>for your interest!</h2>
-        <form action="">
-          <input type="text" name="" placeholder="Your Name" class="input-group__name">
-          <input type="text" name="" placeholder="Email" class="input-group__email">
-          <input type="tel" name="" placeholder="Phone Number" class="input-group__tel">
-          <input type="submit" value="submit" class="input-group__submit">
-        </form>
-        <p class="contact-modal__text">Send us email<br/>or<br/>Call us</p><a href="tel:777777" class="contact-modal__tel">123-456-789</a>
-        <div class="contact-modal__corner-border-bottom"></div>
+      <div class="contact-modal modal closable">
+        <div class="scroll-item__columns-wrap scroll-item__columns-wrap_flex">
+          <div data-layout="contacts" class="scroll-item__full-column scroll-item__text scroll-item__full-column_flex">
+            <div class="m-close"></div>
+            <h2 class="scroll-item__subheading">Thank you for your interest</h2>
+            <p class="scroll-item__paragraph">if you wish contact us please fill out the form below and<br/>our representatives will git in touch you soon</p>
+            <form class="scroll-item__form scroll-item__form_right">
+              <input type="text" placeholder="Your Name">
+              <input type="text" placeholder="Email">
+              <input type="text" placeholder="Phone Number">
+              <textarea type="text" placeholder="Message"></textarea>
+              <input type="submit" value="submit">
+            </form>
+          </div>
+        </div>
       </div>
       <div class="fullpage-image"></div>
       <div class="debug">

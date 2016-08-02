@@ -275,7 +275,7 @@ html.no-js(lang='en')
                         h2.scroll-item__heading allermuir
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__left-column.scroll-item__left-column_flex(data-layout="7")
-                            .scroll-item__slider(data-title="allermuir", data-text="Lorem ipsum dolor sit amet.").owl-carousel
+                            .scroll-item__slider(data-title="allermuir", data-text="Lorem ipsum dolor sit amet.").owl-carousel.scroll-item__slider_natural
                                 .scroll-item__slider-item
                                     .scroll-item__slider-image
                                         img(src="img/final/SenatorGroup/Allermuir/Cardita_Hero-copy.jpg", alt="Allermuir")
@@ -401,7 +401,7 @@ html.no-js(lang='en')
                                 img.scroll-item__image(src="img/final/OFSBrands/Carolina/Carolina.jpg", alt="image")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="7")
                             a(href="http://carolinabusinessfurniture.com/", target="_blank").scroll-item__logo-section
-                                img.scroll-item__logo-image(src="img/manufacturers/OFSBrands/Carolina.gif" alt="Carolina")
+                                img.scroll-item__logo-image(src="img/manufacturers/OFSBrands/carolina.png" alt="Carolina")
                             p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
                             a(href="#").request-more Request more info
                 article.scroll-item#izzy
@@ -535,22 +535,22 @@ html.no-js(lang='en')
                                 .scroll-item__image-wrap(data-animation="vertical-parallax-1", data-animation-type="onProgress")
                                     img.scroll-item__image(src="img/quickships.png", alt="image")
                             p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur rem esse nostrum tenetur enim voluptates?
-                            .brand-slider.owl-carousel
-                                div.brand-slider__item
+                            .brand-grid
+                                div.brand-grid__item
                                     a(href="http://www.thesenatorgroup.com/americas/resource-library/allermuir-xpress-brochure/")
-                                        img(src="img/manufacturers/SenatorsGroup/SenatorGroup.jpg", alt="")
-                                div.brand-slider__item
-                                    a(href="http://ofsbrands.com/products/quickship")
-                                        img(src="img/manufacturers/OFSBrands/OFSBrands.jpg", alt="")
-                                div.brand-slider__item
-                                    a(href="http://highmarkergo.com/")
-                                        img(src="img/highmark.png", alt="")
-                                div.brand-slider__item
-                                    a(href="http://www.peterpepper.com/")
-                                        img(src="img/manufacturers/PeterPepper/peter_pepper.png", alt="")
-                                div.brand-slider__item
+                                        img(src="img/logos/The-Senator-Group.jpg", alt="")
+                                div.brand-grid__item
                                     a(href="http://izzyplus.com/")
-                                        img(src="img/manufacturers/Izzy/izzyplus.jpg", alt="")
+                                        img(src="img/logos/Izzy-plus.jpg", alt="")
+                                div.brand-grid__item
+                                    a(href="http://ofsbrands.com/products/quickship")
+                                        img(src="img/logos/OFS-Brands.jpg", alt="")
+                                div.brand-grid__item
+                                    a(href="http://highmarkergo.com/")
+                                        img(src="img/logos/Highmark.jpg", alt="")
+                                div.brand-grid__item
+                                    a(href="http://www.peterpepper.com/")
+                                        img(src="img/logos/Peter-Pepper-Products.jpg", alt="")
                             //- .scroll-item__text-bundle(data-layout="12")
                                 .scroll__item-text-bundle-item
                                     h3.scroll-item__subheading Senator Group
@@ -583,17 +583,18 @@ html.no-js(lang='en')
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, ab?
             a(href="#").request-more Request more info
         .gallery-modal.modal
-        .contact-modal.modal
-            .contact-modal__corner-border-top
-            h2.contact-modal__heading Thank you<br/>for your interest!
-            form(action="")
-                input(type="text", name="", placeholder="Your Name").input-group__name
-                input(type="text", name="", placeholder="Email").input-group__email
-                input(type="tel", name="", placeholder="Phone Number").input-group__tel
-                input(type="submit", value="submit").input-group__submit
-            p.contact-modal__text Send us email<br/>or<br/>Call us
-            a(href="tel:777777").contact-modal__tel 123-456-789
-            .contact-modal__corner-border-bottom
+        .contact-modal.modal.closable
+            .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                .scroll-item__full-column.scroll-item__text.scroll-item__full-column_flex(data-layout="contacts")
+                    .m-close
+                    h2.scroll-item__subheading Thank you for your interest
+                    p.scroll-item__paragraph if you wish contact us please fill out the form below and<br/>our representatives will git in touch you soon
+                    form.scroll-item__form.scroll-item__form_right
+                        input(type="text", placeholder="Your Name")
+                        input(type="text", placeholder="Email")
+                        input(type="text", placeholder="Phone Number")
+                        textarea(type="text", placeholder="Message")
+                        input(type="submit", value="submit")
         .fullpage-image
         .debug
             .debug__layouts
