@@ -11,4 +11,10 @@
 		flex-basis: 28%
 		max-width: 28%
 		img
-			width: 100%
+			width: 70%
+			filter: grayscale(100%)
+			-webkit-filter: grayscale(100%)
+			+transition(.5s)
+			&:hover
+				filter: grayscale(0)
+				-webkit-filter: grayscale(0)

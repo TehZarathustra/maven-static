@@ -355,6 +355,8 @@
 				} else {
 					$('body').mCustomScrollbar("disable");
 
+					self.addClass('reset-filter');
+
 					var coordinate = {
 							top: self.offset().top,
 							left: self.offset().left,
@@ -455,6 +457,7 @@
 				setTimeout(function() {
 					if (!keep) el.remove();
 					$('body').mCustomScrollbar("update");
+					if (origin) origin.removeClass('reset-filter');
 					setTimeout(function() {
 						if (origin) origin.removeClass('background-center');
 					}, 1500);

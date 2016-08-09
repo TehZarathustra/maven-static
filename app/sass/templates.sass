@@ -11,7 +11,13 @@
 		flex-basis: 28%
 		max-width: 28%
 		img
-			width: 100%
+			width: 70%
+			filter: grayscale(100%)
+			-webkit-filter: grayscale(100%)
+			+transition(.5s)
+			&:hover
+				filter: grayscale(0)
+				-webkit-filter: grayscale(0)
 .brand-slider
 	&__item
 		text-align: center
@@ -793,6 +799,11 @@
 		// z-index: 1
 		height: 90vh
 		width: 100%
+		-webkit-filter: grayscale(100%)
+		filter: grayscale(100%)
+		&:hover
+			-webkit-filter: grayscale(0)
+			filter: grayscale(0)
 		&.tapped
 			opacity: .7
 			&:before
@@ -875,7 +886,7 @@
 			transform: translateX(-15%)
 		&_bundle
 			position: absolute
-			overflow: hidden
+			// overflow: hidden
 		&_bundle-order-1
 			width: 35%
 			height: 35vh
@@ -915,6 +926,8 @@
 
 	&__logo-image
 		width: 100%
+		-webkit-filter: grayscale(100%)
+		filter: grayscale(100%)
 	&__full-column_layout-14
 		.scroll-item__paragraph
 			width: 60%
@@ -984,6 +997,11 @@
 
 .background-center
 	background-position: center !important
+
+.reset-filter
+	-webkit-filter: none !important
+	filter: none !important
+	z-index: 10
 
 .no-pseudo
 	&:before
