@@ -569,11 +569,20 @@ html.no-js(lang='en')
                             h2.scroll-item__subheading Thank you for your interest
                             p.scroll-item__paragraph if you wish contact us please fill out the form below and<br/>our representatives will git in touch you soon
                             form.scroll-item__form.scroll-item__form_right
-                                input(type="text", placeholder="Your Name")
-                                input(type="text", placeholder="Email")
-                                input(type="text", placeholder="Phone Number")
-                                textarea(type="text", placeholder="Message")
-                                input(type="submit", value="submit")
+                                label.scroll-item__group
+                                    .scroll-item__text Name
+                                    input(type="text")
+                                label.scroll-item__group
+                                    .scroll-item__text Email
+                                    input(type="text")
+                                label.scroll-item__group
+                                    .scroll-item__text Phone
+                                    input(type="text")
+                                label.scroll-item__group
+                                    .scroll-item__text Message
+                                    textarea(type="text", row="1")
+                                .submit-wrap
+                                    button(type="submit") Submit
                 .loader.loader_hidden
                     i.fa.fa-cog.fa-spin
         .page-overlay.closable
@@ -590,11 +599,20 @@ html.no-js(lang='en')
                     h2.scroll-item__subheading Thank you for your interest
                     p.scroll-item__paragraph if you wish contact us please fill out the form below and<br/>our representatives will git in touch you soon
                     form.scroll-item__form.scroll-item__form_right
-                        input(type="text", placeholder="Your Name")
-                        input(type="text", placeholder="Email")
-                        input(type="text", placeholder="Phone Number")
-                        textarea(type="text", placeholder="Message")
-                        input(type="submit", value="submit")
+                        label.scroll-item__group
+                            .scroll-item__text Name
+                            input(type="text")
+                        label.scroll-item__group
+                            .scroll-item__text Email
+                            input(type="text")
+                        label.scroll-item__group
+                            .scroll-item__text Phone
+                            input(type="text")
+                        label.scroll-item__group
+                            .scroll-item__text Message
+                            textarea(type="text", row="1")
+                        .submit-wrap
+                            button(type="submit") Submit
         .fullpage-image
         .debug
             .debug__layouts
@@ -608,7 +626,7 @@ html.no-js(lang='en')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     script.
       window.jQuery || document.write('<script src="vendor/jquery-1.11.2.min.js"><\\/script>')
-    script(async='', defer='', data-pin-hover='false', data-pin-round='true', data-pin-save='false', src='//assets.pinterest.com/js/pinit.js')
+    script(async='', defer='', data-pin-hover=false, data-pin-round='true', data-pin-save='false', src='//assets.pinterest.com/js/pinit.js')
     // build:js js/vendor.min.js
     // bower:js
     // endbower

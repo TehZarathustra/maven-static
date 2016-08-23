@@ -370,6 +370,10 @@
 		width: 100%
 		-webkit-filter: grayscale(100%)
 		filter: grayscale(100%)
+		+transition(.4s)
+		&:hover
+			-webkit-filter: grayscale(0)
+			filter: grayscale(0)
 	&__full-column_layout-14
 		.scroll-item__paragraph
 			width: 60%
@@ -392,12 +396,6 @@
 	width: 30%
 	padding-right: 8%
 	box-sizing: border-box
-	input, textarea
-		padding: .5em
-		width: 100%
-		margin-bottom: 10px
-		display: block
-		box-sizing: border-box
 	&_right
 		margin-left: 70%
 	+phones
@@ -407,6 +405,97 @@
 		&_right
 			margin: 0 auto
 		padding-right: 0
+	button[type='submit']
+		color: #000
+		letter-spacing: 1px
+		font-size: .9em
+		display: inline-block
+		margin: 1em 0 1em 0
+		border: none
+		background: none
+		padding: 2px 0
+		font-size: 1.1em
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			width: 100%
+			border-bottom: 1px solid rgba(0,0,0,.3)
+			bottom: 0
+			left: 0
+		&:after
+			content: ''
+			position: absolute
+			width: 0
+			border-bottom: 1px solid #000
+			bottom: 0
+			opacity: .6
+			left: 0
+			+transition(.5s)
+		&:hover
+			&:after
+				width: 100%
+
+.submit-wrap
+	text-align: left
+	padding-left: 5px
+	box-sizing: border-box
+
+.scroll-item__group
+	display: block
+	position: relative
+	margin-bottom: 20px
+	input
+		border: none
+		border-bottom: 1px
+		background: none
+		width: 100%
+		display: inline-block
+		box-sizing: border-box
+		padding: 2px
+		&:focus
+			outline: none
+	textarea
+		border: none
+		display: inline-block
+		box-sizing: border-box
+		padding: 2px
+		width: 100%
+		background: none
+		resize: none
+		&:focus
+			outline: none
+	.scroll-item__text
+		position: absolute
+		left: 5px
+		pointer-events: none
+		+transition(.4s)
+		color: gray
+		&.scroll-item__text_hidden
+			font-size: 15px
+			transform: translateX(-120%)
+			-webkit-transform: translateX(-120%)
+			-moz-transform: translateX(-120%)
+			+phones
+				opacity: 0
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		bottom: 0
+		border-bottom: 1px solid #000
+		width: 0
+		height: 1px
+		+transition(.4s)
+	&_active
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			border-bottom: 1px solid gray
+			width: 100%
+			height: 1px
 
 .scroll-item__paragraph
 	a

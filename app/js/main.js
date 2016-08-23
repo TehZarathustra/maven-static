@@ -624,6 +624,21 @@
 		});
 	}, 800);
 
+	// form focuse
+	$('input, textarea').focus(function() {
+		$(this).parent().find('.scroll-item__text').addClass('scroll-item__text_hidden');
+		$(this).parent().addClass('scroll-item__group_active');
+	});
+
+	// out
+	$('input, textarea').focusout(function() {
+		var el = $(this);
+		if (el.val().length < 1) {
+			el.parent().find('.scroll-item__text').removeClass('scroll-item__text_hidden');
+		}
+		$(this).parent().removeClass('scroll-item__group_active');
+	});
+
 	// global helpers
 	function setImagesAsBackground(node) {
 		var images = node;
