@@ -8,8 +8,11 @@
 	align-items: center
 	flex-wrap: wrap
 	&__item
+		margin-top: 10px
 		flex-basis: 28%
 		max-width: 28%
+		margin-bottom: 10px
+		text-align: center
 		img
 			width: 70%
 			filter: grayscale(100%)
@@ -18,6 +21,13 @@
 			&:hover
 				filter: grayscale(0)
 				-webkit-filter: grayscale(0)
+		a
+			text-decoration: none
+			text-transform: uppercase
+			font-size: 1.3em
+			font-weight: lighter
+			color: #000
+			letter-spacing: 2.5px
 .brand-slider
 	&__item
 		text-align: center
@@ -213,6 +223,10 @@
 	background-size: cover
 	+transition(.5s)
 	z-index: 400
+	+phones
+		background-size: contain
+		background-position: center
+		+transition(.01s)
 
 .intro-slider__image
 	cursor: url(../img/arrows.png), auto

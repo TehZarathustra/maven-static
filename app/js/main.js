@@ -153,8 +153,8 @@
 
 	setImagesAsBackground($('.scroll-item__image'));
 	setImagesAsBackground($('.scroll-item__slider img'));
-	setImagesAsBackground($('.intro-slider__image img'));
-	setImagesAsBackground($('.intro-slider__sub-image img'));
+	setImagesAsBackground($('.intro-slider__image img'), true);
+	setImagesAsBackground($('.intro-slider__sub-image img'), true);
 
 	// menu toggle
 	(function () {
@@ -640,13 +640,21 @@
 	});
 
 	// global helpers
-	function setImagesAsBackground(node) {
+	function setImagesAsBackground(node, hasMobile) {
 		var images = node;
 
 		images.each(function() {
-			var src = $(this).attr('src');
-			$(this).parent().css('background-image', 'url(' + src + ')');
-			$(this).hide();
+			var el = $(this),
+				src;
+
+			if (hasMobile) {
+				src = mobileCheck ? el.data('mobile') : el.data('desktop');
+			} else {
+				src = el.attr('src');
+			}
+
+			el.parent().css('background-image', 'url(' + src + ')');
+			el.hide();
 		});
 	}
 })(jQuery);
