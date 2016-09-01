@@ -115,6 +115,21 @@
 				.on('progress', function (e) {
 					var el = _getScrollNodes(this.triggerElement().id);
 
+					if (el.id === 'who' && mobileCheck) {
+						var node = node || el.node.find('.tab-slider__images-list'),
+							topPos;
+
+						if (e.progress.toFixed(2) >= 1) {
+							topPos = 100;
+						} else {
+							topPos = e.progress.toFixed(2).replace(/\d\./, '')
+						}
+
+						node.css({
+							'top': 'calc(' + topPos + '% - 50px)' 
+						});
+					}
+
 					el.node.find('.scroll-item__image-wrap').each(function() {
 						if ($(this).data('animationType') === 'onProgress') {
 							var animation = $(this).data('animation');

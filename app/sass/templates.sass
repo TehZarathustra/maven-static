@@ -1238,6 +1238,7 @@
 	align-items: stretch
 	width: 100%
 	min-height: 90vh
+	position: relative
 	+tablet-landskape
 		flex-direction: column
 
@@ -1253,7 +1254,7 @@
 	width: 70%
 	position: relative
 	overflow: hidden
-	+transition(.8s)
+	transition: background .8s ease-in-out, top .2s linear
 	background:
 		image: url(../img/Original.jpg)
 		position: center
@@ -1282,6 +1283,9 @@
 	&_pos-6
 		background-size: 230%
 		background-position: 0 0
+	+phones
+		position: absolute
+
 
 .tab-slider__image-item,
 .tab-slider__image
@@ -1415,6 +1419,7 @@
 	h3
 		font-size: 1.2em
 	+phones
+		opacity: 1
 		font-size: .8em
 
 .tab-slider__select-list
