@@ -386,7 +386,7 @@ module.exports = function() {
 	// scrollbar
 	(function() {
 		var scrollPosition = 0,
-			isHeaderHidden = false;
+			isIntroHidden = false;
 
 		$('body').mCustomScrollbar({
 		    theme: 'minimal-dark',
@@ -398,13 +398,15 @@ module.exports = function() {
 					var currentPosition = this.mcs.top;
 					if (currentPosition < scrollPosition) {
 						// scroll down
-						if (!isHeaderHidden) {
-							hideHeader();
+						if (!isIntroHidden) {
+							setTimeout(function() {
+								hideIntro('scroll');
+							}, 100);
 
-							isHeaderHidden = true;
+							isIntroHidden = true;
 						}
 
-						hideIntro();
+						hideHeader();
 					} else {
 						// scroll up
 						showHeader();

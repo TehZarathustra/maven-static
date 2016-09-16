@@ -1,9 +1,15 @@
-function hideIntro() {
+function hideIntro(scroll) {
 	if ($('.intro-slider').hasClass('intro-hidden')) {
-		return;
+		return false;
+	}
+
+	if (scroll) {
+		$('body').mCustomScrollbar('scrollTo', '#about');
 	}
 
 	$('.intro-slider').addClass('intro-hidden');
+
+	$('body').mCustomScrollbar('disable');
 
 	var container = $('#about .scroll-item__left-column');
 

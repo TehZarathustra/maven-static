@@ -18,9 +18,6 @@
 
 	if (!mobileCheck) {
 		enableTransition();
-		setTimeout(function() {
-			// $('body').mCustomScrollbar("disable");
-		}, 500);
 	}
 
 	// debug: layouts
