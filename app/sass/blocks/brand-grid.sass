@@ -1,6 +1,6 @@
 .brand-grid
 	display: flex
-	justify-content: space-around
+	justify-content: space-between
 	align-content: space-around
 	max-width: 1300px
 	margin: 0 auto
@@ -9,10 +9,12 @@
 	flex-wrap: wrap
 	&__item
 		margin-top: 10px
-		flex-basis: 28%
 		max-width: 28%
 		margin-bottom: 10px
 		text-align: center
+		+phones
+			max-width: 100%
+			width: 100%
 		img
 			width: 70%
 			filter: grayscale(100%)
@@ -24,7 +26,7 @@
 		a
 			text-decoration: none
 			text-transform: uppercase
-			font-size: 1.3em
+			font-size: 1.2em
 			font-weight: lighter
 			color: #000
 			letter-spacing: 2.5px
