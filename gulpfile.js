@@ -11,6 +11,10 @@ var gulp = require('gulp'),
 	flatten = require('gulp-flatten'),
 	wiredep = require('wiredep').stream,
 	jade = require('gulp-jade'),
+	gutil = require('gulp-util'),
+	source = require('vinyl-source-stream'),
+	browserify = require('browserify'),
+	buffer = require('vinyl-buffer'),
 	browserSync = require('browser-sync').create();
 
 var onError = function(err) {
@@ -82,7 +86,7 @@ gulp.task('serve', ['sass'], function() {
 
     gulp.watch(['app/sass/*.sass','app/sass/blocks/*.sass'], ['sass']);
 	gulp.watch(['app/jade/*.jade'], ['bower', browserSync.reload]);
-	gulp.watch(['app/js/main.js', 'app/js/plugins.js'], ['scripts', browserSync.reload]);
+	gulp.watch(['app/js/main.js', 'app/js/plugins.js', 'app/js/blocks/*.js'], ['js', browserSync.reload]);
 });
 
 
@@ -124,16 +128,14 @@ gulp.task('sass', ['blocks'], function() {
 
 // scripts
 
-gulp.task('plugins', function() {
-	return gulp.src('./app/js/plugins/*.js')
-	.pipe(concat('plugins.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('./app/js'));
-});
-
-gulp.task('scripts', function() {
-	return gulp.src('./app/js/main.js')
-	.pipe(concat('main.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('./app/js'))
+gulp.task('js', function() {
+	browserify('./app/js/main.js')
+		.bundle()
+		.on('error', function (error) {
+			gutil.log(error);
+		})
+		.pipe(source('main.min.js'))
+		.pipe(buffer())
+		.pipe(uglify())
+		.pipe(gulp.dest('./app/js'))
 });
