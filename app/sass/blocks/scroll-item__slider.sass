@@ -1,6 +1,8 @@
 .scroll-item__slider
 	cursor: pointer
 	height: 80vh
+	+phones
+		height: 40vh
 	&-item
 		height: 100%
 	&-image
@@ -12,9 +14,7 @@
 		filter: grayscale(100%)
 		+transition(.5s)
 		+phones
-			background-size: auto 155%
-		+phones-portrait
-			background-size: auto 125%
+			background-size: 100% !important
 		&:hover
 			-webkit-filter: grayscale(0)
 			filter: grayscale(0)

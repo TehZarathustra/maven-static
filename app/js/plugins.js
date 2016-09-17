@@ -401,7 +401,7 @@ module.exports = function() {
 						if (!isIntroHidden) {
 							setTimeout(function() {
 								hideIntro('scroll');
-							}, 100);
+							}, 0);
 
 							isIntroHidden = true;
 						}

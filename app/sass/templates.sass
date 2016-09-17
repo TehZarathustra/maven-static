@@ -26,10 +26,14 @@
 		a
 			text-decoration: none
 			text-transform: uppercase
-			font-size: 1.2em
+			font-size: 1em
 			font-weight: lighter
 			color: #000
 			letter-spacing: 2.5px
+			+transition(.4s)
+		&_inactive
+			a
+				color: #c7c7c7
 
 .brand-slider
 	&__item
@@ -633,6 +637,8 @@
 		// overflow: hidden
 		position: relative
 		min-height: 90vh
+		+phones
+			min-height: auto
 		&_layout-1
 		&_layout-2
 			order: 2
@@ -692,6 +698,10 @@
 			align-items: center
 		&_layout-5
 			text-align: center
+		&_layout-4
+			+phones
+				height: 45vh
+				min-height: auto
 		+phones
 			flex-wrap: wrap
 		&_layout-contacts
@@ -752,6 +762,7 @@
 		&_layout-6
 			width: 30%
 			+phones
+				height: 45vh
 				width: 100% !important
 
 		&_layout-10
@@ -778,6 +789,11 @@
 			.scroll-item__image-wrap
 				height: 62vh
 				background-size: auto 130% !important
+				+phones
+					background-size: auto 110% !important
+		&_layout-11
+			+phones
+				height: 40vh
 		&_layout-14
 			justify-content: space-between
 			align-items: center
@@ -801,6 +817,8 @@
 				background-size: auto 115%
 				background-position: center top
 				+transition(.1s)
+				+phones
+					background-size: 100%
 			&_vertical-parallax-2
 				// +transition(.2s)
 				// transform: translateY(0)
@@ -818,6 +836,9 @@
 		width: 100%
 		-webkit-filter: grayscale(100%)
 		filter: grayscale(100%)
+		+phones
+			height: 45vh
+			background-size: 100% !important
 		&:hover
 			-webkit-filter: grayscale(0)
 			filter: grayscale(0)
@@ -862,6 +883,8 @@
 		&_vertical-parallax-1
 			background-size: auto 115%
 			background-position: center top
+			+phones
+				background-size: 100%
 			+transition(.1s)
 		&_vertical-parallax-2
 			+transition(.2s)
@@ -1119,6 +1142,8 @@
 .scroll-item__slider
 	cursor: pointer
 	height: 80vh
+	+phones
+		height: 40vh
 	&-item
 		height: 100%
 	&-image
@@ -1130,9 +1155,7 @@
 		filter: grayscale(100%)
 		+transition(.5s)
 		+phones
-			background-size: auto 155%
-		+phones-portrait
-			background-size: auto 125%
+			background-size: 100% !important
 		&:hover
 			-webkit-filter: grayscale(0)
 			filter: grayscale(0)
@@ -1185,6 +1208,7 @@
 			-moz-transform: translateX(10px)
 			-ms-transform: translateX(10px)
 			position: absolute
+
 .scroll-items-wrapper
 	height: 90%
 

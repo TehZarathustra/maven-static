@@ -2,6 +2,7 @@
 	// requires
 	var pluginsInit = require('./plugins')();
 	var hideIntro = require('./blocks/intro-slider');
+	var brandGrid = require('./blocks/brand-grid')();
 
 	// globals
 	var mobileCheck;
