@@ -169,6 +169,9 @@
 
 			function resizeForm() {
 				jQuery('.pops').center();
+
+				setImagesAsBackground($('.intro-slider__image img'), true);
+				setImagesAsBackground($('.intro-slider__sub-image img'), true);
 			}
 
 			$('.m-close, .page-overlay, .modal.closable').bind(mobileCheck ? 'touchend' : 'click', function (e) {
@@ -611,7 +614,7 @@
 				src;
 
 			if (hasMobile) {
-				src = mobileCheck ? el.data('mobile') : el.data('desktop');
+				src = mobileCheck && $('body').width() < 450 ? el.data('mobile') : el.data('desktop');
 			} else {
 				src = el.attr('src');
 			}
