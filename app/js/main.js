@@ -146,7 +146,8 @@
 	// modals
 	(function($) {
 		$(function() {
-			$(window).on("resize", resizeForm);
+			$(window).on('resize', resizeForm);
+
 			jQuery.fn.center = function(parent) {
 				if (parent) {
 					parent = this.parent();
@@ -164,16 +165,18 @@
 				jQuery('.pops').center();
 			}
 
-			$('.m-close, .page-overlay, .modal.closable').bind(mobileCheck ? 'touchend' : 'click', function(){
+			$('.m-close, .page-overlay, .modal.closable').bind(mobileCheck ? 'touchend' : 'click', function (e) {
+				if ($(e.target).is('input') || $(e.target).is('textarea')) {
+					return;
+				}
+
 				$('.page-overlay, .modal').fadeOut(500);
 				$('.page-overlay').removeClass('closable-show');
 				$('.modal').removeClass('closable-show');
-				destroySlideShow();
-				$('body').mCustomScrollbar("update");
-			});
 
-			$('.modal input, .modal textarea').bind(mobileCheck ? 'touchend' : 'click', function() {
-				return false;
+				destroySlideShow();
+
+				$('body').mCustomScrollbar("update");
 			});
 
 			var inClick = 0;
@@ -183,10 +186,11 @@
 				gallery = gallery || '';
 				$(trigger).bind(mobileCheck ? 'touchend' : 'click', function(e) {
 					var self = $(this);
-					$('body').mCustomScrollbar("disable");
 					e.preventDefault();
 
-					if (mobileCheck && trigger != '.nav-menu__telephone') {
+					$('body').mCustomScrollbar('disable');
+
+					if (mobileCheck && trigger != '.request-more') {
 						inClick++;
 
 						if (inClick == 1) {
@@ -295,7 +299,7 @@
 						'background-image': 'url(' + self.find('img').attr('src') + ')'
 					}).fadeIn(1000);
 
-					$('body').mCustomScrollbar("disable");
+					$('body').mCustomScrollbar('disable');
 
 					pin.fillMeta(self);
 					pin.show();
@@ -306,7 +310,7 @@
 					click = 0;
 					self.removeClass(activeClass);
 				} else {
-					$('body').mCustomScrollbar("disable");
+					$('body').mCustomScrollbar('disable');
 
 					self.addClass('reset-filter');
 
@@ -340,7 +344,7 @@
 				activeClass = 'scroll-item__slider_active';
 
 			if (!self.hasClass(activeClass)) {
-				$('body').mCustomScrollbar("disable");
+				$('body').mCustomScrollbar('disable');
 				var coordinate = {
 					top: self.offset().top,
 					left: self.offset().left,
