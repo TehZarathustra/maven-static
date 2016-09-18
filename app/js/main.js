@@ -3,12 +3,14 @@
 	var pluginsInit = require('./plugins')();
 	var hideIntro = require('./blocks/intro-slider');
 	var brandGrid = require('./blocks/brand-grid')();
+	var hideAddressBar = require('./blocks/hide-bar');
 
 	// globals
 	var mobileCheck;
 
 	if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		mobileCheck = true;
+		hideAddressBar(this);
 	} else {
 		mobileCheck = false;
 	};
