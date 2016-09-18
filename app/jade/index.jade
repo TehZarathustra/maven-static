@@ -614,15 +614,8 @@ html.no-js(lang='en')
                         .submit-wrap
                             button(type="submit") Submit
         .fullpage-image
-        .debug
-            .debug__layouts
-                p.debug__title Layouts:
-                label.debug__item 1
-                    input.debug__radio(checked, type="radio", name="layout", value="1")
-                label.debug__item 2
-                    input.debug__radio(type="radio", name="layout", value="2")
-                label.debug__item 3
-                    input.debug__radio(type="radio", name="layout", value="3")
+        .loading-screen
+            i.fa.fa-circle-o-notch.fa-spin
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     script.
       window.jQuery || document.write('<script src="vendor/jquery-1.11.2.min.js"><\\/script>')
