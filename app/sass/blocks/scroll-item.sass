@@ -1,6 +1,6 @@
 .scroll-item
 	padding: 0 0 100px 0
-	+phones
+	+phones-portrait
 		margin-bottom: 100px
 	&__heading-wrap
 		text-align: center
@@ -48,18 +48,18 @@
 			justify-content: space-between
 			align-items: center
 			+transition(.52s)
-			+phones
+			+phones-portrait
 				min-height: 0
 				flex-direction: row
 				flex-wrap: wrap
 	&__left-column
 		+transition(.52s)
 		width: 40%
-		// overflow: hidden
 		position: relative
 		min-height: 90vh
-		+phones
+		+phones-portrait
 			min-height: auto
+			order: 2 !important
 		&_layout-1
 		&_layout-2
 			order: 2
@@ -73,7 +73,7 @@
 			width: 65%
 		&_layout-8
 			width: 65%
-		+phones
+		+phones-portrait
 			width: 100% !important
 			flex-shrink: 0
 	&__right-column
@@ -100,7 +100,7 @@
 		&_layout-8
 			text-align: center
 			width: 30%
-		+phones
+		+phones-portrait
 			width: 100% !important
 			flex-shrink: 0
 			padding: 0
@@ -120,10 +120,10 @@
 		&_layout-5
 			text-align: center
 		&_layout-4
-			+phones
+			+phones-portrait
 				height: 45vh
 				min-height: auto
-		+phones
+		+phones-portrait
 			flex-wrap: wrap
 		&_layout-contacts
 			align-items: center
@@ -131,14 +131,14 @@
 				image: url(../img/Request-More-Info.jpg)
 				position: center
 				size: cover
-			+phones
+			+phones-portrait
 				background: none
 			text-align: right
 			h2, p
 				margin-right: 8%
 			h2
 				margin-top: 20%
-			+phones
+			+phones-portrait
 				h2, p
 					margin-right: 0
 				text-align: center
@@ -150,16 +150,16 @@
 			font-weight: lighter
 		&_layout-6
 			width: 30%
-		+phones
+		+phones-portrait
 			width: 100% !important
 		&_layout-13
 			width: 35%
-			+phones
+			+phones-portrait
 				width: 100%
 	&__image-bundle
 		height: 100vh
 		display: flex
-		+phones
+		+phones-portrait
 			width: 100% !important
 		&_layout-4
 			align-items: flex-end
@@ -177,15 +177,16 @@
 				height: 70%
 				&:after
 					text-align: right
-			+phones
+			+phones-portrait
 				flex-wrap: wrap
 				.scroll-item__image-wrap
 					height: 40% !important
 					width: 100% !important
 		&_layout-6
 			width: 30%
-			+phones
+			+phones-portrait
 				height: 45vh
+				order: 1
 				width: 100% !important
 
 		&_layout-10
@@ -193,11 +194,12 @@
 			align-items: center
 			+tablet-landskape
 				margin-top: 150px
-			+phones
+			+phones-portrait
 				flex-wrap: wrap
+				margin-top: 0
 			.scroll-item__image-wrap
 				height: 400px
-				+phones
+				+phones-portrait
 					width: 100% !important
 					height: 200px !important
 			.scroll-item__image-wrap:nth-child(1)
@@ -212,10 +214,10 @@
 			.scroll-item__image-wrap
 				height: 62vh
 				background-size: auto 130% !important
-				+phones
+				+phones-portrait
 					background-size: auto 110% !important
 		&_layout-11
-			+phones
+			+phones-portrait
 				height: 40vh
 		&_layout-14
 			justify-content: space-between
@@ -230,7 +232,7 @@
 				height: 70%
 				&:after
 					text-align: right
-			+phones
+			+phones-portrait
 				flex-wrap: wrap
 				.scroll-item__image-wrap
 					height: 40% !important
@@ -240,7 +242,7 @@
 				background-size: auto 115%
 				background-position: center top
 				+transition(.1s)
-				+phones
+				+phones-portrait
 					background-size: 100%
 			&_vertical-parallax-2
 				// +transition(.2s)
@@ -259,7 +261,7 @@
 		width: 100%
 		-webkit-filter: grayscale(100%)
 		filter: grayscale(100%)
-		+phones
+		+phones-portrait
 			height: 45vh
 			background-size: 100% !important
 		&:hover
@@ -292,7 +294,7 @@
 				transform: translateY(-50%) translateX(-50%)
 				-webkit-transform: translateY(-50%) translateX(-50%)
 				-moz-transform: translateY(-50%) translateX(-50%)
-		+phones
+		+phones-portrait
 			background-position: center
 			transform: none !important
 			-webkit-transform: none !important
@@ -306,7 +308,7 @@
 		&_vertical-parallax-1
 			background-size: auto 115%
 			background-position: center top
-			+phones
+			+phones-portrait
 				background-size: 100%
 			+transition(.1s)
 		&_vertical-parallax-2
@@ -316,7 +318,7 @@
 			+transition(.2s)
 			margin-top: 100px
 		&_fullscreen
-			
+
 		&_shortened
 			width: 90%
 		&_gallery-trigger
@@ -366,7 +368,7 @@
 			left: 0
 			width: 51%
 			height: 40vh
-		+phones
+		+phones-portrait
 			transform: none !important
 			transition: none !important
 			width: 100% !important
@@ -406,7 +408,7 @@
 		text-align: left
 		box-sizing: border-box
 		padding: 0 1em 1em 1em
-	+phones
+	+phones-portrait
 		display: block
 	&_layout-6
 		flex-direction: column
@@ -419,7 +421,7 @@
 	box-sizing: border-box
 	&_right
 		margin-left: 70%
-	+phones
+	+phones-portrait
 		width: 90%
 		textarea
 			display: none
@@ -497,7 +499,7 @@
 			transform: translateX(-120%)
 			-webkit-transform: translateX(-120%)
 			-moz-transform: translateX(-120%)
-			+phones
+			+phones-portrait
 				opacity: 0
 	&:before
 		content: ''

@@ -1,7 +1,7 @@
 .scroll-item__slider
 	cursor: pointer
 	height: 80vh
-	+phones
+	+phones-portrait
 		height: 40vh
 	&-item
 		height: 100%
@@ -13,7 +13,7 @@
 		-webkit-filter: grayscale(100%)
 		filter: grayscale(100%)
 		+transition(.5s)
-		+phones
+		+phones-portrait
 			background-size: 100% !important
 		&:hover
 			-webkit-filter: grayscale(0)
@@ -25,7 +25,7 @@
 		.scroll-item__slider-image
 			background-position: center center
 			background-size: contain
-		+phones
+		+phones-portrait
 			.owl-prev
 				top: 40%
 				left: 5px
@@ -48,7 +48,7 @@
 			-webkit-transform: translateX(20px)
 			-moz-transform: translateX(20px)
 			-ms-transform: translateX(20px)
-			
+
 	.owl-stage-outer, .owl-stage, .owl-item
 		height: 100%
 	.owl-prev
