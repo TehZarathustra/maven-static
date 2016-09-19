@@ -383,7 +383,7 @@ module.exports = function() {
 			    onScrollStart: function(){
 			    	scrollPosition = this.mcs.top;
 
-			    	if (this.mcs.top < -1183 && this.mcs.top > -1870) {
+			    	if (this.mcs.top < -1183 && this.mcs.top > -1870 && mobileCheck && $('body').width() < 400) {
 			    		console.log('true');
 			    		$('.tab-slider').addClass('fixed');
 			    	} else {
