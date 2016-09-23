@@ -1,6 +1,6 @@
 module.exports = function (win) {
 	var doc = win.document;
-   	
+
 	// If there's a hash, or addEventListener is undefined, stop here
 	if(!location.hash && win.addEventListener) {
 		//scroll to 1
@@ -15,7 +15,7 @@ module.exports = function (win) {
 					clearInterval(bodycheck);
 					scrollTop = getScrollTop();
 					win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-				}	
+				}
 			}, 15);
 		win.addEventListener('load', function () {
 			setTimeout(function () {
