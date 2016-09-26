@@ -1,8 +1,0 @@
-node_modules
-.sass-cache
-app/css
-app/components
-app/.editorconfig
-app/js/main.min.js
-.idea
-.gitignore
