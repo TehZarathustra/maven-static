@@ -379,6 +379,8 @@ module.exports = function() {
 			$('.tab-slider__images-wrapper').css('min-height', imageListHeight + 'px');
 		}
 
+		if (mobileCheck) return;
+
 		$('body').mCustomScrollbar({
 		    theme: 'minimal-dark',
 		    callbacks: {
