@@ -80,31 +80,6 @@ module.exports = function() {
 			for (var i = 0, l = items.length; i < l; i++) {
 				_makeScene(items[i]);
 			}
-
-			// loader
-			// new ScrollMagic.Scene({
-			// 		triggerElement: '.loader',
-			// 		triggerHook: 'onEnter'
-			// 	})
-			// 	.addTo(controller)
-			// 	.on('enter leave', function (e) {
-			// 		if (e.type == 'enter') {
-			// 			if (!dataFlag) {
-
-			// 				$('.loader').removeClass('loader_hidden');
-
-			// 				setTimeout(function() {
-			// 					$('.scroll-items-wrapper').append(_fillTemplate());
-			// 					var item = document.querySelectorAll('article.scroll-item');
-			// 					_makeScene(item[item.length - 1]);
-			// 					$('.loader').hide();
-			// 				}, 1000);
-
-			// 			}
-
-			// 			dataFlag = true;
-			// 		}
-			// 	});
 		}
 
 		// make generic scene
