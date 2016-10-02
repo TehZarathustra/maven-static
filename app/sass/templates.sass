@@ -229,7 +229,7 @@
 	background-size: cover
 	+transition(.5s)
 	z-index: 400
-	+phones
+	+phones-portrait
 		background-size: contain
 		background-position: center
 		background-repeat: no-repeat
@@ -726,7 +726,8 @@
 			background:
 				image: url(../img/Request-More-Info.jpg)
 				position: center
-				size: cover
+				size: contain
+				repeat: no-repeat
 			+phones-portrait
 				background: none
 			text-align: right
