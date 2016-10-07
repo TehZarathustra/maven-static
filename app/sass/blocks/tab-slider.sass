@@ -19,6 +19,15 @@
 .tab-slider__images-wrapper
 	width: 70%
 	position: relative
+	+phones-portrait
+		width: 100%
+	&.cloned-image
+		position: absolute
+		top: 0
+		z-index: 1
+		&.cloned-fixed
+			position: fixed
+			width: 90%
 
 .tab-slider__images-list
 	width: 100%
