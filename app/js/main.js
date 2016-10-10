@@ -651,11 +651,12 @@
 			}
 
 			if (mobileCheck && clientWidthIsPortrait && imageOffsetTop) {
-				console.log(scroller >= imageOffsetTop && scroller <= (whoSectionOffset + whoSectionHeight), clonedImage);
 				if (scroller >= imageOffsetTop && scroller <= (whoSectionOffset + whoSectionHeight)) {
 					clonedImage.addClass('cloned-fixed');
+					image.addClass('hide-original');
 				} else {
 					clonedImage.removeClass('cloned-fixed');
+					image.removeClass('hide-original');
 				}
 			}
 
