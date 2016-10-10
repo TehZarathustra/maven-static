@@ -7,6 +7,7 @@
 
 	// globals
 	var mobileCheck;
+	var introIsHidden;
 
 	if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		mobileCheck = true;
@@ -97,6 +98,9 @@
 	setTimeout(function() {
 		if (window.location.href.split('#')[1] && window.location.href.split('#')[1] !== 'about') {
 			hideIntro();
+			setTimeout(function() {
+				introIsHidden = true;
+			}, 2000);
 			var target = window.location.href.split('#')[1];
 			setTimeout(function() {
 				$('body').mCustomScrollbar("update");
@@ -109,6 +113,9 @@
 	(function() {
 		$('.intro-slider').click(function() {
 			hideIntro();
+			setTimeout(function() {
+				introIsHidden = true;
+			}, 2000);
 		});
 	})();
 
@@ -614,10 +621,21 @@
 
 		var image = $('.tab-slider__images-wrapper');
 		var clonedImage = image.clone().addClass('cloned-image');
-		var whoSectionOffset = parseInt($('article#who').offset().top.toFixed(0));
-		var whoSectionHeight = $('article#who').height();
-		var imageOffsetTop = parseInt($('.tab-slider').offset().top.toFixed(0));
+		var whoSectionOffset;
+		var whoSectionHeight;
+		var imageOffsetTop;
 		var clientWidthIsPortrait = $('body').width() < 450;
+
+		var checkForIntro = setInterval(function() {
+			if (introIsHidden) {
+				whoSectionOffset = parseInt($('article#who').offset().top.toFixed(0));
+				whoSectionHeight = $('article#who').height();
+				imageOffsetTop = parseInt($('.tab-slider').offset().top.toFixed(0));
+
+				clearInterval(checkForIntro);
+			}
+		}, 2000);
+
 
 		if (mobileCheck) {
 			$('.tab-slider').append(clonedImage);
@@ -632,7 +650,8 @@
 				$('.left-pane').filter(':not(:animated)').removeClass('hide_header');
 			}
 
-			if (mobileCheck && clientWidthIsPortrait) {
+			if (mobileCheck && clientWidthIsPortrait && imageOffsetTop) {
+				console.log(scroller >= imageOffsetTop && scroller <= (whoSectionOffset + whoSectionHeight), clonedImage);
 				if (scroller >= imageOffsetTop && scroller <= (whoSectionOffset + whoSectionHeight)) {
 					clonedImage.addClass('cloned-fixed');
 				} else {
@@ -643,7 +662,7 @@
 			previousScroll = scroller;
 
 		});
-	}, 3000);
+	}, 1000);
 
 	// global helpers
 	function setImagesAsBackground(node, hasMobile) {
