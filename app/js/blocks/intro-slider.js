@@ -1,4 +1,5 @@
 function hideIntro(scroll) {
+	// $(selector).mCustomScrollbar('stop');
 	if ($('.intro-slider').hasClass('intro-hidden')) {
 		return false;
 	}
@@ -8,8 +9,6 @@ function hideIntro(scroll) {
 	}
 
 	$('.intro-slider').addClass('intro-hidden');
-
-	$('body').mCustomScrollbar('disable');
 
 	var container = $('#about .scroll-item__left-column');
 
@@ -58,7 +57,6 @@ function hideIntro(scroll) {
 			}, 100);
 		}
 
-		$('body').mCustomScrollbar("update");
 	}, 2000);
 }
 

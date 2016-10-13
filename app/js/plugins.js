@@ -7,6 +7,7 @@ module.exports = function() {
 		mobileCheck = true;
 	} else {
 		mobileCheck = false;
+		$('body').addClass('stop-scrolling');
 	};
 
 	function showHeader() {
@@ -356,6 +357,7 @@ module.exports = function() {
 
 		if (mobileCheck) return;
 
+		setTimeout(function() {
 		$('body').mCustomScrollbar({
 		    theme: 'minimal-dark',
 		    callbacks: {
@@ -404,5 +406,6 @@ module.exports = function() {
 		    }
 
 		});
+		}, 1000);
 	})();
 };
