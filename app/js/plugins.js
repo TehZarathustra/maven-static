@@ -166,7 +166,6 @@ module.exports = function() {
 						el.barParent.show();
 
 						el.link.removeClass('nav-menu__link_black');
-						// el.link.parent().find('.thirdmenu').addClass('thirdmenu_hidden');
 
 						if (el.subBarParent) el.subBarParent.show();
 
@@ -203,6 +202,7 @@ module.exports = function() {
 				})
 
 				.on('start end', function (e) {
+					hideSlideOuts();
 					var el = _getScrollNodes(this.triggerElement().id);
 
 					if (e.type != 'start' && !el.link.hasClass('nav-menu__link_black')) {
@@ -343,6 +343,30 @@ module.exports = function() {
 			return CONTENT_BLOCK.width();
 		}
 	})();
+
+	// slide out menu items
+	(function() {
+		var slideOutItems = $('.slide-out-menu'),
+			slideOutPhone = $('.nav-menu__telephone');
+
+		slideOutItems.click(function (e) {
+			e.preventDefault();
+
+			$(this).toggleClass('slide-out-menu_active');
+			$('#' + $(this).data('anchor')).toggleClass('scroll-item_slide-out_active');
+		});
+
+		slideOutPhone.click(function (e) {
+			e.preventDefault();
+
+			$('#' + $(this).data('anchor')).toggleClass('scroll-item_slide-out_active');
+		});
+	})();
+
+	function hideSlideOuts() {
+		$('.slide-out-menu').removeClass('slide-out-menu_active');
+		$('.scroll-item_slide-out').removeClass('scroll-item_slide-out_active');
+	}
 
 	// scrollbar
 	(function() {

@@ -34,10 +34,10 @@ html.no-js(lang='en')
             .logo
                 a.logo__link(href="/")
                     img.logo__image(src="img/logo.png", alt="logo")
-            //- a.nav-menu__link.nav-menu__link_default contact
+            a.nav-menu__link.nav-menu__link_default.slide-out-menu(data-anchor="contact") contact
             .nav-menu
                 .nav-menu__toggle
-                a.nav-menu__telephone(href="#")
+                a.nav-menu__telephone(href="#", data-anchor="contact")
 
                 nav.nav-menu__container
                     ul.nav-menu__list
@@ -239,7 +239,7 @@ html.no-js(lang='en')
                                     a(href="mailto:esther@mavenwest.com") esther@mavenwest.com
                                     a(href="tel:#") 916-591-4348
 
-                article.scroll-item#contact
+                article.scroll-item#contact.scroll-item_slide-out
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading contact
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
@@ -247,7 +247,6 @@ html.no-js(lang='en')
                             .scroll-item__image-wrap(data-animation="shortened", data-animation-type="onEnter")
                                 img.scroll-item__image(src="img/maven-showroom.jpg", alt="image")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="2")
-                            //- h3.scroll-item__subheading Our Address
                             p.scroll-item__paragraph 923 Harrison St <br/>San Francisco CA 94107<br/>415-621-3232 <br/><a href="mailto:info@mavenwest.com">info@mavenwest.com</a>
 
                 article.scroll-item#manufacturers

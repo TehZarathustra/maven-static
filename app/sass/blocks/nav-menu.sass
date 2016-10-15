@@ -84,6 +84,28 @@
 		&__link
 			padding: 10px
 
+.slide-out-menu
+	cursor: pointer
+	z-index: 1
+	position: relative
+	padding-top: 20px
+	padding-bottom: 20px
+	transition: all .5s ease-in-out
+	&:before
+		content: ''
+		z-index: -1
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 100%
+		transition: all .5s ease-in-out
+		background-color: #1e2023
+	&_active
+		color: #fff
+		&:before
+			right: 0
+
 .submenu
 	+transition(.5s)
 	position: relative

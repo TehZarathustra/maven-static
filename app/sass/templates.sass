@@ -530,6 +530,28 @@
 		&__link
 			padding: 10px
 
+.slide-out-menu
+	cursor: pointer
+	z-index: 1
+	position: relative
+	padding-top: 20px
+	padding-bottom: 20px
+	transition: all .5s ease-in-out
+	&:before
+		content: ''
+		z-index: -1
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 100%
+		transition: all .5s ease-in-out
+		background-color: #1e2023
+	&_active
+		color: #fff
+		&:before
+			right: 0
+
 .submenu
 	+transition(.5s)
 	position: relative
@@ -542,6 +564,7 @@
 		z-index: -1
 	&__progress-bar
 		z-index: 22
+
 .page-wrapper
 	height: 100%
 	&_flex
@@ -599,6 +622,22 @@
 	padding: 0 0 100px 0
 	+phones-portrait
 		margin-bottom: 100px
+	&_slide-out
+		position: fixed
+		right: 0
+		top: 0
+		z-index: 2
+		width: calc(100% - 350px)
+		background: #fff
+		transform: translateX(150%)
+		transition: all .5s ease-in-out
+		box-sizing: border-box
+		+phones-portrait
+			width: 100%
+			padding: 3em 1em 1em 1em
+			height: 100%
+		&_active
+			transform: translateX(0)
 	&__heading-wrap
 		text-align: center
 		overflow: hidden
