@@ -22,9 +22,7 @@
 		$('.scroll-item__image-wrap').addClass('scroll-item__image-wrap_transition');
 	}
 
-	// if (!mobileCheck) {
-		enableTransition();
-	// }
+	enableTransition();
 
 	$().ready(function () {
 		setTimeout(function() {
@@ -294,8 +292,6 @@
 			}
 
 			addModal('.scroll-item__image-wrap_gallery-trigger', '.gallery-modal', false, true);
-			// addModal('.nav-menu__telephone', '.contact-modal');
-			addModal('.request-more', '.contact-modal');
 		});
 	})(jQuery);
 

@@ -455,6 +455,8 @@
 		list-style: none
 		position: relative
 		+transition(.5s)
+		&:last-child
+			margin-top: -.5px
 	&__toggle
 		&:before
 			content: '\f0c9'
@@ -531,26 +533,15 @@
 			padding: 10px
 
 .slide-out-menu
-	cursor: pointer
-	z-index: 1
-	position: relative
-	padding-top: 20px
-	padding-bottom: 20px
-	transition: all .5s ease-in-out
-	&:before
-		content: ''
-		z-index: -1
-		position: absolute
-		top: 0
-		bottom: 0
-		left: 0
-		right: 100%
+	&_in-menu
+		cursor: pointer
+		z-index: 1
+		position: relative
+		color: #fff
 		transition: all .5s ease-in-out
 		background-color: #1e2023
-	&_active
-		color: #fff
-		&:before
-			right: 0
+		&:hover
+			background-color: #1e2023
 
 .submenu
 	+transition(.5s)
@@ -628,6 +619,7 @@
 		top: 0
 		z-index: 2
 		width: calc(100% - 350px)
+		padding-right: 100px
 		background: #fff
 		transform: translateX(150%)
 		transition: all .5s ease-in-out
@@ -895,7 +887,7 @@
 				margin-top: 100px
 	&__image-wrap
 		background-size: auto 115% !important
-		background-position: 20% 0
+		background-position: 30% 100%
 		background-repeat: no-repeat
 		position: relative
 		cursor: pointer
