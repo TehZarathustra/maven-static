@@ -13,10 +13,12 @@
 		transform: translateX(150%)
 		transition: all .5s ease-in-out
 		box-sizing: border-box
-		+phones-portrait
+		+phones
 			width: 100%
-			padding: 3em 1em 1em 1em
+			padding: 0 1em 1em 1em
 			height: 100%
+		+phones-portrait
+			padding-top: 3em
 		&_active
 			transform: translateX(0)
 	&__heading-wrap
@@ -294,7 +296,7 @@
 		&.tapped
 			opacity: .7
 			&:before
-				content: 'tap to enlarge'
+				content: ''
 				position: absolute
 				top: 50%
 				left: 50%

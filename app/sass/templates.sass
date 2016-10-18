@@ -624,10 +624,12 @@
 		transform: translateX(150%)
 		transition: all .5s ease-in-out
 		box-sizing: border-box
-		+phones-portrait
+		+phones
 			width: 100%
-			padding: 3em 1em 1em 1em
+			padding: 0 1em 1em 1em
 			height: 100%
+		+phones-portrait
+			padding-top: 3em
 		&_active
 			transform: translateX(0)
 	&__heading-wrap
@@ -905,7 +907,7 @@
 		&.tapped
 			opacity: .7
 			&:before
-				content: 'tap to enlarge'
+				content: ''
 				position: absolute
 				top: 50%
 				left: 50%
@@ -1326,7 +1328,7 @@
 	width: 100%
 	min-height: 90vh
 	position: relative
-	+phones
+	+phones-portrait
 		flex-direction: column
 
 .tab-slider__images-list,
@@ -1334,14 +1336,17 @@
 	box-sizing: border-box
 
 .tab-slider__select-list
-	+phones
+	+phones-portrait
 		margin-top: 0 !important
 
 .tab-slider__images-wrapper
 	width: 70%
 	position: relative
+	+phones
+		margin-top: 20%
 	+phones-portrait
 		width: 100%
+		margin-top: 0
 	&.hide-original
 		opacity: 0
 	&.cloned-image
@@ -1363,7 +1368,7 @@
 		position: center
 		size: 100%
 		repeat: no-repeat
-	+phones
+	+phones-portrait
 		width: 100%
 		height: 600px
 	+phones-portrait
@@ -1410,63 +1415,63 @@
 
 .tab-slider__image-item
 	&_1 .tab-slider__image
-		+phones
+		+phones-portrait
 			background-position: center right !important
 	&_2 .tab-slider__image
-		+phones
+		+phones-portrait
 			background-position: center !important
 	&_3 .tab-slider__image
-		+phones
+		+phones-portrait
 			background-position: top right !important
 	&_4 .tab-slider__image
-		+phones
+		+phones-portrait
 			background-position: top center !important
 	&_5 .tab-slider__image
-		+phones
+		+phones-portrait
 			background-position: bottom left !important
 	&_6 .tab-slider__image
-		+phones
+		+phones-portrait
 			background-position: top left !important
 
 .tab-slider__image
-	+phones
+	+phones-portrait
 		background-size: cover !important
 
 .tab-slider__caption_1
 	right: 15%
 	bottom: 25%
-	+phones
+	+phones-portrait
 		bottom: 5%
 
 .tab-slider__caption_2
 	right: 40%
 	bottom: 30%
-	+phones
+	+phones-portrait
 		bottom: 15%
 
 .tab-slider__caption_3
 	right: 25%
 	top: 35%
-	+phones
+	+phones-portrait
 		top: 30%
 
 .tab-slider__caption_4
 	left: 35%
 	top: 42%
-	+phones
+	+phones-portrait
 		top: 40%
 		left: 28%
 
 .tab-slider__caption_5
 	left: 14%
 	bottom: 25%
-	+phones
+	+phones-portrait
 		bottom: 8%
 
 .tab-slider__caption_6
 	left: 12%
 	top: 42%
-	+phones
+	+phones-portrait
 		top: 45%
 
 .tab-slider__image-item
@@ -1490,7 +1495,7 @@
 	text-align: right
 	padding: 1em
 	display: none
-	+phones
+	+phones-portrait
 		display: block
 	+phones-portrait
 		left: 0 !important
@@ -1535,12 +1540,22 @@
 	width: 30%
 	padding: 1em
 	margin-top: 5%
-	+phones
+	+phones-portrait
 		width: 100%
 		text-align: center
 
 .tab-slider__select-item
 	margin-bottom: 20px
+
+#request
+	+phones
+		.scroll-item__paragraph
+			display: none
+		h2
+			margin-top: 20px
+	+phones-portrait
+		.scroll-item__paragraph
+			display: block
 
 
 .thirdmenu
