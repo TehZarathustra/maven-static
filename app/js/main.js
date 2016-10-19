@@ -304,6 +304,11 @@
 		$('.scroll-item__image-wrap:not(.scroll-item__image-wrap_fullscreen):not(.scroll-item__image-wrap_gallery-trigger)').click(function() {
 			click++;
 			var self = $(this);
+
+			if (self.parent().parent().parent().is($('#contact'))) {
+				return false;
+			}
+
 			self.addClass(activeClass);
 
 			if (click === 2 || !mobileCheck) {
@@ -555,7 +560,7 @@
 
 			$('.tab-slider__image-item_' + index).addClass('active');
 
-			if (mobileCheck && $('body').width() < 450) {
+			if (mobileCheck && $('body').width() < 750) {
 				mainImage.attr('class', 'tab-slider__images-list');
 				mainImage.addClass('tab-slider__images-list_pos-' + index);
 			}

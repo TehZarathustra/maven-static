@@ -129,6 +129,8 @@
 		&_layout-10
 			text-align: center
 			padding-top: 60px
+			+phones-portrait
+				padding-top: 0
 		p
 			margin-bottom: 2%
 		&_layout-6
@@ -192,6 +194,8 @@
 			.scroll-item__image-wrap
 				height: 90%
 				width: 100%
+			+phones-portrait
+				align-items: flex-start
 		&_layout-5
 			justify-content: space-between
 			align-items: center
@@ -242,6 +246,8 @@
 				background-size: auto 130% !important
 				+phones-portrait
 					background-size: auto 110% !important
+			+phones-portrait
+				height: 30vh
 		&_layout-11
 			+phones-portrait
 				height: 40vh
@@ -288,7 +294,7 @@
 		-webkit-filter: grayscale(100%)
 		filter: grayscale(100%)
 		+phones-portrait
-			height: 45vh
+			height: 30vh !important
 			background-size: 100% !important
 		&:hover
 			-webkit-filter: grayscale(0)
