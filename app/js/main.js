@@ -1,13 +1,11 @@
 (function() {
 	// requires
 	var pluginsInit = require('./plugins')();
-	var hideIntro = require('./blocks/intro-slider');
 	var brandGrid = require('./blocks/brand-grid')();
 	var hideAddressBar = require('./blocks/hide-bar');
 
 	// globals
 	var mobileCheck;
-	var introIsHidden;
 
 	if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		mobileCheck = true;
@@ -95,10 +93,6 @@
 
 	setTimeout(function() {
 		if (window.location.href.split('#')[1] && window.location.href.split('#')[1] !== 'about') {
-			hideIntro();
-			setTimeout(function() {
-				introIsHidden = true;
-			}, 2000);
 			var target = window.location.href.split('#')[1];
 			setTimeout(function() {
 				$('body').mCustomScrollbar('update');
@@ -106,16 +100,6 @@
 			}, 2000);
 		}
 	}, 100);
-
-	// home image
-	(function() {
-		$('.intro-slider').click(function() {
-			hideIntro();
-			setTimeout(function() {
-				introIsHidden = true;
-			}, 2000);
-		});
-	})();
 
 	setImagesAsBackground($('.scroll-item__image'));
 	setImagesAsBackground($('.scroll-item__slider img'));
@@ -626,17 +610,6 @@
 		var whoSectionHeight;
 		var imageOffsetTop;
 		var clientWidthIsPortrait = $('body').width() < 450;
-
-		var checkForIntro = setInterval(function() {
-			if (introIsHidden) {
-				whoSectionOffset = parseInt($('article#who').offset().top.toFixed(0));
-				whoSectionHeight = $('article#who').height();
-				imageOffsetTop = parseInt($('.tab-slider').offset().top.toFixed(0));
-
-				clearInterval(checkForIntro);
-			}
-		}, 2000);
-
 
 		if (mobileCheck) {
 			$('.tab-slider').append(clonedImage);

@@ -204,14 +204,7 @@
 	background-color: #fff
 	overflow: hidden
 	height: 100%
-	&_fullscreen
-		position: fixed
-		left: 0
-		top: 0
-		z-index: 100
-		.owl-stage
-			height: 100vh !important
-
+	padding-top: 30px
 	+transition(1s)
 	.owl-stage
 		height: 90vh
@@ -255,18 +248,10 @@
 	left: 0
 	right: 0
 	bottom: 0
-	opacity: 0
-	transform: translateY(50%)
-	-webkit-transform: translateY(50%)
-	-moz-transform: translateY(50%)
+	opacity: 1
 	background-size: cover
 	background-repeat: no-repeat
 	+transition(.7s)
-	&_show
-		opacity: 1
-		transform: translateY(0)
-		-webkit-transform: translateY(0)
-		-moz-transform: translateY(0)
 
 .left-pane
 	width: 280px
@@ -617,6 +602,7 @@
 		position: fixed
 		right: 0
 		top: 0
+		bottom: 0
 		z-index: 2
 		width: calc(100% - 350px)
 		padding-right: 100px
@@ -1206,6 +1192,11 @@
 .no-pseudo
 	&:before
 		opacity: 0
+
+#about
+	.scroll-item__image-wrap
+		pointer-events: none
+		height: 80vh
 
 .scroll-item__slider
 	cursor: pointer
