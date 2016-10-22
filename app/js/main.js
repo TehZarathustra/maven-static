@@ -639,6 +639,15 @@
 		});
 	}, 1000);
 
+	// submit form
+	(function() {
+		$('#request button[type="submit"]').click(function(e) {
+			e.preventDefault();
+
+			$('#request').addClass('message-sent');
+		});
+	})();
+
 	// global helpers
 	function setImagesAsBackground(node, hasMobile) {
 		var images = node;

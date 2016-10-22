@@ -8,12 +8,17 @@
 		top: 0
 		bottom: 0
 		z-index: 2
-		width: calc(100% - 350px)
-		padding-right: 100px
-		background: #fff
-		transform: translateX(150%)
-		transition: all .5s ease-in-out
 		box-sizing: border-box
+		background: #fff
+		&_in-content
+			width: calc(100% - 350px)
+			padding-right: 100px
+			transform: translateX(150%)
+			transition: all .5s ease-in-out
+		&_full
+			transition: all 1s ease-in-out
+			transform: translateY(-150%)
+			width: 100%
 		+phones
 			width: 100%
 			padding: 0 1em 1em 1em
@@ -581,6 +586,19 @@
 		&:hover
 			&:after
 				width: 100%
+
+.message-sent__heading
+	display: none
+
+.message-sent
+	form, p, h2
+		display: none
+
+	.message-sent__heading
+		display: block !important
+		font-size: 1em
+		float: right
+		width: 500px
 
 .background-center
 	background-position: center !important

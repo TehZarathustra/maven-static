@@ -134,7 +134,7 @@ html.no-js(lang='en')
             .fixed-heading-wrap
                 h1.fixed-heading
             .scroll-items-wrapper
-                article.scroll-item#intro.scroll-item_slide-out.scroll-item_slide-out_active
+                article.scroll-item#intro.scroll-item_slide-out.scroll-item_slide-out_full.scroll-item_slide-out_active
                     .owl-carousel.intro-slider(data-preview="img/preview.jpg").intro-slider_fullscreen
                         .intro-slider__item
                             .intro-slider__image
@@ -243,7 +243,7 @@ html.no-js(lang='en')
                                     a(href="mailto:esther@mavenwest.com") esther@mavenwest.com
                                     a(href="tel:#") 916-591-4348
 
-                article.scroll-item#contact.scroll-item_slide-out
+                article.scroll-item#contact.scroll-item_slide-out.scroll-item_slide-out_in-content
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading contact
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
@@ -603,11 +603,12 @@ html.no-js(lang='en')
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, ab?
             a(href="#").request-more.slide-out-menu(data-anchor="request")  Request more info
         .gallery-modal.modal
-        #request.scroll-item_slide-out
+        #request.scroll-item_slide-out.scroll-item_slide-out_in-content
             .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                 .scroll-item__full-column.scroll-item__text.scroll-item__full-column_flex(data-layout="contacts")
                     .m-close
                     h2.scroll-item__subheading Thank you for your interest
+                    h2.scroll-item__subheading.message-sent__heading Thank you for submitting your request, our representative will contact you shortly
                     p.scroll-item__paragraph.clearfix if you wish contact us please fill out the form below and our esentatives will git in touch you soon
                     form.scroll-item__form.scroll-item__form_right
                         label.scroll-item__group
