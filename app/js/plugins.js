@@ -370,6 +370,13 @@ module.exports = function() {
 		});
 	})();
 
+	// intro hide on click
+	(function() {
+		$('#intro').click(function() {
+			hideSlideOuts();
+		});
+	})();
+
 	function hideSlideOuts() {
 		setTimeout(function() {
 			$('#request').removeClass('message-sent');
