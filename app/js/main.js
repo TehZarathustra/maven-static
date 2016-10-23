@@ -606,10 +606,11 @@
 
 		var image = $('.tab-slider__images-wrapper');
 		var clonedImage = image.clone().addClass('cloned-image');
-		var whoSectionOffset;
-		var whoSectionHeight;
-		var imageOffsetTop;
 		var clientWidthIsPortrait = $('body').width() < 450;
+
+		var whoSectionOffset = parseInt($('article#who').offset().top.toFixed(0));
+		var whoSectionHeight = $('article#who').height();
+		var imageOffsetTop = parseInt($('.tab-slider').offset().top.toFixed(0));
 
 		if (mobileCheck) {
 			$('.tab-slider').append(clonedImage);
@@ -623,6 +624,8 @@
 			} else if (scroller + senseSpeed < previousScroll) {
 				$('.left-pane').filter(':not(:animated)').removeClass('hide_header');
 			}
+
+			console.log(mobileCheck, clientWidthIsPortrait, imageOffsetTop);
 
 			if (mobileCheck && clientWidthIsPortrait && imageOffsetTop) {
 				if (scroller >= imageOffsetTop && scroller <= (whoSectionOffset + whoSectionHeight)) {
