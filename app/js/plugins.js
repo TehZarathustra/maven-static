@@ -8,6 +8,8 @@ module.exports = function() {
 		$('body').addClass('stop-scrolling');
 	};
 
+	var hideSlideOuts = require('./blocks/slide-outs');
+
 	function showHeader() {
 		toggleHeader('show_header', 'hide_header');
 	}
@@ -376,15 +378,6 @@ module.exports = function() {
 			hideSlideOuts();
 		});
 	})();
-
-	function hideSlideOuts() {
-		setTimeout(function() {
-			$('#request').removeClass('message-sent');
-		}, 1000);
-
-		$('.slide-out-menu').removeClass('slide-out-menu_active');
-		$('.scroll-item_slide-out').removeClass('scroll-item_slide-out_active');
-	}
 
 	// scrollbar
 	(function() {

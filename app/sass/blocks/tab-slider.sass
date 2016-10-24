@@ -30,9 +30,12 @@
 		position: absolute
 		top: 0
 		z-index: 1
+		transition: opacity .5s ease-in-out
 		&.cloned-fixed
 			position: fixed
 			width: 90%
+		&.fade
+			opacity: 0
 
 .tab-slider__images-list
 	width: 100%
@@ -236,4 +239,9 @@
 	+phones-portrait
 		.scroll-item__paragraph
 			display: block
+	&.mobile-focus
+		.scroll-item__group
+			display: none
+	.scroll-item__group.focused
+		display: block
 
