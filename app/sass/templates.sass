@@ -846,9 +846,9 @@
 				height: 62vh
 				background-size: auto 130% !important
 				+phones-portrait
-					background-size: auto 110% !important
+					background: none !important
 			+phones-portrait
-				height: 30vh
+				height: auto !important
 		&_layout-11
 			+phones-portrait
 				height: 40vh
@@ -895,8 +895,11 @@
 		-webkit-filter: grayscale(100%)
 		filter: grayscale(100%)
 		+phones-portrait
-			height: 30vh !important
+			height: auto !important
 			background-size: 100% !important
+			img
+				width: 100%
+				display: block !important
 		&:hover
 			-webkit-filter: grayscale(0)
 			filter: grayscale(0)

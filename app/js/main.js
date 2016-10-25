@@ -668,6 +668,12 @@
 				hideSlideOuts();
 			}, 1000);
 		});
+
+		$('#contacts button[type="submit"]').click(function(e) {
+			e.preventDefault();
+
+			$('#contacts').addClass('message-sent');
+		});
 	})();
 
 	// global helpers
