@@ -393,14 +393,14 @@ module.exports = function() {
 
 		slideOutItems.click(function (e) {
 			e.preventDefault();
-
+			hideHeader();
 			$(this).toggleClass('slide-out-menu_active');
 			$('#' + $(this).data('anchor')).toggleClass('scroll-item_slide-out_active');
 		});
 
 		slideOutPhone.click(function (e) {
 			e.preventDefault();
-
+			hideHeader();
 			$('#' + $(this).data('anchor')).toggleClass('scroll-item_slide-out_active');
 		});
 	})();
