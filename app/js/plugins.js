@@ -8,6 +8,7 @@ module.exports = function() {
 		$('body').addClass('stop-scrolling');
 	};
 
+	var delaySlideOut = false;
 	var hideSlideOuts = require('./blocks/slide-outs');
 
 	function showHeader() {
@@ -60,6 +61,38 @@ module.exports = function() {
         return wrapper;
     }
 
+    // form focus
+	$('input, textarea').focus(function() {
+		delaySlideOut = true;
+
+		$(this).parent().find('.scroll-item__text').addClass('scroll-item__text_hidden');
+		$(this).parent().addClass('scroll-item__group_active');
+
+		if (mobileCheck && $(window).width() < 700) {
+			$('#request').addClass('mobile-focus');
+			$(this).parent().addClass('focused');
+		}
+	});
+
+	// out
+	$('input, textarea').focusout(function() {
+		var el = $(this);
+
+		if (mobileCheck && $(window).width() < 700) {
+			$('#request').removeClass('mobile-focus');
+			$(this).parent().removeClass('focused');
+		}
+
+		if (el.val().length < 1) {
+			el.parent().find('.scroll-item__text').removeClass('scroll-item__text_hidden');
+		}
+		$(this).parent().removeClass('scroll-item__group_active');
+
+		setTimeout(function() {
+			delaySlideOut = false;
+		}, 5000);
+	});
+
 	// scroll magic
 	(function() {
 		var CONTENT_BLOCK = $('.main-content'),
@@ -97,7 +130,7 @@ module.exports = function() {
 						isScrollInited = true;
 					}, 1000);
 
-					if (isScrollInited) {
+					if (isScrollInited && !delaySlideOut) {
 						hideSlideOuts();
 					}
 
