@@ -614,7 +614,7 @@
 			transition: all 1s ease-in-out
 			transform: translateY(-150%)
 			width: 100%
-		+phones
+		+tablet-landskape
 			width: 100%
 			padding: 0 1em 1em 1em
 			height: 100%
@@ -914,8 +914,6 @@
 				text-transform: uppercase
 				text-align: center
 				transform: translateY(-50%) translateX(-50%)
-				-webkit-transform: translateY(-50%) translateX(-50%)
-				-moz-transform: translateY(-50%) translateX(-50%)
 		&.clicked
 			opacity: .7
 			&:before
@@ -928,16 +926,10 @@
 				text-transform: uppercase
 				text-align: center
 				transform: translateY(-50%) translateX(-50%)
-				-webkit-transform: translateY(-50%) translateX(-50%)
-				-moz-transform: translateY(-50%) translateX(-50%)
 		+phones-portrait
 			background-position: center
 			transform: none !important
-			-webkit-transform: none !important
-			-moz-transform: none !important
 			transition: none !important
-			-webkit-transition: none !important
-			-moz-transition: none !important
 			margin-bottom: 10px
 		&_transition
 			+transition(1.2s)
@@ -1054,6 +1046,7 @@
 .scroll-item__form
 	width: 30%
 	padding-right: 8%
+	position: relative
 	box-sizing: border-box
 	&_right
 		margin-left: 70%
@@ -1133,10 +1126,8 @@
 		&.scroll-item__text_hidden
 			font-size: 15px
 			transform: translateX(-120%)
-			-webkit-transform: translateX(-120%)
-			-moz-transform: translateX(-120%)
 			+phones-portrait
-				opacity: 0
+				transform: translateY(-22px)
 	&:before
 		content: ''
 		display: block
@@ -1200,6 +1191,22 @@
 		+phones-portrait
 			width: 100%
 			float: none
+
+.next-step
+	position: absolute
+	font-size: 1.2em
+	top: -7px
+	right: 0
+	z-index: 1
+	opacity: 0
+	display: none
+	transform: translateX(120%)
+	transition: all .5s ease-in-out
+	&_active
+		opacity: 1
+		transform: translateX(0)
+	+phones
+		display: block
 
 .background-center
 	background-position: center !important

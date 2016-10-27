@@ -61,12 +61,18 @@ module.exports = function() {
         return wrapper;
     }
 
-    // form focus
+    var focusedItem;
+
+    // form: focus in
 	$('input, textarea').focus(function() {
 		delaySlideOut = true;
 
+		$('.next-step').addClass('next-step_active');
+
 		$(this).parent().find('.scroll-item__text').addClass('scroll-item__text_hidden');
 		$(this).parent().addClass('scroll-item__group_active');
+
+		focusedItem = $(this).parent();
 
 		if (mobileCheck && $(window).width() < 700) {
 			$('#request').addClass('mobile-focus');
@@ -74,9 +80,11 @@ module.exports = function() {
 		}
 	});
 
-	// out
+	// form: focus out
 	$('input, textarea').focusout(function() {
 		var el = $(this);
+
+		$('.next-step').removeClass('next-step_active');
 
 		if (mobileCheck && $(window).width() < 700) {
 			$('#request').removeClass('mobile-focus');
@@ -92,6 +100,18 @@ module.exports = function() {
 			delaySlideOut = false;
 		}, 5000);
 	});
+
+	//
+	(function() {
+		$('.next-step').click(function() {
+			if (focusedItem) {
+				var nextItem = focusedItem.next();
+				if (nextItem.hasClass('scroll-item__group')) {
+					focusedItem.next().focus();
+				}
+			}
+		});
+	})();
 
 	// scroll magic
 	(function() {
