@@ -633,20 +633,27 @@
 
 	// submit form
 	(function() {
-		$('#request button[type="submit"]').click(function(e) {
+		$('.scroll-item__form button[type="submit"]').click(function(e) {
 			e.preventDefault();
+			var isValid = true,
+				currentForm = $(this).parent().parent();
 
-			$('#request').addClass('message-sent');
+			currentForm.find('input').each(function() {
+				if ($(this).prop('required') && $(this).val().length < 2) {
+					$(this).addClass('not-valid');
+					isValid = false;
+				}
+			});
+
+			if (!isValid) {
+				return;
+			}
+
+			currentForm.parent().parent().addClass('message-sent');
 
 			setTimeout(function() {
 				hideSlideOuts();
 			}, 2000);
-		});
-
-		$('#contacts button[type="submit"]').click(function(e) {
-			e.preventDefault();
-
-			$('#contacts').addClass('message-sent');
 		});
 	})();
 

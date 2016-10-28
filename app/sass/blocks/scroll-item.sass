@@ -455,8 +455,14 @@
 	box-sizing: border-box
 	&_right
 		margin-left: 70%
+	// &.last-step
+	// 	button[type='submit']
+	// 		position: absolute
+	// 		right: 1em
+	// 		top: 35px
 	+phones-portrait
-		width: 90%
+		width: 90% !important
+		margin: 1em !important
 		textarea
 			display: none
 		&_right
@@ -512,6 +518,8 @@
 		padding: 2px
 		&:focus
 			outline: none
+		&.not-valid
+			border-bottom: 1px solid red
 	textarea
 		border: none
 		display: inline-block
@@ -602,7 +610,7 @@
 	font-size: 1.2em
 	top: -7px
 	right: 0
-	z-index: 1
+	z-index: 10
 	opacity: 0
 	display: none
 	transform: translateX(120%)

@@ -593,27 +593,29 @@ html.no-js(lang='en')
                                 .scroll__item-text-bundle-item
                                     h3.scroll-item__subheading Peter Pepper
                                     p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime
-                article.scroll-item#contacts
+                article.scroll-item#contacts.scroll-item_form
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading contact us
                     .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                         .scroll-item__full-column.scroll-item__text.scroll-item__full-column_flex(data-layout="contacts")
-                            h2.scroll-item__subheading Thank you for your interest
+                            h2.scroll-item__subheading.scroll-item__subheading_form Thank you for your interest
                             h2.scroll-item__subheading.message-sent__heading Thank you for submitting your request, our representative will contact you shortly
                             p.scroll-item__paragraph.clearfix if you wish contact us please fill out the form below and our representatives will git in touch you soon
-                            form.scroll-item__form.scroll-item__form_right
+                            form(action='#', name='request').scroll-item__form.scroll-item__form_right
+                                .next-step
+                                    .fa.fa-arrow-right
                                 label.scroll-item__group
                                     .scroll-item__text Name
-                                    input(type="text")
+                                    input(type="text", required, name="name")
                                 label.scroll-item__group
                                     .scroll-item__text Email
-                                    input(type="text")
+                                    input(type="text", required, name="email")
                                 label.scroll-item__group
                                     .scroll-item__text Phone
-                                    input(type="text")
+                                    input(type="text", name="phone")
                                 label.scroll-item__group
                                     .scroll-item__text Message
-                                    textarea(type="text", row="1")
+                                    textarea(type="text", row="1", name="message")
                                 .submit-wrap
                                     button(type="submit") Submit
                 .loader.loader_hidden
@@ -625,28 +627,28 @@ html.no-js(lang='en')
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, ab?
             //- a(href="#").request-more.slide-out-menu(data-anchor="request")  Request more info
         .gallery-modal.modal
-        #request.scroll-item_slide-out.scroll-item_slide-out_in-content
+        #request.scroll-item_slide-out.scroll-item_slide-out_in-content.scroll-item_form
             .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
                 .scroll-item__full-column.scroll-item__text.scroll-item__full-column_flex(data-layout="contacts")
                     .m-close
-                    h2.scroll-item__subheading Thank you for your interest
+                    h2.scroll-item__subheading.scroll-item__subheading_form Thank you for your interest
                     h2.scroll-item__subheading.message-sent__heading Thank you for submitting your request, our representative will contact you shortly
                     p.scroll-item__paragraph.clearfix if you wish contact us please fill out the form below and our esentatives will git in touch you soon
-                    form.scroll-item__form.scroll-item__form_right
+                    form(action='#', name='request').scroll-item__form.scroll-item__form_right
                         .next-step
                             .fa.fa-arrow-right
                         label.scroll-item__group
                             .scroll-item__text Name
-                            input(type="text")
+                            input(type="text", required, name="name")
                         label.scroll-item__group
                             .scroll-item__text Email
-                            input(type="text")
+                            input(type="text", required, name="email")
                         label.scroll-item__group
                             .scroll-item__text Phone
-                            input(type="text")
+                            input(type="text", name="phone")
                         label.scroll-item__group
                             .scroll-item__text Message
-                            textarea(type="text", row="1")
+                            textarea(type="text", row="1", name="message")
                         .submit-wrap
                             button(type="submit") Submit
         .fullpage-image

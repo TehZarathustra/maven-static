@@ -230,7 +230,7 @@
 .tab-slider__select-item
 	margin-bottom: 20px
 
-#request
+.scroll-item_form
 	padding: 0
 	.scroll-item__full-column_layout-contacts
 		background-size: cover
@@ -239,12 +239,24 @@
 			display: none
 		h2
 			margin-top: 20px
+			font-size: 1em
 	+phones-portrait
 		.scroll-item__paragraph
 			display: block
+		h2
+			font-size: 1.2em
+
+.scroll-item__form
 	&.mobile-focus
 		.scroll-item__group
 			display: none
 	.scroll-item__group.focused
 		display: block
+	+phones
+		margin-right: 20px
+		width: 50%
+		margin-left: 50%
+		margin-top: 20px
+		.next-step
+			right: 10px
 

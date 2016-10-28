@@ -65,29 +65,37 @@ module.exports = function() {
 
     // form: focus in
 	$('input, textarea').focus(function() {
+		var el = $(this),
+			currentForm = $(this).parent().parent(),
+			wrapper = currentForm.parent().parent();
+
 		delaySlideOut = true;
 
 		$('.next-step').addClass('next-step_active');
 
-		$(this).parent().find('.scroll-item__text').addClass('scroll-item__text_hidden');
-		$(this).parent().addClass('scroll-item__group_active');
+		el.parent().find('.scroll-item__text').addClass('scroll-item__text_hidden');
+		el.parent().addClass('scroll-item__group_active');
 
-		focusedItem = $(this).parent();
+		focusedItem = el.parent();
 
 		if (mobileCheck && $(window).width() < 700) {
-			$('#request').addClass('mobile-focus');
-			$(this).parent().addClass('focused');
+			currentForm.addClass('mobile-focus');
+			el.parent().addClass('focused');
 		}
+
+		// $('.scroll-item__subheading_form').hide();
 	});
 
 	// form: focus out
 	$('input, textarea').focusout(function() {
-		var el = $(this);
+		var el = $(this),
+			currentForm = $(this).parent().parent(),
+			wrapper = currentForm.parent().parent();
 
 		$('.next-step').removeClass('next-step_active');
 
 		if (mobileCheck && $(window).width() < 700) {
-			$('#request').removeClass('mobile-focus');
+			currentForm.removeClass('mobile-focus');
 			$(this).parent().removeClass('focused');
 		}
 
@@ -96,18 +104,48 @@ module.exports = function() {
 		}
 		$(this).parent().removeClass('scroll-item__group_active');
 
+		if (currentForm.hasClass('last-step')) {
+			currentForm.find('button').click();
+		}
+
+		if (el.prop('required') && el.val().length < 2) {
+			el.addClass('not-valid');
+		}
+
+		if (el.hasClass('not-valid') && el.val().length > 2) {
+			el.removeClass('not-valid');
+		}
+
+		currentForm.removeClass('last-step');
+
+		// $('.scroll-item__subheading_form').show();
+
 		setTimeout(function() {
 			delaySlideOut = false;
 		}, 5000);
 	});
 
-	//
+	// next step
 	(function() {
 		$('.next-step').click(function() {
+			var currentForm = $(this).parent(),
+				wrapper = currentForm.parent().parent();
+
 			if (focusedItem) {
 				var nextItem = focusedItem.next();
+
+				if (focusedItem.find('input').hasClass('not-valid')) {
+					focusedItem.find('input').focus();
+					return;
+				}
+
 				if (nextItem.hasClass('scroll-item__group')) {
 					focusedItem.next().focus();
+				}
+
+				if (!nextItem.next().hasClass('scroll-item__group')) {
+					currentForm.addClass('last-step');
+					// $('.next-step').removeClass('next-step_active');
 				}
 			}
 		});
