@@ -646,9 +646,11 @@
 			});
 
 			if (!isValid) {
+				currentForm.parent().parent().addClass('invalid-form');
 				return;
 			}
 
+			currentForm.parent().parent().removeClass('invalid-form');
 			currentForm.parent().parent().addClass('message-sent');
 
 			setTimeout(function() {

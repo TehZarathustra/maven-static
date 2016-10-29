@@ -1050,11 +1050,6 @@
 	box-sizing: border-box
 	&_right
 		margin-left: 70%
-	// &.last-step
-	// 	button[type='submit']
-	// 		position: absolute
-	// 		right: 1em
-	// 		top: 35px
 	+phones-portrait
 		width: 90% !important
 		margin: 1em !important
@@ -1093,6 +1088,16 @@
 		&:hover
 			&:after
 				width: 100%
+	.invalid
+		text-align: left
+		font-size: .8em
+		color: red
+		text-indent: 5px
+		display: none
+
+.invalid-form
+	.invalid
+		display: block
 
 .submit-wrap
 	text-align: left
@@ -1189,7 +1194,7 @@
 
 .message-sent
 	form, p, h2
-		display: none
+		display: none !important
 
 	.message-sent__heading
 		display: block !important
@@ -1198,6 +1203,7 @@
 		width: 500px
 		+phones-portrait
 			width: 100%
+			margin-top: 50%
 			float: none
 
 .next-step

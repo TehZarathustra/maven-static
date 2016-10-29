@@ -612,12 +612,13 @@ html.no-js(lang='en')
                                     input(type="text", required, name="email")
                                 label.scroll-item__group
                                     .scroll-item__text Phone
-                                    input(type="text", name="phone")
+                                    input(type="text", required, name="phone")
                                 label.scroll-item__group
                                     .scroll-item__text Message
                                     textarea(type="text", row="1", name="message")
                                 .submit-wrap
                                     button(type="submit") Submit
+                                .invalid Please fill out the required fields
                 .loader.loader_hidden
                     i.fa.fa-cog.fa-spin
         .page-overlay.closable
@@ -645,12 +646,13 @@ html.no-js(lang='en')
                             input(type="text", required, name="email")
                         label.scroll-item__group
                             .scroll-item__text Phone
-                            input(type="text", name="phone")
+                            input(type="text", required, name="phone")
                         label.scroll-item__group
                             .scroll-item__text Message
                             textarea(type="text", row="1", name="message")
                         .submit-wrap
                             button(type="submit") Submit
+                        .invalid Please fill out the required fields
         .fullpage-image
         .loading-screen
             i.fa.fa-circle-o-notch.fa-spin
