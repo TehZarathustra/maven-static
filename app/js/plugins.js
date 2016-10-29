@@ -125,6 +125,10 @@ module.exports = function() {
 		}, 5000);
 	});
 
+	$('.m-close').click(function() {
+		hideSlideOuts();
+	});
+
 	// next step
 	(function() {
 		$('.next-step').click(function() {
