@@ -11,7 +11,7 @@ bower i
 gulp
 ```
 
-# NOTES
+# Notes
 
 to have multiple links like "request more info" just copy and paste them in block element like that:
 ```
