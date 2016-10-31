@@ -593,14 +593,16 @@
 		var image = $('.tab-slider__images-wrapper');
 		var clonedImage = image.clone().addClass('cloned-image');
 		var clientWidthIsPortrait = $('body').width() < 450;
-
-		setInterval(function() {
-			clientWidthIsPortrait = $('body').width() < 450;
-		}, 1000);
-
 		var whoSectionOffset = parseInt($('article#who').offset().top.toFixed(0));
 		var whoSectionHeight = $('article#who').height();
 		var imageOffsetTop = parseInt($('.tab-slider').offset().top.toFixed(0));
+
+		setInterval(function() {
+			clientWidthIsPortrait = $('body').width() < 450;
+			whoSectionHeight = $('article#who').height();
+			whoSectionOffset = parseInt($('article#who').offset().top.toFixed(0));
+			imageOffsetTop = parseInt($('.tab-slider').offset().top.toFixed(0));
+		}, 2000);
 
 		if (mobileCheck) {
 			$('.tab-slider').append(clonedImage);
