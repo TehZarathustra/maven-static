@@ -594,6 +594,10 @@
 		var clonedImage = image.clone().addClass('cloned-image');
 		var clientWidthIsPortrait = $('body').width() < 450;
 
+		setInterval(function() {
+			clientWidthIsPortrait = $('body').width() < 450;
+		}, 1000);
+
 		var whoSectionOffset = parseInt($('article#who').offset().top.toFixed(0));
 		var whoSectionHeight = $('article#who').height();
 		var imageOffsetTop = parseInt($('.tab-slider').offset().top.toFixed(0));
