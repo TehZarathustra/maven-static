@@ -313,7 +313,7 @@ module.exports = function() {
 						if (!el.isInSubMenu) {
 							if (e.state == 'AFTER') el.link.addClass('nav-menu__link_black');
 							if (e.state === 'DURING' && el.isInThirdMenu) {
-								var heightPos = 76;
+								var heightPos = 78;
 
 								el.link.parent().parent().parent().parent().parent().find('.submenu').css({
 									'margin-top': '-' + heightPos * el.link.parent().parent().parent().index() + 'px'
