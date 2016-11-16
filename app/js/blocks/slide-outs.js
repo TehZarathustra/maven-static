@@ -1,6 +1,8 @@
 module.exports = function() {
 	setTimeout(function() {
-		$('#request').removeClass('message-sent');
+		$('#request > div').removeClass('message-sent');
+		$('#request input').val('');
+		$('#request textarea').val('');
 	}, 1000);
 
 	$('.slide-out-menu').removeClass('slide-out-menu_active');

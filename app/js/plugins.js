@@ -237,17 +237,19 @@ module.exports = function() {
 						}
 					});
 
+					var currentProgress = e.progress.toFixed(2).replace(/\d\./, '');
+
 					if (el.isInSubMenu) {
 						el.link.parent().find('.submenu__progress-bar').css({
-							'height': e.progress.toFixed(2).replace(/\d\./, '')
+							'transform': 'translateY(' + currentProgress + 'px)'
 						})
 					} else if (el.isInThirdMenu) {
 						el.link.parent().find('.thirdmenu__progress-bar').css({
-							'height': e.progress.toFixed(2).replace(/\d\./, '')
+							'transform': 'translateY(' + currentProgress + 'px)'
 						})
 					} else {
 						el.bar.css({
-							'height': e.progress.toFixed(2).replace(/\d\./, '')
+							'transform': 'translateY(' + currentProgress + 'px)'
 						})
 					}
 
