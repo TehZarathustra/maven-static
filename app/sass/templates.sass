@@ -1271,7 +1271,9 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		opacity: 0
 
 .color
-	filter: grayscale(0) !important
+	filter: grayscale(0)
+	+phones
+		filter: grayscale(100%)
 
 #about
 	.scroll-item__image-wrap
