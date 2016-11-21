@@ -297,7 +297,6 @@
 		// z-index: 1
 		height: 90vh
 		width: 100%
-		-webkit-filter: grayscale(100%)
 		filter: grayscale(100%)
 		+phones-portrait
 			height: auto !important
@@ -306,7 +305,6 @@
 				width: 100%
 				display: block !important
 		&:hover
-			-webkit-filter: grayscale(0)
 			filter: grayscale(0)
 		&.tapped
 			opacity: .7
@@ -671,6 +669,9 @@
 .no-pseudo
 	&:before
 		opacity: 0
+
+.color
+	filter: grayscale(0) !important
 
 #about
 	.scroll-item__image-wrap

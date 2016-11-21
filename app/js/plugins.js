@@ -283,6 +283,7 @@ module.exports = function() {
 			            if (el.image.data('animationType') === 'onEnter') {
 			            	var animationClass = 'scroll-item__image-wrap_' + el.image.data('animation');
 
+			            	el.image.addClass('color');
 			            	el.image.removeClass(animationClass);
 			            }
 
@@ -300,6 +301,7 @@ module.exports = function() {
 
 			            	if (!el.image.hasClass(animationClass)) {
 			            		el.image.addClass(animationClass);
+			            		el.image.removeClass('color');
 			            	}
 			            }
 
