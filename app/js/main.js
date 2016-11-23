@@ -317,6 +317,11 @@
 					$('body').mCustomScrollbar('disable');
 
 					self.addClass('reset-filter');
+					self.removeClass('scroll-item__image-wrap_transition');
+
+					setTimeout(function () {
+						self.addClass('scroll-item__image-wrap_transition');
+					}, 500);
 
 					var coordinate = {
 							top: self.offset().top,
