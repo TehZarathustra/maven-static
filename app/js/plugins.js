@@ -8,6 +8,12 @@ module.exports = function() {
 		$('body').addClass('stop-scrolling');
 	};
 
+	var totalItems = this.totalItems ||
+		(this.totalItems = document.querySelectorAll('article.scroll-item'));
+
+	var socialIcons = this.social ||
+		(this.social = $('.social'));
+
 	var delaySlideOut = false;
 	var hideSlideOuts = require('./blocks/slide-outs');
 
@@ -170,7 +176,7 @@ module.exports = function() {
 		_setHeadingWidth();
 
 		function _buildStages() {
-			var items = document.querySelectorAll('article.scroll-item'),
+			var items = totalItems,
 				init;
 
 			for (var i = 0, l = items.length; i < l; i++) {
@@ -181,6 +187,7 @@ module.exports = function() {
 		// make generic scene
 		function _makeScene(item) {
 			var isScrollInited = false;
+			var _this = this;
 
 			new ScrollMagic.Scene({
 					triggerElement: item,
@@ -272,6 +279,10 @@ module.exports = function() {
 					if (e.type == 'enter') {
 						el.barParent.show();
 
+						if (totalItems[totalItems.length - 3].id === this.triggerElement().id) {
+							socialIcons.addClass('active');
+						}
+
 						el.link.removeClass('nav-menu__link_black');
 
 						if (el.subBarParent) el.subBarParent.show();
@@ -296,6 +307,18 @@ module.exports = function() {
 			            }
 
 					} else {
+						var currentIndex;
+						var triggerElement = this.triggerElement().id;
+						totalItems.forEach(function (item, index) {
+							if (item.id === triggerElement) {
+								currentIndex = index;
+							}
+						})
+
+						if (currentIndex < (totalItems.length - 3)) {
+							socialIcons.removeClass('active');
+						}
+
 						if (el.image.data('animationType') === 'onEnter') {
 			            	var animationClass = 'scroll-item__image-wrap_' + el.image.data('animation');
 
