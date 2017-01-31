@@ -1289,12 +1289,24 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 	justify-content: space-between
 	margin-top: 20px
 	font-size: .8em
+	opacity: .6
+	&__left
+		text-align: left
+	&__right
+		text-align: right
+	a
+		text-decoration: none
+		color: #000
 
 .quickship-title
 	text-align: right
 	padding: 20px
 	font-size: 4em
 	color: #fff
+	+phones
+		font-size: 2em
+		text-align: center
+		margin-left: 40%
 
 #about
 	.scroll-item__image-wrap
