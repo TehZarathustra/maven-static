@@ -1,0 +1,25 @@
+.breadcrumbs
+	position: absolute
+	right: 0
+	top: 15px
+	&__list
+		margin: 0
+		padding: 0
+	&__item
+		list-style: none
+		display: inline-block
+		&:after
+			content: '/'
+			margin-left: 5px
+		&:last-child
+			&:after
+				content: ''
+	&__link
+		color: #000
+		opacity: .9
+		text-decoration: none
+		font-size: .9em
+		cursor: pointer
+		letter-spacing: 1px
+		&_active
+			opacity: .6

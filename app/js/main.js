@@ -4,6 +4,7 @@
 	var brandGrid = require('./blocks/brand-grid')();
 	var hideAddressBar = require('./blocks/hide-bar');
 	var hideSlideOuts = require('./blocks/slide-outs');
+	var followBlock = require('./blocks/follow');
 
 	// globals
 	var mobileCheck;
@@ -22,6 +23,7 @@
 	}
 
 	enableTransition();
+	followBlock();
 
 	$().ready(function () {
 		setTimeout(function() {
@@ -594,6 +596,10 @@
 	setTimeout(function() {
 		var senseSpeed = 5;
 		var previousScroll = 0;
+
+		if (!($('article#who').length)) {
+			return;
+		}
 
 		var image = $('.tab-slider__images-wrapper');
 		var clonedImage = image.clone().addClass('cloned-image');

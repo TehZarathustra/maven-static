@@ -481,6 +481,7 @@ module.exports = function() {
 			slideOutPhone = $('.nav-menu__telephone');
 
 		slideOutItems.click(function (e) {
+			hideSlideOuts();
 			e.preventDefault();
 			hideHeader();
 			$(this).toggleClass('slide-out-menu_active');
@@ -488,6 +489,7 @@ module.exports = function() {
 		});
 
 		slideOutPhone.click(function (e) {
+			hideSlideOuts();
 			e.preventDefault();
 			hideHeader();
 			$('#' + $(this).data('anchor')).toggleClass('scroll-item_slide-out_active');

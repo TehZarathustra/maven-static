@@ -51,6 +51,32 @@
 			background: none !important
 			display: flex
 			align-items: center
+.breadcrumbs
+	position: absolute
+	right: 0
+	top: 15px
+	&__list
+		margin: 0
+		padding: 0
+	&__item
+		list-style: none
+		display: inline-block
+		&:after
+			content: '/'
+			margin-left: 5px
+		&:last-child
+			&:after
+				content: ''
+	&__link
+		color: #000
+		opacity: .9
+		text-decoration: none
+		font-size: .9em
+		cursor: pointer
+		letter-spacing: 1px
+		&_active
+			opacity: .6
+
 .debug
 	display: none
 	position: fixed
@@ -147,6 +173,45 @@
 		right: 0
 		width: 4000%
 		transform: translateX(100%)
+.follow
+	text-align: right
+	font-size: .9em
+	div
+		margin-bottom: 10px
+	.follow__label
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+	input[type='radio']
+		display: none
+	input:checked + .follow__label
+		color: lightgray
+		text-decoration: none
+	&__confirmation
+		display: none
+	&.sent
+		.follow__form
+			display: none
+		.follow__confirmation
+			display: block
+	&__title
+		a
+			margin-left: 5px
+			margin-right: 5px
+			color: #000
+			&:hover
+				text-decoration: none
+	&__input
+		input
+			border: 1px solid #ccc
+			padding: 2px 5px
+	input:disabled
+		background: #ccc
+	button
+		border: none
+		background: none
+		padding: 0
+
 
 .fullpage-image
 	position: fixed
@@ -570,6 +635,107 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		top: 1em
 		+phones
 			top: .25em
+.product-wrapper
+	position: relative
+	.follow
+		width: 65%
+	.social
+		display: block
+		ul
+			right: 20px
+			left: auto
+			width: auto
+			background: none
+		.social__link
+			font-size: 2em
+
+.product
+	&__logo
+		width: 150px
+		margin-bottom: 40px
+		img
+			width: 100%
+	&__cols
+		display: flex
+		justify-content: space-between
+	&__image
+		width: 65%
+		img
+			width: 100%
+	&__details
+		position: fixed
+		right: 40px
+		width: 26%
+	&__title
+		text-transform: uppercase
+	&__price
+		font-size: .9em
+	&__designer
+		margin-bottom: 20px
+		font-size: .9em
+	&__year
+		margin-top: 20px
+		font-size: .9em
+	&__text
+		font-size: .9em
+
+.products-wrapper
+	position: relative
+	.follow
+		margin-top: 40px
+
+.products
+	padding-top: 2%
+	&__logo
+		text-align: center
+		img
+			width: 200px
+	&__text
+		font-size: .9em
+		margin-top: 30px
+		margin-bottom: 30px
+	&__items
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+	&__item
+		display: block
+		width: 24%
+		text-decoration: none
+		filter: grayscale(100%)
+		color: #000
+		overflow: hidden
+		+transition(.5s)
+		margin-bottom: 10px
+		position: relative
+		&:hover
+			filter: grayscale(0)
+			.products__item-caption
+				opacity: 1
+	&__item-image
+		width: 100%
+		img
+			width: 100%
+	&__item-caption
+		display: inline-block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		+grd-v(rgba(0,0,0,0), rgba(0,0,0,.8))
+		color: #fff
+		opacity: 0
+		+transition(.2s)
+		span
+			display: block
+			text-align: center
+			position: absolute
+			bottom: 10px
+			width: 100%
+			opacity: .8
+			font-size: .9em
+
 .request-more
 	text-decoration: none
 	color: #000
@@ -1331,10 +1497,8 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		+phones-portrait
 			background-size: 100% !important
 		&:hover
-			-webkit-filter: grayscale(0)
 			filter: grayscale(0)
 	&.active .scroll-item__slider-image
-		-webkit-filter: grayscale(0)
 		filter: grayscale(0)
 	&.refreshed
 		.scroll-item__slider-image
@@ -1427,6 +1591,8 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			content: '\f0d2'
 		&_instagram:before
 			content: '\f16d'
+		&_google:before
+			content: '\f0d5'
 		&:hover
 			opacity: .6
 	+tablet-landskape

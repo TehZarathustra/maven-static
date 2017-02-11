@@ -1,0 +1,38 @@
+.follow
+	text-align: right
+	font-size: .9em
+	div
+		margin-bottom: 10px
+	.follow__label
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+	input[type='radio']
+		display: none
+	input:checked + .follow__label
+		color: lightgray
+		text-decoration: none
+	&__confirmation
+		display: none
+	&.sent
+		.follow__form
+			display: none
+		.follow__confirmation
+			display: block
+	&__title
+		a
+			margin-left: 5px
+			margin-right: 5px
+			color: #000
+			&:hover
+				text-decoration: none
+	&__input
+		input
+			border: 1px solid #ccc
+			padding: 2px 5px
+	input:disabled
+		background: #ccc
+	button
+		border: none
+		background: none
+		padding: 0

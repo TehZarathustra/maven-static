@@ -1,0 +1,56 @@
+.products-wrapper
+	position: relative
+	.follow
+		margin-top: 40px
+
+.products
+	padding-top: 2%
+	&__logo
+		text-align: center
+		img
+			width: 200px
+	&__text
+		font-size: .9em
+		margin-top: 30px
+		margin-bottom: 30px
+	&__items
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+	&__item
+		display: block
+		width: 24%
+		text-decoration: none
+		filter: grayscale(100%)
+		color: #000
+		overflow: hidden
+		+transition(.5s)
+		margin-bottom: 10px
+		position: relative
+		&:hover
+			filter: grayscale(0)
+			.products__item-caption
+				opacity: 1
+	&__item-image
+		width: 100%
+		img
+			width: 100%
+	&__item-caption
+		display: inline-block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		+grd-v(rgba(0,0,0,0), rgba(0,0,0,.8))
+		color: #fff
+		opacity: 0
+		+transition(.2s)
+		span
+			display: block
+			text-align: center
+			position: absolute
+			bottom: 10px
+			width: 100%
+			opacity: .8
+			font-size: .9em
