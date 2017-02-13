@@ -639,15 +639,32 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 	position: relative
 	.follow
 		width: 65%
+		position: relative
+		+phones
+			width: 100%
 	.social
 		display: block
 		ul
-			right: 20px
-			left: auto
+			left: 0
 			width: auto
+			padding: 0
+			top: 0
 			background: none
 		.social__link
 			font-size: 2em
+	.scroll-item__image-wrap_bundle-order-2
+		right: 0
+	.scroll-item__left-column_layout-5
+		width: 65%
+	.scroll-item__image-wrap_bundle-order-1
+		width: 40%
+		left: 20%
+		+phones
+			left: 0
+	.scroll-item__image-wrap_bundle-order-3
+		width: 60%
+	.breadcrumbs
+		top: 0
 
 .product
 	&__logo
@@ -655,17 +672,29 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		margin-bottom: 40px
 		img
 			width: 100%
+		+phones
+			padding-top: 50px
+			margin: 0 auto 30px auto
 	&__cols
 		display: flex
 		justify-content: space-between
+		flex-wrap: wrap
 	&__image
 		width: 65%
 		img
 			width: 100%
+		+phones
+			width: 100%
+			margin-bottom: 20px
 	&__details
 		position: fixed
 		right: 40px
 		width: 26%
+		+phones
+			width: 100%
+			position: relative
+			right: auto
+			margin-bottom: 20px
 	&__title
 		text-transform: uppercase
 	&__price
@@ -690,6 +719,8 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		text-align: center
 		img
 			width: 200px
+		+phones
+			padding-top: 50px
 	&__text
 		font-size: .9em
 		margin-top: 30px
@@ -712,6 +743,8 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			filter: grayscale(0)
 			.products__item-caption
 				opacity: 1
+		+phones
+			width: 100%
 	&__item-image
 		width: 100%
 		img
