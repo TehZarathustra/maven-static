@@ -1,0 +1,14 @@
+.clipboard-hint
+	position: absolute
+	white-space: nowrap
+	font-size: .7em
+	top: 10%
+	opacity: 0
+	color: gray
+	padding: 5px
+	border-radius: 5px
+	z-index: -1
+	+transition(.2s)
+	&_show
+		transform: translateX(50%)
+		opacity: 1

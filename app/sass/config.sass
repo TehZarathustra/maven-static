@@ -48,6 +48,11 @@ body
 $tablet-width: 768px
 $desktop-width: 1280px
 $phones-width: 700px
+$widescreen-width: 1920px
+
+=widescreen
+  @media (min-width: #{$widescreen-width})
+    @content
 
 =tablet-landskape
   @media (max-width: #{$desktop-width})

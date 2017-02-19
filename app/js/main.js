@@ -677,6 +677,23 @@
 	})();
 
 	// global helpers
+	function copyToClipboard(link) {
+		var $temp = $('<input>');
+		$('body').append($temp);
+		$temp.val(link).select();
+		document.execCommand('copy');
+		$temp.remove();
+	}
+
+	$('.social__link_link').click(function (e) {
+		e.preventDefault();
+		$('.clipboard-hint').addClass('clipboard-hint_show');
+		copyToClipboard(window.location.href);
+		setTimeout(function () {
+			$('.clipboard-hint').removeClass('clipboard-hint_show');
+		}, 1500);
+	});
+
 	function setImagesAsBackground(node, hasMobile) {
 		var images = node;
 

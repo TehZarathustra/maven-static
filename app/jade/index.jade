@@ -126,7 +126,7 @@ html.no-js(lang='en')
                             .nav-menu__progress
                                 .nav-menu__progress-bar
                             a.nav-menu__link.nav-menu__link_default(href="#quickship") quickship
-            .social
+            .social.fixed
                 ul.social__list
                     li.social__item
                         a.social__link.social__link_facebook(href="#")
@@ -262,7 +262,13 @@ html.no-js(lang='en')
                             a(href="http://www.ercol.com/international", target="_blank").scroll-item__logo-section
                                 img.scroll-item__logo-image(src="img/Brands/Ercol/ercol-logo.png" alt="ercol")
                             p.scroll-item__paragraph Combining practicality with aesthetics, be it the copious storage of ercol’s sideboards, shelving units, bookcases and display cabinets, the comfort of the studio couch and of their chairs, or the utility of ercol’s coffee tables, lamp tables, desk and media units.
-                            a(href="#").request-more.slide-out-menu(data-anchor="request")  Request more info
+                            .call-to-action-grid
+                                a(href="#").request-more.slide-out-menu(data-anchor="request") Request more info
+                                a(href="#").request-more.slide-out-menu(data-anchor="request") Request something else
+                                a(href="#").request-more.slide-out-menu(data-anchor="request") Request
+                                a(href="products.html").request-more View products
+                            div
+                                a(href="products.html").request-more.request-more_product View products
 
                 article.scroll-item#izzy
                     .scroll-item__heading-wrap

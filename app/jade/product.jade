@@ -67,7 +67,8 @@ html.no-js(lang='en')
                             img(src="img/Brands/Ercol/ercol-logo.png", alt="")
                         .product__cols
                             .product__image
-                                img(src="img/Brands/Ercol/ercol-382-plank-table-half-black-and-401-butterfly-chair-half-black-copy.jpg", alt="")
+                                    .scroll-item__image-wrap
+                                        img.scroll-item__image(src="img/Brands/Ercol/ercol-382-plank-table-half-black-and-401-butterfly-chair-half-black-copy.jpg", alt="")
                             .product__details
                                 .product__title Title
                                 .product__price Price: 10 000
@@ -86,14 +87,25 @@ html.no-js(lang='en')
                                     a(href="#").request-more.slide-out-menu(data-anchor="request") Request more info
                                 div
                                     a(href="#").request-more.slide-out-menu(data-anchor="request") Request more info
-                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
-                        .scroll-item__left-column.scroll-item__left-column_flex(data-layout="5")
-                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-1(data-animation-type="onEnter")
-                                img.scroll-item__image(src="img/final/Harter/Forum.jpg", alt="image")
-                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-2(data-animation-type="onEnter")
-                                img.scroll-item__image(src="img/final/Harter/Meet.jpg", alt="image")
-                            .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-3(data-animation-type="onEnter")
-                                img.scroll-item__image(src="img/final/Harter/Truman.jpg", alt="image")
+                                .social.social_product
+                                    ul.social__list
+                                        li.social__item
+                                            a.social__link.social__link_facebook(href="#")
+                                        li.social__item
+                                            a.social__link.social__link_twitter(href="#")
+                                        li.social__item
+                                            a.social__link.social__link_google(href="#")
+                                        li.social__item
+                                            a.social__link.social__link_email(href="mailto:someone@yoursite.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=lastperson@theirsite.com&subject=Big%20News&body=Body-goes-here")
+                                        li.social__item
+                                            a.social__link.social__link_link(href="#")
+                                            .clipboard-hint Copied!
+                            .product__image
+                                    .scroll-item__image-wrap
+                                        img.scroll-item__image(src="img/final/Harter/Forum.jpg", alt="")
+                            .product__image
+                                    .scroll-item__image-wrap
+                                        img.scroll-item__image(src="img/final/Harter/Meet.jpg", alt="")
                     .follow
                         .follow__confirmation Thank you for submitting your request
                         form.follow__form
@@ -108,14 +120,6 @@ html.no-js(lang='en')
                             .follow__input
                                 input(type="text", name="address")
                             button(type="submit").follow__button Submit
-                        .social.social_product
-                            ul.social__list
-                                li.social__item
-                                    a.social__link.social__link_facebook(href="#")
-                                li.social__item
-                                    a.social__link.social__link_twitter(href="#")
-                                li.social__item
-                                    a.social__link.social__link_google(href="#")
                 article#contact.scroll-item_slide-out.scroll-item_slide-out_in-content
                     .scroll-item__heading-wrap
                         h2.scroll-item__heading contact

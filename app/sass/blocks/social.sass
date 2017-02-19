@@ -11,6 +11,7 @@
 	&__item
 		list-style: none
 		display: inline-block
+		position: relative
 	&__link
 		text-decoration: none
 		font-family: 'FontAwesome'
@@ -28,6 +29,10 @@
 			content: '\f16d'
 		&_google:before
 			content: '\f0d5'
+		&_email:before
+			content: '\f003'
+		&_link:before
+			content: '\f0c1'
 		&:hover
 			opacity: .6
 	+tablet-landskape
@@ -39,3 +44,18 @@
 			font-size: 1.5em
 	&.active
 		display: block
+	&.fixed
+		.social__list
+			padding: 0
+			margin: 0
+			background: none
+			position: fixed
+			width: 50px
+			right: 10px
+			font-size: 1.4em
+			top: 50%
+			left: auto
+			bottom: auto
+			transform: translateY(-50%)
+			+phones
+				fz1em

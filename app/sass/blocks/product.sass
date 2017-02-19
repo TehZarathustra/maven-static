@@ -5,6 +5,8 @@
 		position: relative
 		+phones
 			width: 100%
+			text-align: center
+			padding-bottom: 20px
 	.social
 		display: block
 		ul
@@ -13,8 +15,10 @@
 			padding: 0
 			top: 0
 			background: none
+			position: static
+			margin-top: 20px
 		.social__link
-			font-size: 2em
+			font-size: 1.5em
 	.scroll-item__image-wrap_bundle-order-2
 		right: 0
 	.scroll-item__left-column_layout-5
@@ -28,6 +32,8 @@
 		width: 60%
 	.breadcrumbs
 		top: 0
+	.scroll-item__image-wrap
+		background-size: auto 125% !important
 
 .product
 	&__logo
@@ -44,6 +50,7 @@
 		flex-wrap: wrap
 	&__image
 		width: 65%
+		margin-bottom: 20px
 		img
 			width: 100%
 		+phones
@@ -51,8 +58,10 @@
 			margin-bottom: 20px
 	&__details
 		position: fixed
-		right: 40px
-		width: 26%
+		right: 100px
+		width: 22%
+		+widescreen
+			width: 25%
 		+phones
 			width: 100%
 			position: relative

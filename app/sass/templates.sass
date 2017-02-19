@@ -76,6 +76,27 @@
 		letter-spacing: 1px
 		&_active
 			opacity: .6
+	+phones
+		width: 100%
+		text-align: center
+
+.call-to-action-grid > a
+	margin: 5px 10px
+
+.clipboard-hint
+	position: absolute
+	white-space: nowrap
+	font-size: .7em
+	top: 10%
+	opacity: 0
+	color: gray
+	padding: 5px
+	border-radius: 5px
+	z-index: -1
+	+transition(.2s)
+	&_show
+		transform: translateX(50%)
+		opacity: 1
 
 .debug
 	display: none
@@ -642,6 +663,8 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		position: relative
 		+phones
 			width: 100%
+			text-align: center
+			padding-bottom: 20px
 	.social
 		display: block
 		ul
@@ -650,8 +673,10 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			padding: 0
 			top: 0
 			background: none
+			position: static
+			margin-top: 20px
 		.social__link
-			font-size: 2em
+			font-size: 1.5em
 	.scroll-item__image-wrap_bundle-order-2
 		right: 0
 	.scroll-item__left-column_layout-5
@@ -665,6 +690,8 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		width: 60%
 	.breadcrumbs
 		top: 0
+	.scroll-item__image-wrap
+		background-size: auto 125% !important
 
 .product
 	&__logo
@@ -681,6 +708,7 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		flex-wrap: wrap
 	&__image
 		width: 65%
+		margin-bottom: 20px
 		img
 			width: 100%
 		+phones
@@ -688,8 +716,10 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			margin-bottom: 20px
 	&__details
 		position: fixed
-		right: 40px
-		width: 26%
+		right: 100px
+		width: 22%
+		+widescreen
+			width: 25%
 		+phones
 			width: 100%
 			position: relative
@@ -796,6 +826,8 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 	&:hover
 		&:after
 			width: 100%
+	&_product
+		font-size: 1.1em
 
 .scroll-item
 	padding: 0 0 100px 0
@@ -1609,6 +1641,7 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 	&__item
 		list-style: none
 		display: inline-block
+		position: relative
 	&__link
 		text-decoration: none
 		font-family: 'FontAwesome'
@@ -1626,6 +1659,10 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			content: '\f16d'
 		&_google:before
 			content: '\f0d5'
+		&_email:before
+			content: '\f003'
+		&_link:before
+			content: '\f0c1'
 		&:hover
 			opacity: .6
 	+tablet-landskape
@@ -1637,6 +1674,21 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			font-size: 1.5em
 	&.active
 		display: block
+	&.fixed
+		.social__list
+			padding: 0
+			margin: 0
+			background: none
+			position: fixed
+			width: 50px
+			right: 10px
+			font-size: 1.4em
+			top: 50%
+			left: auto
+			bottom: auto
+			transform: translateY(-50%)
+			+phones
+				fz1em
 
 .tab-slider
 	display: flex
