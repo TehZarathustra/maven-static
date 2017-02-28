@@ -1,3 +1,31 @@
+.author
+	padding-top: 50px
+	background: #fff
+	position: relative
+	&__cols
+		box-sizing: border-box
+		padding-left: 2em
+		padding-right: 2em
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+	&__text-col
+		width: 60%
+		padding-top: 50px
+		+phones
+			width: 100%
+	&__image-col
+		width: 35%
+		img
+			width: 100%
+		+phones
+			width: 100%
+	&__name
+		font-size: 30px
+		text-transform: uppercase
+		span
+			font-weight: bold
+
 .brand-grid
 	display: flex
 	justify-content: space-between
@@ -223,15 +251,27 @@
 			&:hover
 				text-decoration: none
 	&__input
+		label
+			margin-left: 10px
+			font-size: .9em
 		input
 			border: 1px solid #ccc
 			padding: 2px 5px
+			margin-left: 10px
 	input:disabled
 		background: #ccc
 	button
 		border: none
 		background: none
 		padding: 0
+
+.has-product2,
+.has-product3
+	.follow
+		position: relative
+		top: -30px
+		+phones
+			top: auto
 
 
 .fullpage-image
@@ -666,7 +706,7 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			text-align: center
 			padding-bottom: 20px
 	.social
-		display: block
+		opacity: 1
 		ul
 			left: 0
 			width: auto
@@ -738,6 +778,17 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 	&__text
 		font-size: .9em
 
+.product2-details
+	&__container
+		position: absolute
+		opacity: 0
+		+transition(.2s)
+		+phones
+			opacity: 1
+			position: relative
+		&.show
+			opacity: 1
+
 .products-wrapper
 	position: relative
 	.follow
@@ -775,6 +826,9 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 				opacity: 1
 		+phones
 			width: 100%
+			filter: grayscale(0)
+			.products__item-caption
+				opacity: 1
 	&__item-image
 		width: 100%
 		img
@@ -798,6 +852,15 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			width: 100%
 			opacity: .8
 			font-size: .9em
+
+.recent-articles
+	margin-top: 20px
+	padding-top: 20px
+	background: white
+	position: relative
+	&__heading
+		text-align: center
+		margin-bottom: 20px
 
 .request-more
 	text-decoration: none
@@ -864,7 +927,7 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 	&__subheading
 		text-transform: uppercase
 		letter-spacing: 1px
-	&__heading
+	&__heading, &__heading_static
 		display: inline-block
 		position: relative
 		font-weight: lighter
@@ -1258,6 +1321,10 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		&:hover
 			path
 				fill: inherit
+		&_text
+			margin: 0
+			font-size: 60px
+			color: #000
 
 
 	&__logo-image
@@ -1629,7 +1696,8 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		+phones-portrait
 			min-height: 0
 .social
-	display: none
+	opacity: 0
+	+transition(.5s)
 	&__list
 		margin: 0
 		padding: 0 0 10px 40px
@@ -1638,6 +1706,10 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		width: 200px
 		left: 0
 		background: #D9D9D4
+		+phones
+			text-align: center
+			margin-top: 0
+			margin-bottom: 10px
 	&__item
 		list-style: none
 		display: inline-block
@@ -1673,7 +1745,7 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 		&__link
 			font-size: 1.5em
 	&.active
-		display: block
+		opacity: 1
 	&.fixed
 		.social__list
 			padding: 0
@@ -1688,7 +1760,11 @@ h2.scroll-item__subheading.scroll-item__subheading_form
 			bottom: auto
 			transform: translateY(-50%)
 			+phones
-				fz1em
+				font-size: 1em
+	&_default
+		opacity: 1
+		.social__list
+			background: none
 
 .tab-slider
 	display: flex

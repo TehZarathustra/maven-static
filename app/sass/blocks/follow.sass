@@ -27,12 +27,24 @@
 			&:hover
 				text-decoration: none
 	&__input
+		label
+			margin-left: 10px
+			font-size: .9em
 		input
 			border: 1px solid #ccc
 			padding: 2px 5px
+			margin-left: 10px
 	input:disabled
 		background: #ccc
 	button
 		border: none
 		background: none
 		padding: 0
+
+.has-product2,
+.has-product3
+	.follow
+		position: relative
+		top: -30px
+		+phones
+			top: auto

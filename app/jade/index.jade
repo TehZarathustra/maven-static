@@ -125,6 +125,15 @@ html.no-js(lang='en')
                         li.nav-menu__item
                             .nav-menu__progress
                                 .nav-menu__progress-bar
+                            a.nav-menu__link.nav-menu__link_default(href="#articles") Articles
+                            ul.submenu.submenu__list.submenu_hidden
+                                li.submenu__item
+                                  .submenu__progress
+                                      .submenu__progress-bar
+                                  a.submenu__link.submenu__link_default(href='#article') article
+                        li.nav-menu__item
+                            .nav-menu__progress
+                                .nav-menu__progress-bar
                             a.nav-menu__link.nav-menu__link_default(href="#quickship") quickship
             .social.fixed
                 ul.social__list
@@ -259,8 +268,7 @@ html.no-js(lang='en')
                             .scroll-item__image-wrap.scroll-item__image-wrap_bundle.scroll-item__image-wrap_bundle-order-3(data-animation="moved", data-animation-type="onEnter")
                                 img.scroll-item__image(src="img/Brands/Ercol/ercol-0700-marino-chairs-copy.jpg", alt="image")
                         .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="5")
-                            a(href="http://www.ercol.com/international", target="_blank").scroll-item__logo-section
-                                img.scroll-item__logo-image(src="img/Brands/Ercol/ercol-logo.png" alt="ercol")
+                            a(href="http://www.ercol.com/international", target="_blank").scroll-item__logo-section.scroll-item__logo-section_text Ercol
                             p.scroll-item__paragraph Combining practicality with aesthetics, be it the copious storage of ercol’s sideboards, shelving units, bookcases and display cabinets, the comfort of the studio couch and of their chairs, or the utility of ercol’s coffee tables, lamp tables, desk and media units.
                             .call-to-action-grid
                                 a(href="#").request-more.slide-out-menu(data-anchor="request") Request more info
@@ -561,6 +569,54 @@ html.no-js(lang='en')
                                 img.scroll-item__logo-image(src="img/manufacturers/SenatorsGroup/Senator.png" alt="Senator")
                             p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
                             a(href="#").request-more.slide-out-menu(data-anchor="request")  Request more info
+
+                article.scroll-item#articles
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading manufacturers
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .scroll-item__full-column.scroll-item__full-column_flex(data-layout="4")
+                            .scroll-item__image-bundle(data-layout="4")
+                                .scroll-item__image-wrap(data-animation="vertical-parallax-1", data-animation-type="onProgress", data-title="Manufacturers", data-text=" Lorem ipsum.")
+                                    img.scroll-item__image(src="img/Maven_Manufacturers.jpg", alt="Manufacturers")
+
+                article.scroll-item#article
+                    .scroll-item__heading-wrap
+                        h2.scroll-item__heading article
+                    .scroll-item__columns-wrap.scroll-item__columns-wrap_flex
+                        .scroll-item__left-column.scroll-item__left-column_flex(data-layout="4")
+                            .scroll-item__image-wrap(data-animation="shortened", data-animation-type="onEnter")
+                                img.scroll-item__image(src="img/home.jpg", alt="image")
+                        .scroll-item__right-column.scroll-item__text.scroll-item__right-column_flex(data-layout="4")
+                            h3.scroll-item__subheading Main title
+                            p.scroll-item__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione officiis consectetur fuga autem sit in exercitationem velit non eveniet nesciunt sunt eaque quas at ipsam quam, hic ullam maxime pariatur veniam. Nihil mollitia voluptatem dignissimos voluptatibus nesciunt beatae accusantium.
+                            div
+                                a(href="#").request-more Read more
+                        .recent-articles
+                    .recent-articles__heading
+                        .scroll-item__heading-wrap
+                            h2.scroll-item__heading_static recent articles
+                        .products__grid
+                            .products__items
+                                a.products__item.slide-out-menu(data-anchor="ercol-product1", href="#")
+                                    span.products__item-image
+                                        img(src="img/home.jpg", alt="")
+                                    span.products__item-caption
+                                        span Caption
+                                a.products__item(href="#")
+                                    span.products__item-image
+                                        img(src="img/home.jpg", alt="")
+                                    span.products__item-caption
+                                        span Caption
+                                a.products__item(href="#")
+                                    span.products__item-image
+                                        img(src="img/home.jpg", alt="")
+                                    span.products__item-caption
+                                        span Caption
+                                a.products__item(href="#")
+                                    span.products__item-image
+                                        img(src="img/home.jpg", alt="")
+                                    span.products__item-caption
+                                        span Caption
 
                 article.scroll-item#quickship
                     .scroll-item__heading-wrap

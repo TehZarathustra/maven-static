@@ -8,7 +8,7 @@
 			text-align: center
 			padding-bottom: 20px
 	.social
-		display: block
+		opacity: 1
 		ul
 			left: 0
 			width: auto
@@ -79,3 +79,14 @@
 		font-size: .9em
 	&__text
 		font-size: .9em
+
+.product2-details
+	&__container
+		position: absolute
+		opacity: 0
+		+transition(.2s)
+		+phones
+			opacity: 1
+			position: relative
+		&.show
+			opacity: 1

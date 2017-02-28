@@ -1,5 +1,6 @@
 .social
-	display: none
+	opacity: 0
+	+transition(.5s)
 	&__list
 		margin: 0
 		padding: 0 0 10px 40px
@@ -8,6 +9,10 @@
 		width: 200px
 		left: 0
 		background: #D9D9D4
+		+phones
+			text-align: center
+			margin-top: 0
+			margin-bottom: 10px
 	&__item
 		list-style: none
 		display: inline-block
@@ -43,7 +48,7 @@
 		&__link
 			font-size: 1.5em
 	&.active
-		display: block
+		opacity: 1
 	&.fixed
 		.social__list
 			padding: 0
@@ -58,4 +63,8 @@
 			bottom: auto
 			transform: translateY(-50%)
 			+phones
-				fz1em
+				font-size: 1em
+	&_default
+		opacity: 1
+		.social__list
+			background: none

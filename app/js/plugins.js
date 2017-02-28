@@ -516,9 +516,47 @@ module.exports = function() {
 		if (mobileCheck) return;
 
 		setTimeout(function() {
-			$('body').mCustomScrollbar({
-			    theme: 'minimal-dark'
-			});
+			var isProduct2 = $('.page-wrapper').hasClass('has-product2');
+			var product2Offsets = {};
+			var product2Details;
+
+			if (isProduct2) {
+				$('.product__image').each(function (index) {
+					product2Offsets[index] = $(this).offset().top;
+				});
+
+				product2Details = $('.product2-details__container');
+			}
+
+			var scrollConfig = Object.assign(
+				{
+					theme: 'minimal-dark'
+				},
+				isProduct2 && {
+					callbacks: {
+						whileScrolling: function() {
+							var scrollTop = Math.abs(this.mcs.top);
+
+							if ((scrollTop < product2Offsets['1'])) {
+				    			$('.product2-details__container').removeClass('show');
+				    			$(product2Details[0]).addClass('show');
+				    		}
+
+				    		if ((scrollTop >= product2Offsets['1'] / 1.5) && scrollTop < product2Offsets['2']) {
+				    			$('.product2-details__container').removeClass('show');
+				    			$(product2Details[1]).addClass('show');
+				    		}
+
+				    		if (scrollTop >= product2Offsets['2'] / 1.5) {
+				    			$('.product2-details__container').removeClass('show');
+				    			$(product2Details[2]).addClass('show');
+				    		}
+				    	}
+					}
+				}
+			);
+
+			$('body').mCustomScrollbar(scrollConfig);
 		}, 1000);
 	})();
 };
